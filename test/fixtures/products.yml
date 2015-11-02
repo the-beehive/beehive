@@ -2,7 +2,7 @@
 
 one:
   user_id: 1
-  name: MyString
+  name: "Small Ottoman"
   description: MyText
   yardage: 1
   fabric_type: MyString
