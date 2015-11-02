@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
+
   setup do
     @order = orders(:one)
   end
@@ -18,7 +19,7 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should create order" do
     assert_difference('Order.count') do
-      post :create, order: { order_status: @order.order_status, total: @order.total, user_id_as_buyer: @order.user_id_as_buyer }
+      post :create, order: { order_status: @order.order_status, total: @order.total, user_id: @order.user_id }
     end
 
     assert_redirected_to order_path(assigns(:order))
@@ -35,7 +36,7 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should update order" do
-    patch :update, id: @order, order: { order_status: @order.order_status, total: @order.total, user_id_as_buyer: @order.user_id_as_buyer }
+    patch :update, id: @order, order: { order_status: @order.order_status, total: @order.total, user_id: @order.user_id }
     assert_redirected_to order_path(assigns(:order))
   end
 
