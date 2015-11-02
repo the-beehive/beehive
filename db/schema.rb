@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102155114) do
+ActiveRecord::Schema.define(version: 20151102163644) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "product_id"
@@ -33,30 +33,30 @@ ActiveRecord::Schema.define(version: 20151102155114) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "user_id_as_buyer"
+    t.integer  "user_id"
     t.decimal  "total"
     t.string   "order_status"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "user_id_as_seller"
+    t.integer  "user_id"
     t.string   "name"
     t.text     "description"
     t.integer  "yardage"
     t.string   "fabric_type"
     t.decimal  "shipping"
     t.decimal  "price"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "street"
     t.string   "city"
     t.string   "state"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20151102155114) do
     t.string   "phone"
     t.integer  "uid"
     t.string   "provider"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
