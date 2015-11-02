@@ -20,6 +20,10 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.user_id %></td>
+        <td><% product.images.each do |image|%>
+          <%= image_tag(image.image_url, :width => 100, :height => 100) %>
+            <% end %>
+        </td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.yardage %></td>
