@@ -20,6 +20,6 @@ bower_components
 
 node_modules
 
-css/*
+css
 
 src/css/main.css
