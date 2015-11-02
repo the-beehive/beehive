@@ -15,7 +15,7 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= image.product_id %></td>
-        <td><%= image.image_url %></td>
+        <td><%= image_tag(image.image_url, :width => 100, :height => 100) %></td>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
