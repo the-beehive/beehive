@@ -1,0 +1,28 @@
+body {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  header {
+    max-width: 80%;
+    margin: 0 auto;
+    border: 1px black solid;
+    text-transform: lowercase;
+  }
+
+  main.container {
+    max-width: 80%;
+    margin: 0 auto;
+    border: 1px black solid;
+  }
+
+  footer {
+    max-width: 80%;
+    margin: 0 auto;
+    border: 1px black solid;
+
+    h5 {
+      float: right;
+    }
+  }
+}
