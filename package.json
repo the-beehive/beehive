@@ -1,0 +1,34 @@
+{
+  "name": "beehive",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --directory --files='app/*.html, app/main.css'",
+    "sass": "node-sass app/assets/stylesheets/application.scss app/assets/stylesheets/application.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-beehive/beehive.git"
+  },
+  "author": "Kristine Erickson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-beehive/beehive/issues"
+  },
+  "homepage": "https://github.com/the-beehive/beehive#readme",
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "browser-sync": "^2.9.11",
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "node-sass": "^3.4.1"
+  },
+  "dependencies": {
+    "wiredep": "^2.2.2"
+  }
+}
