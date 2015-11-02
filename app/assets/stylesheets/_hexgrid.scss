@@ -1,0 +1,24 @@
+.hex-grid {
+  width: auto; /* 100% wide */
+
+  &:after { /* clears content */
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  [class*='column-'] { /* selects all columns */
+    float: left; /* makes columns next to eachother */
+    width: 100% * (1/4); /* four equal columns */
+    padding-right: 20px; /* applies fixed padding to right of all columns... */
+
+    &:last-of-type { /* ...except last on */
+      padding-right: 0;
+    }
+  }
+}
+
+/* GUTTERS */
+*, *:after, *:before {
+  box-sizing: border-box;
+}

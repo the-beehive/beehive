@@ -20,4 +20,6 @@ bower_components
 
 node_modules
 
-css
+app/assets/stylesheets/application.css
+
+app/assets/stylesheets/normalize.css

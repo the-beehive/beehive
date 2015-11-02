@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server --directory --files='app/*.html, app/main.css'",
-    "sass": "node-sass app/assets/stylesheets/scss/application.scss app/assets/stylesheets/css/application.css"
+    "sass": "node-sass app/assets/stylesheets/application.scss app/assets/stylesheets/application.css"
   },
   "repository": {
     "type": "git",
