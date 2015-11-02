@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id_as_seller: 1
+  name: MyString
+  description: MyText
+  yardage: 1
+  fabric_type: MyString
+  shipping: 9.99
+  price: 9.99
+
+two:
+  user_id_as_seller: 1
+  name: MyString
+  description: MyText
+  yardage: 1
+  fabric_type: MyString
+  shipping: 9.99
+  price: 9.99
