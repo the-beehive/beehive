@@ -1,0 +1,11 @@
+.user-profile {
+  width: 100%;
+
+  .user-info {
+    width: 100% * (1/3);
+  }
+
+  .seller-info {
+    width: 100% * (2/3);
+  }
+}
