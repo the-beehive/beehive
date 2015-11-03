@@ -1,41 +1,101 @@
 <section class="hex-grid">
-  <section class="column-1">
-    <p>col 1</p>
-  </section>
-  <section class="column-2">
-    <p>col 2</p>
-  </section>
-  <section class="column-3">
-    <p>col 3</p>
-  </section>
-  <section class="column-4">
-    <p>col 4</p>
-  </section>
+  <ul id="categories" class="">
+    <% @products.each do |product| %>
+    <li>
+      <div>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+                <% end %>
+          </tr>
+
+        <h3><%=product.name%></h3>
+        <p><%=product.description%></p>
+      </div>
+    </li>
+    <% end %>
+    <!-- <li>
+      <div>
+        <% @products.each do |product| %>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+                <% end %>
+          </tr>
+
+        <h3><%=product.name%></h3>
+        <p><%=product.description%></p>
+        <% end %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <% @products.each do |product| %>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+                <% end %>
+          </tr>
+
+        <h3><%=product.name%></h3>
+        <p><%=product.description%></p>
+        <% end %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <% @products.each do |product| %>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+                <% end %>
+          </tr>
+
+        <h3><%=product.name%></h3>
+        <p><%=product.description%></p>
+        <% end %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <% @products.each do |product| %>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+                <% end %>
+          </tr>
+
+        <h3><%=product.name%></h3>
+        <p><%=product.description%></p>
+        <% end %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <% @products.each do |product| %>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+                <% end %>
+          </tr>
+
+        <h3><%=product.name%></h3>
+        <p><%=product.description%></p>
+        <% end %>
+      </div>
+    </li> -->
+  </ul>
 </section>
 
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Products</h1>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,200,100,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-
-
- <ul id="categories" class="clr">
-   <li class="pusher"></li>
-     <li>
-       <div>
-         <% @products.each do |product| %>
-           <tr>
-             <% product.images.each do |image|%>
-               <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                 <% end %>
-           </tr>
-
-         <h1><%=product.name%></h1>
-         <p><%=product.description%></p>
-         <% end %>
-     </div>
-   </li>
-
-</table>
+<!-- <section class="column-1">
+  <p>col 1</p>
+</section>
+<section class="column-2">
+  <p>col 2</p>
+</section>
+<section class="column-3">
+  <p>col 3</p>
+</section>
+<section class="column-4">
+  <p>col 4</p>
+</section> -->
