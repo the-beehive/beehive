@@ -55,5 +55,31 @@
   <%= @user.provider %>
 </p>
 
+<p>
+  <strong>Ordered Items:</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>User id as buyer</th>
+        <th>Total</th>
+        <th>Order status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user.orders.each do |order| %>
+        <tr>
+          <td><%= order.user_id %></td>
+          <td><%= order.total %></td>
+          <td><%= order.order_status %></td>
+          <td><%= link_to 'Show', order %></td>
+          <td><%= link_to 'Edit', edit_order_path(order) %></td>
+          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
