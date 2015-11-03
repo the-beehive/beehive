@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151102163644) do
+=======
+ActiveRecord::Schema.define(version: 20151103040912) do
+>>>>>>> farmerjosh
 
   create_table "images", force: :cascade do |t|
     t.integer  "product_id"
@@ -62,7 +66,7 @@ ActiveRecord::Schema.define(version: 20151102163644) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.integer  "uid"
+    t.string   "uid"
     t.string   "provider"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
