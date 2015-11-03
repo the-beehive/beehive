@@ -36,6 +36,14 @@
       }
     } // END .profile-tabs
 
+    .seller-panel {
+      display: none;
+
+      &.active {
+        display: inherit;
+      }
+    }
+
     ul {
       list-style: none;
     }
