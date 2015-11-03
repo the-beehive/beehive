@@ -1,0 +1,24 @@
+{
+  "name": "beehive",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Kristine Erickson"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/the-beehive/beehive",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "modernizr": "components-modernizr#~2.8.3",
+    "normalize-css": "~3.0.3"
+  }
+}
