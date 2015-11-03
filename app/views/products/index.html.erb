@@ -1,17 +1,20 @@
 <section class="hex-grid">
-  <ul id="hex-products" class="clr">
+  <ul id="hex-products" class="clr" >
     <% @products.each do |product| %>
-    <li class="hex-container">
-      <div>
-        <tr>
-          <% product.images.each do |image|%>
-            <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-              <% end %>
-        </tr>
-        <h3><%=product.name%></h3>
-        <p><%=product.description%></p>
-      </div>
-    </li>
+
+      <li class="hex-container" onclick="location.href='<%= product_path(product) %>';">
+        <div>
+          <tr>
+            <% product.images.each do |image|%>
+              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+            <% end %>
+          </tr>
+          <h3><%=product.name%></h3>
+          <p><%=product.description%></p>
+
+        </div>
+      </li>
     <% end %>
+
   </ul>
 </section>
