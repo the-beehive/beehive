@@ -1,4 +1,37 @@
-<p id="notice"><%= notice %></p>
+<section class="user-profile">
+  <section class="user-info">
+    <img class="avatar" src="{{user.avatar_url}}"/>
+    <h1 class="full-name">
+      <%= @user.name %>
+    </h1>
+    <p>Edit profile</p>
+  </section>
+  <section class="seller-info">
+    <nav class="profile-tabs">
+      <a href="#/orders" class="active">Orders</a>
+      <a href="#/add-product" class="">Add Products</a>
+    </nav>
+    <section class="panel seller-orders active" id="orders">
+      <h2>Current orders</h2>
+      <ul class="current-orders"> <!-- TODO: repeat/loop for each order -->
+        <li class="buyer-info">
+          <h4>Buyer name and date order was placed</h4>
+            <ul class="order-details">
+              <li>Item name</li>
+              <li><span class="fab-thumbnail">Spoonflower pattern</li>
+            </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="panel add-new" id="add-product">
+      <h2>Add a new product</h2>
+      <%= render :partial => "/products/form" %>
+    </section>
+  </section>
+</section>
+
+
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -56,4 +89,4 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->
