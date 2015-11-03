@@ -3,6 +3,7 @@
     <% @products.each do |product| %>
     <li class="hex-container">
       <div>
+        <p>Test</p>
         <tr>
           <% product.images.each do |image|%>
             <%= image_tag(image.image_url, :width => 200, :height => 200) %>
