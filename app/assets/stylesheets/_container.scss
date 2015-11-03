@@ -1,0 +1,27 @@
+body {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  header {
+    max-width: 80%;
+    margin: 0 auto;
+    text-transform: lowercase;
+    padding: 2em 0 2em 0;
+  }
+
+  main.container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  footer {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2em 0 2em 0;
+
+    h5 {
+      text-align: right;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id_as_seller: 1
-  name: MyString
+  user_id: 1
+  name: "Small Ottoman"
   description: MyText
   yardage: 1
   fabric_type: MyString
@@ -10,7 +10,7 @@ one:
   price: 9.99
 
 two:
-  user_id_as_seller: 1
+  user_id: 1
   name: MyString
   description: MyText
   yardage: 1
