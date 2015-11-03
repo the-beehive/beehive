@@ -8,6 +8,23 @@
 </head>
 <body>
 
+  <div class="topbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <ul class="nav nav-pills">
+          <% if current_user %>
+            <li class="signed_in">Signed in with <%= current_user.provider %> as <%= current_user.name %></li>
+            <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign In With Facebook', "/auth/facebook" %></li>
+            <li><%= link_to 'Sign In With Twitter', "/auth/twitter" %></li>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+  </div>
+
 <%= yield %>
 
 </body>
