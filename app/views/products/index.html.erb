@@ -1,101 +1,17 @@
 <section class="hex-grid">
-  <ul id="categories" class="">
+  <ul id="hex-products" class="">
     <% @products.each do |product| %>
     <li>
       <div>
-          <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                <% end %>
-          </tr>
-
+        <tr>
+          <% product.images.each do |image|%>
+            <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+              <% end %>
+        </tr>
         <h3><%=product.name%></h3>
         <p><%=product.description%></p>
       </div>
     </li>
     <% end %>
-    <!-- <li>
-      <div>
-        <% @products.each do |product| %>
-          <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                <% end %>
-          </tr>
-
-        <h3><%=product.name%></h3>
-        <p><%=product.description%></p>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div>
-        <% @products.each do |product| %>
-          <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                <% end %>
-          </tr>
-
-        <h3><%=product.name%></h3>
-        <p><%=product.description%></p>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div>
-        <% @products.each do |product| %>
-          <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                <% end %>
-          </tr>
-
-        <h3><%=product.name%></h3>
-        <p><%=product.description%></p>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div>
-        <% @products.each do |product| %>
-          <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                <% end %>
-          </tr>
-
-        <h3><%=product.name%></h3>
-        <p><%=product.description%></p>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div>
-        <% @products.each do |product| %>
-          <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
-                <% end %>
-          </tr>
-
-        <h3><%=product.name%></h3>
-        <p><%=product.description%></p>
-        <% end %>
-      </div>
-    </li> -->
   </ul>
 </section>
-
-<!-- <section class="column-1">
-  <p>col 1</p>
-</section>
-<section class="column-2">
-  <p>col 2</p>
-</section>
-<section class="column-3">
-  <p>col 3</p>
-</section>
-<section class="column-4">
-  <p>col 4</p>
-</section> -->
