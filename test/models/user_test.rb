@@ -1,7 +1,14 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should have products" do
+    user = User.new
+    assert user.respond_to?(:products)
+  end
+
+  test "should have orders" do
+    user = User.new
+    assert user.respond_to?(:orders)
+  end
+
 end
