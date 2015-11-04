@@ -28,6 +28,11 @@ gem 'faker'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+# Paperclip and AWS S3
+gem 'paperclip'
+gem 'aws-sdk', '~> 1.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -56,3 +61,5 @@ group :development do
   gem 'spring'
 
 end
+
+gem 'stripe'
