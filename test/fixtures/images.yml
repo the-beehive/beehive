@@ -2,8 +2,8 @@
 
 one:
   product_id: 1
-  image_url: MyString
+  uploaded_file_file_name: MyString
 
 two:
   product_id: 1
-  image_url: MyString
+  uploaded_file_file_name: MyString

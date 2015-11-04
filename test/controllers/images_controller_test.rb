@@ -18,7 +18,7 @@ class ImagesControllerTest < ActionController::TestCase
 
   test "should create image" do
     assert_difference('Image.count') do
-      post :create, image: { image_url: @image.image_url, product_id: @image.product_id }
+      post :create, image: { uploaded_file_file_name: "just_work_ya_big_dummy.jpg", product_id: @image.product_id }
     end
 
     assert_redirected_to image_path(assigns(:image))
@@ -35,7 +35,7 @@ class ImagesControllerTest < ActionController::TestCase
   end
 
   test "should update image" do
-    patch :update, id: @image, image: { image_url: @image.image_url, product_id: @image.product_id }
+    patch :update, id: @image, image: { uploaded_file_file_name: @image.uploaded_file, product_id: @image.product_id }
     assert_redirected_to image_path(assigns(:image))
   end
 
