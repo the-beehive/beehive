@@ -30,7 +30,6 @@ Product.create!(user_id: 3, name: "Set of Five Dinner Napkins", description: "A 
 Product.create!(user_id: 3, name: "5 inch wristlet with ID pocket", description: "Use it as a purse or wallet! Small enough for the essentials and then some.",
   yardage: 1, fabric_type: "eco canvas", shipping: 3.00, price: 18.00)
 
-
 3.times do
   Order.create!(user_id: rand(1..10), total: rand(100.00..200.00), order_status: rand(1..5))
 end

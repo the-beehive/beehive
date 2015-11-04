@@ -6,7 +6,7 @@
         <div>
           <tr>
             <% product.images.each do |image|%>
-              <%= image_tag(image.image_url, :width => 200, :height => 200) %>
+              <%= image_tag(image.uploaded_file, :width => 200, :height => 200) %>
             <% end %>
           </tr>
           <h3><%=product.name%></h3>
