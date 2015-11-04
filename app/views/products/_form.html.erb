@@ -45,7 +45,7 @@
       <%= image_tag i.uploaded_file %>
       <td><%= link_to 'Show', i %></td>
       <td><%= link_to 'Edit', edit_image_path(i) %></td>
-      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </div>
   <div class="field">
