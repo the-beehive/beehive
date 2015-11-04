@@ -13,4 +13,8 @@ class SessionsControllerTest < ActionController::TestCase
 
         get :auth
     end
+
+
+
+
 end
