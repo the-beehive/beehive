@@ -2,22 +2,27 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Lato', sans-serif;
+  // font-family: 'Lato', sans-serif;
+  font-family: american typewriter;
 
   header {
     max-width: 80%;
     margin: 0 auto;
+    margin-top: 2%;
     text-transform: lowercase;
     padding: 2em 0 2em 0;
     // display: inline-block;
+    border-top: 5px solid #FFAF44;
 
     h1 {
-      font-weight: 300;
+      font-weight: 400;
       float: left;
+      font-size: 3vw;
     }
     div {
       width: auto;
       nav.login-register {
+        // font-family: 'Dancing Script', cursive;
         ul {
           list-style-type: none;
           margin-left: 65%;
