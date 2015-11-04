@@ -36,7 +36,7 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :uploaded_file %><br>
+    <%= f.label :uploaded_file, "Images" %><br>
     <% @product.images.each do |i| %>
       <%= image_tag i.uploaded_file %>
       <td><%= link_to 'Show', i %></td>
@@ -45,8 +45,8 @@
     <% end %>
   </div>
   <div class="field">
-    <%= label_tag :uploaded_file %>
-    <%= file_field_tag :uploaded_file %>
+    <%= label_tag :image, "Upload new image:" %><br/>
+    <%= file_field_tag 'image' %>
   </div>
   <div class="actions">
     <%= f.submit %>
