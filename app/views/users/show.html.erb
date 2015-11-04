@@ -10,6 +10,7 @@
     <nav class="profile-tabs">
       <a href="#orders" class="active">Orders</a>
       <a href="#add-product" class="">Add Products</a>
+      <a href="#users-products" class="">Your Products</a>
     </nav>
     <section class="seller-panel seller-orders active" id="orders">
       <h2>Current orders</h2>
@@ -26,6 +27,29 @@
     <section class="seller-panel add-new" id="add-product">
       <h2>Add a new product</h2>
       <%= render :partial => "/products/form" %>
+    </section>
+    <section class="seller-panel all-seller-products" id="users-products">
+      <h2>Products you offer</h2>
+      <ul>
+        <% @products.each do |product| %>
+
+          <li onclick="location.href='<%= edit_product_path(product) %>';">
+            <div>
+              <tr>
+                <% product.images.each do |image|%>
+                  <%= image_tag(image.uploaded_file, :width => 50, :height => 50) %>
+                <% end %>
+              </tr>
+              <h3><%=product.name%></h3>
+              <p><%=product.yardage%></p>
+              <p><%=product.shipping%></p>
+              <p><%=product.price%></p>
+
+            </div>
+          </li>
+        <% end %>
+
+      </ul>
     </section>
   </section>
 </section>
