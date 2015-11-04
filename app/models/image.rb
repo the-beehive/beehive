@@ -4,4 +4,6 @@ class Image < ActiveRecord::Base
 
   belongs_to :product
 
+  validates :uploaded_file_file_name, presence: true
+
 end
