@@ -38,7 +38,7 @@
   <div class="field">
     <table>
       <th>
-        <%= f.label :uploaded_file, "Images" %>
+        <%= f.label "Images" %>
       </th>
       <tbody>
         <% @product.images.each do |i| %>
@@ -54,7 +54,7 @@
   </div>
   <div class="field">
     <%= label_tag :image, "Upload new image:" %>
-    <%= file_field_tag 'image' %>
+    <%= file_field_tag :image %>
   </div>
   <div class="actions">
     <%= f.submit %>
