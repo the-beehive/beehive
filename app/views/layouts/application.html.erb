@@ -11,12 +11,8 @@
 
         <header>
           <h1>Beehive</h1>
-        </header>
-        <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <main class="container">
-
           <div>
-            <nav>
+            <nav class="login-register">
               <div>
                 <ul>
                 <% if current_user %>
@@ -30,6 +26,9 @@
               </div>
             </nav>
           </div>
+        </header>
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <main class="container">
 
           <%= yield %>
 

@@ -9,9 +9,23 @@ body {
     margin: 0 auto;
     text-transform: lowercase;
     padding: 2em 0 2em 0;
+    // display: inline-block;
 
     h1 {
       font-weight: 300;
+      float: left;
+    }
+    div {
+      width: auto;
+      nav.login-register {
+        ul {
+          list-style-type: none;
+          margin-left: 65%;
+          li {
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 
