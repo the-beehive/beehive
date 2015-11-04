@@ -36,16 +36,24 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :uploaded_file, "Images" %><br>
-    <% @product.images.each do |i| %>
-      <%= image_tag i.uploaded_file %>
-      <td><%= link_to 'Show', i %></td>
-      <td><%= link_to 'Edit', edit_image_path(i) %></td>
-      <td><%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+    <table>
+      <th>
+        <%= f.label :uploaded_file, "Images" %>
+      </th>
+      <tbody>
+        <% @product.images.each do |i| %>
+        <tr>
+          <td><%= image_tag i.uploaded_file, :width => 400, :height => 400 %></td>
+          <td><%= link_to 'Show', i %></td>
+          <td><%= link_to 'Edit', edit_image_path(i) %></td>
+          <td><%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <div class="field">
-    <%= label_tag :image, "Upload new image:" %><br/>
+    <%= label_tag :image, "Upload new image:" %>
     <%= file_field_tag 'image' %>
   </div>
   <div class="actions">
