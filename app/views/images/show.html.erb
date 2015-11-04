@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @image.image_url %>
+  <strong>Image:</strong>
+  <%= image_tag @image.uploaded_file %>
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
