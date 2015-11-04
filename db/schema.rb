@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20151104022733) do
     t.string   "name"
     t.string   "username"
     t.string   "email"
-    t.string   "password_digest"
     t.string   "street"
     t.string   "city"
     t.string   "state"
