@@ -14,7 +14,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
   test "user can see products index" do
     get root_path
     assert_response :success
-    assert response.body.match("Listing Products")
+    assert response.body.match("Powered by Spoonflower")
   end
 
   test "user can see individual product from index" do

@@ -3,9 +3,53 @@
 
   .user-info {
     width: 100% * (1/3);
-  }
+    // outline: 1px solid black;
+    float: left;
+
+    img {
+      width: 100%;
+      position: relative;
+    }
+  } // END .user-info
 
   .seller-info {
     width: 100% * (2/3);
-  }
-}
+    display: inline-block;
+
+    nav.profile-tabs {
+      border-bottom: solid 1px gray;
+      margin: 0;
+
+      a[href] {
+        text-decoration: none;
+        padding: 1ex 3em;
+        bottom: 6px;
+        padding: 1ex 3em;
+        position: relative;
+
+        &.active {
+          border: 1px solid gray;
+          border-bottom-color: #FFF;
+          border-top: 2px solid gray;
+        }
+      }
+    } // END .profile-tabs
+
+    .seller-panel {
+      display: none;
+      padding-top: 5%;
+
+      .buyer-info > h3 {
+        cursor: pointer;
+      }
+
+      &.active {
+        display: inherit;
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+  } // END .seller-info
+} // END .user-profile
