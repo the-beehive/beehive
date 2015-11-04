@@ -1,5 +1,7 @@
 console.log("hello");
 $(document).ready(function() {
+
+  // USER-PROFILE TABS AND PANELS
   $('.profile-tabs > a').on('click', function(){
     var panelId = $(this).attr('href');
 
@@ -10,4 +12,10 @@ $(document).ready(function() {
 
     }).filter('[href="#orders"]')
       .trigger('click');
+
+  // CURRENT ORDERS ACCORDION
+  $('.order-details  > li').hide();
+  $('.buyer-info > h4').on('click', function(){
+    $('.order-details  > li').show();
+  });
 });

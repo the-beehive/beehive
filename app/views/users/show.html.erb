@@ -4,7 +4,7 @@
     <h1 class="full-name">
       <%= @user.name %>
     </h1>
-    <p>Edit profile</p> <!-- TODO: LINK TO EDIT PROF FORM -->
+    <p><%= link_to 'Edit profile', edit_user_path(@user) %></p> <!-- TODO: LINK TO EDIT PROF FORM -->
   </section>
   <section class="seller-info">
     <nav class="profile-tabs">

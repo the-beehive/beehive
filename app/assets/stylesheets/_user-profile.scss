@@ -14,7 +14,6 @@
 
   .seller-info {
     width: 100% * (2/3);
-    // outline: 1px solid black;
     display: inline-block;
 
     nav.profile-tabs {
@@ -38,9 +37,18 @@
 
     .seller-panel {
       display: none;
+      padding-top: 5%;
 
       &.active {
         display: inherit;
+
+        // ul.order-details > li {
+        //   display: none;
+        //
+        //   &.show-accordion {
+        //     display: inherit;
+        //   }
+        // }
       }
     }
 
