@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
     <head>
         <title>Beehive</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300italic,300,700' rel='stylesheet' type='text/css'>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
@@ -10,12 +11,8 @@
 
         <header>
           <h1>Beehive</h1>
-        </header>
-        <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <main class="container">
-
           <div>
-            <nav>
+            <nav class="login-register">
               <div>
                 <ul>
                 <% if current_user %>
@@ -29,6 +26,9 @@
               </div>
             </nav>
           </div>
+        </header>
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <main class="container">
 
           <%= yield %>
 
