@@ -1,6 +1,6 @@
 <section class="user-profile">
   <section class="user-info">
-    <img class="avatar" src="{{user.avatar_url}}"/>
+    <%= image_tag @user.uploaded_file %>
     <h1 class="full-name">
       <%= @user.name %>
     </h1>
