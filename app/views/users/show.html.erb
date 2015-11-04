@@ -1,21 +1,22 @@
 <section class="user-profile">
   <section class="user-info">
-    <img class="avatar" src="{{user.avatar_url}}"/>
-    <h1 class="full-name">
+    <%= image_tag @user.uploaded_file %>
+    <h2 class="full-name">
       <%= @user.name %>
-    </h1>
-    <p>Edit profile</p>
+    </h2>
+    <p><%= link_to 'Edit profile', edit_user_path(@user) %></p> <!-- TODO: LINK TO EDIT PROF FORM -->
   </section>
   <section class="seller-info">
     <nav class="profile-tabs">
-      <a href="#/orders" class="active">Orders</a>
-      <a href="#/add-product" class="">Add Products</a>
+      <a href="#orders" class="active">Orders</a>
+      <a href="#add-product" class="">Add Products</a>
+      <a href="#users-products" class="">Your Products</a>
     </nav>
-    <section class="panel seller-orders active" id="orders">
+    <section class="seller-panel seller-orders active" id="orders">
       <h2>Current orders</h2>
       <ul class="current-orders"> <!-- TODO: repeat/loop for each order -->
         <li class="buyer-info">
-          <h4>Buyer name and date order was placed</h4>
+          <h3>Buyer name and date order was placed</h3>
             <ul class="order-details">
               <li>Item name</li>
               <li><span class="fab-thumbnail">Spoonflower pattern</li>
@@ -23,10 +24,32 @@
         </li>
       </ul>
     </section>
-    <section class="panel add-new" id="add-product">
+    <section class="seller-panel add-new" id="add-product">
       <h2>Add a new product</h2>
-      <!-- TODO: call 'add-product' form here -->
-      <!-- <%# render :partial => "/products/form" %> -->
+      <%= render :partial => "/products/form" %>
+    </section>
+    <section class="seller-panel all-seller-products" id="users-products">
+      <h2>Products you offer</h2>
+      <ul>
+        <% @products.each do |product| %>
+
+          <li onclick="location.href='<%= edit_product_path(product) %>';">
+            <div>
+              <tr>
+                <% product.images.each do |image|%>
+                  <%= image_tag(image.uploaded_file, :width => 50, :height => 50) %>
+                <% end %>
+              </tr>
+              <h3><%=product.name%></h3>
+              <p><%=product.yardage%></p>
+              <p><%=product.shipping%></p>
+              <p><%=product.price%></p>
+
+            </div>
+          </li>
+        <% end %>
+
+      </ul>
     </section>
   </section>
 </section>

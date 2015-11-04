@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+####
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '4.2.4'
 gem 'remove_tl'
 # Use SCSS for stylesheets
@@ -30,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+# Paperclip and AWS S3
+gem 'paperclip'
+gem 'aws-sdk', '~> 1.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -58,3 +63,5 @@ group :development do
   gem 'spring'
 
 end
+
+gem 'stripe'

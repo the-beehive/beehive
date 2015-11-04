@@ -6,7 +6,7 @@
 </p>
 
 <% @product.images.each do |image|%>
-  <%= image_tag(image.image_url, :width => 400, :height => 400) %>
+  <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
     <% end %>
 
 <p>
@@ -28,5 +28,3 @@
   <strong>Price:</strong>
   $<%= (number_with_precision(@product.price, :precision => 2)) %>
 </p>
-
-<%= link_to 'Back', products_path %>

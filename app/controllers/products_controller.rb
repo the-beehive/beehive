@@ -22,18 +22,13 @@ class ProductsController < ApplicationController
   end
 
   # POST /products
-  # POST /products.json
   def create
     @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      redirect_to @product, notice: 'Product was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -42,6 +37,9 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        if params[:image]
+            @product.images.create(uploaded_file: params[:image])
+        end
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else

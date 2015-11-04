@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @product = Product.new
+    @products = Product.all
   end
 
   # GET /users/new
@@ -69,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :username, :email, :street, :city, :state, :zip, :phone, :uid, :provider)
+      params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
     end
 end
