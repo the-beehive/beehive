@@ -39,16 +39,12 @@
       display: none;
       padding-top: 5%;
 
+      .buyer-info > h4 {
+        cursor: pointer;
+      }
+
       &.active {
         display: inherit;
-
-        // ul.order-details > li {
-        //   display: none;
-        //
-        //   &.show-accordion {
-        //     display: inherit;
-        //   }
-        // }
       }
     }
 

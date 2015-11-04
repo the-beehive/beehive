@@ -11,11 +11,15 @@ $(document).ready(function() {
       .removeClass('active');
 
     }).filter('[href="#orders"]')
-      .trigger('click');
+      .trigger('click'); // END tabs
 
   // CURRENT ORDERS ACCORDION
-  $('.order-details  > li').hide();
+  $('.order-details  > li').hide(); // hides on page load
   $('.buyer-info > h4').on('click', function(){
-    $('.order-details  > li').show();
-  });
+    if ($('.order-details > li').is(':hidden')) {
+      $('.order-details > li').show();
+    } else {
+      $('.order-details > li').hide();
+    }
+  }); // END accordion
 });
