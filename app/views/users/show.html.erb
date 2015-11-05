@@ -31,7 +31,7 @@
       </form>
     </section>
     <section class="seller-panel all-seller-products" id="users-products">
-      <h2>Products you offer</h2>
+      <h2>Manage your products</h2>
       <ul>
         <% @products.each do |product| %>
 
@@ -43,9 +43,9 @@
                 <% end %>
               </tr>
               <h3><%=product.name%></h3>
-              <p><%=product.yardage%></p>
-              <p><%=product.shipping%></p>
-              <p><%=product.price%></p>
+              <label>Yardage: <p><%=product.yardage%></p>
+              <label>Shipping cost: <p><%=product.shipping%></p>
+              <label>Price: <p><%=product.price%></p>
 
             </div>
           </li>

@@ -12,6 +12,7 @@ body {
     padding: 2em 0 2em 0;
     // display: inline-block;
     border-top: 5px solid #FFAF44;
+    overflow: hidden;
 
     // p {
     //   font-weight: 300;
@@ -20,9 +21,10 @@ body {
     h1 {
       font-weight: 400;
       float: left;
-      font-size: 4vw;
+      font-size: 5vw;
       text-decoration: none;
       color: black;
+      padding-left: 5px;
       font-family: 'Dancing Script', cursive;
       // text-align: center;
     }

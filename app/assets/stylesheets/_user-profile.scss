@@ -17,7 +17,7 @@
     display: inline-block;
 
     nav.profile-tabs {
-      border-bottom: solid 1px gray;
+      border-bottom: solid 1px lightgray;
       margin: 0;
 
       a[href] {
@@ -74,18 +74,33 @@
     .add-new {
 
       form.add-product {
-        border: 1px solid gray;
+        border: 2px solid lightgray;
         border-radius: 4px;
         padding: 1em 2em;
+        label {
+          font-size: 16px;
+        }
         input {
           width: 100%;
-          height: 20px;
+          height: 30px;
           margin-bottom: 5px;
+          font-size: 14px;
         }
         textarea {
           width: 100%;
           height: 50px;
+          font-size: 14px;
         }
+      }
+    }
+
+    .all-seller-products {
+      padding-bottom: 5%;
+      label {
+        margin-left: 5%;
+      }
+      label, p {
+        display: inline-block;
       }
     }
   } // END .seller-info
