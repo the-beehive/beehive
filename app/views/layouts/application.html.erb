@@ -3,6 +3,7 @@
     <head>
         <title>Beehive</title>
         <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
@@ -15,16 +16,15 @@
           <% end %>
           <div>
             <nav class="login-register">
-
+              <p>login</p>
               <div class="user-login">
                 <ul>
-                  <h3>login</h3>
                 <% if current_user %>
                   <li>Signed in with <%= current_user.provider %> as <%= current_user.name %></li>
                   <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
                 <% else %>
-                  <button><%= link_to 'Sign In With Facebook', "/auth/facebook" %></button>
-                  <button><%= link_to 'Sign In With Twitter', "/auth/twitter" %></button>
+                  <button class="fb-bttn"><i class="fa fa-facebook fa-lg"></i><%= link_to 'Sign In With Facebook', "/auth/facebook" %></button>
+                  <button class="tw-bttn"><i class="fa fa-twitter fa-lg"></i><%= link_to 'Sign In With Twitter', "/auth/twitter" %></button>
                 <% end %>
                 </ul>
               </div>

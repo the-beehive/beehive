@@ -26,8 +26,32 @@ body {
         ul {
           list-style-type: none;
           margin-left: 65%;
-          li {
-            display: inline-block;
+
+          button {
+            display: block;
+            padding: 10px 0;
+            width: 50%;
+            border: solid;
+            text-decoration: none;
+            color: #FFF;
+
+            i.fa {
+              float: left;
+              padding-left: 10px;
+            }
+
+            &.fb-bttn {
+              margin-bottom: 5px;
+              background: #44619D;
+              border-color: #44619D;
+            }
+            &.tw-bttn {
+              background: #55ACEE;
+              border-color: #55ACEE;
+              font-family: Helvetica Neue;
+              color: #FFF;
+              text-decoration: none;
+            }
           }
         }
       }
