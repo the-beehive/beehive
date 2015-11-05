@@ -34,7 +34,6 @@
       <h2>Manage your products</h2>
       <ul>
         <% @products.each do |product| %>
-
           <li onclick="location.href='<%= edit_product_path(product) %>';">
             <div>
               <tr>
@@ -46,16 +45,13 @@
               <label>Yardage: <p><%=product.yardage%></p>
               <label>Shipping cost: <p><%=product.shipping%></p>
               <label>Price: <p><%=product.price%></p>
-
             </div>
           </li>
         <% end %>
-
       </ul>
     </section>
   </section>
 </section>
-
 
 <!-- <p id="notice"><%= notice %></p>
 

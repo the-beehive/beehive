@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :users
   resources :images
   resources :products
+  resources :sessions
 
   get 'auth/facebook/callback', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#create'
+  post 'sign_in', to: 'sessions#create'
+  get  'sign_in', to: 'sessions#new'
 
   delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
 
