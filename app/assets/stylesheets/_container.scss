@@ -47,39 +47,39 @@ body {
             border-right: none;
           }
         }
-        ul {
-          list-style-type: none;
-          margin-top: 10px;
-          padding: 2em 1em;
-          border: 1px solid black;
-
-          button {
-            display: block;
-            padding: 10px 0;
-            width: 100%;
-            border: solid;
-            text-decoration: none;
-            color: #FFF;
-
-            i.fa {
-              float: left;
-              padding-left: 10px;
-            }
-
-            &.fb-bttn {
-              margin-bottom: 5px;
-              background: #44619D;
-              border-color: #44619D;
-            }
-            &.tw-bttn {
-              background: #55ACEE;
-              border-color: #55ACEE;
-              font-family: Helvetica Neue;
-              color: #FFF;
-              text-decoration: none;
-            }
-          }
-        }
+        // ul {
+        //   list-style-type: none;
+        //   margin-top: 10px;
+        //   padding: 2em 1em;
+        //   border: 1px solid black;
+        //
+        //   button {
+        //     display: block;
+        //     padding: 10px 0;
+        //     width: 100%;
+        //     border: solid;
+        //     text-decoration: none;
+        //     color: #FFF;
+        //
+        //     i.fa {
+        //       float: left;
+        //       padding-left: 10px;
+        //     }
+        //
+        //     &.fb-bttn {
+        //       margin-bottom: 5px;
+        //       background: #44619D;
+        //       border-color: #44619D;
+        //     }
+        //     &.tw-bttn {
+        //       background: #55ACEE;
+        //       border-color: #55ACEE;
+        //       font-family: Helvetica Neue;
+        //       color: #FFF;
+        //       text-decoration: none;
+        //     }
+        //   }
+        // }
       }
     }
   }
