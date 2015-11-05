@@ -2,8 +2,7 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  // font-family: 'Lato', sans-serif;
-  font-family: american typewriter;
+  font-family: 'Oswald', sans-serif;
 
   header {
     max-width: 80%;
@@ -14,10 +13,18 @@ body {
     // display: inline-block;
     border-top: 5px solid #FFAF44;
 
+    // p {
+    //   font-weight: 300;
+    // }
+
     h1 {
       font-weight: 400;
       float: left;
-      font-size: 3vw;
+      font-size: 4vw;
+      text-decoration: none;
+      color: black;
+      font-family: 'Dancing Script', cursive;
+      // text-align: center;
     }
     div {
       width: auto;
@@ -26,11 +33,13 @@ body {
         // margin-left: 65%;
         float: right;
         margin-right: 10px;
+        text-transform: uppercase;
 
         p {
           display: inline-block;
           border-right: 1px solid black;
           padding: 0 2em;
+          cursor: pointer;
 
           &:nth-child(3) {
             border-right: none;
