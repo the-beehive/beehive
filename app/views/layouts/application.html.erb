@@ -6,7 +6,6 @@
         <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
         <%= csrf_meta_tags %>
     </head>
     <body>
@@ -16,9 +15,10 @@
           <% end %>
           <div>
             <nav class="login-register">
-              <p class="log">login</p>
+              <p ><%= link_to 'Sign In Here!', new_session_path %></p>
               <p class="reg">register</p>
               <p class="cart">cart</p>
+
               <!-- <div class="user-login">
                 <ul class="login-form">
                 <% if current_user %>
@@ -38,6 +38,7 @@
                   <li>Signed in with <%= current_user.provider %> as <%= current_user.name %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                   <li><%= link_to 'Profile', user_path(current_user) %></li>
+                  <li><%= link_to 'Products', products_path %></li>
                 <% else %>
                   <li><%= link_to 'Sign In With Facebook', "/auth/facebook" %></li>
                   <li><%= link_to 'Sign In With Twitter', "/auth/twitter" %></li>
@@ -45,6 +46,7 @@
                 </ul>
               </div>
             </nav>
+
           </div>
         </header>
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
@@ -54,7 +56,7 @@
 
         </main>
         <footer>
-          <h5>Powered by Spoonflower</h5>
+          <%= image_tag"Spoonflower_Logo_Vector.jpeg", width: "20%" %>
         </footer>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
