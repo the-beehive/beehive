@@ -40,6 +40,7 @@
                   <li>Signed in with <%= current_user.provider %> as <%= current_user.name %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                   <li><%= link_to 'Profile', user_path(current_user) %></li>
+                  <li><%= link_to 'Products', products_path %></li>
                 <% else %>
                   <li><%= link_to 'Sign In With Facebook', "/auth/facebook" %></li>
                   <li><%= link_to 'Sign In With Twitter', "/auth/twitter" %></li>
