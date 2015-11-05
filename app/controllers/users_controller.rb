@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :user_logged_in?
 
   # GET /users
   # GET /users.json
@@ -60,5 +61,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
+    end
+
+    def user_logged_in?
+      redirect_to sign_in_path, notice: "you must sign in to view this page." unless session[:logged_in_user]
     end
 end

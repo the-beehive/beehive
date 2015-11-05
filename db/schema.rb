@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104022733) do
+ActiveRecord::Schema.define(version: 20151105153408) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "product_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20151104022733) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
+    t.string   "password_digest"
   end
 
 end
