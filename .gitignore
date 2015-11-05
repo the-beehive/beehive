@@ -16,7 +16,7 @@
 !/log/.keep
 /tmp
 
-<<<<<<< HEAD
+
 bower_components
 
 node_modules
@@ -24,6 +24,5 @@ node_modules
 app/assets/stylesheets/application.css
 
 app/assets/stylesheets/normalize.css
-=======
-config/secrets.yml
->>>>>>> farmerjosh
+
+/.env
