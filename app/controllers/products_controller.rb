@@ -23,7 +23,6 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    byebug
     @product = Product.new(product_params)
     if @product.save
       redirect_to @product, notice: 'Product was successfully created.'
