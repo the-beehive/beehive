@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'puma'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -42,6 +42,8 @@ gem 'aws-sdk', '~> 1.6'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'pg'
+
+  gem 'puma'
 
   gem 'rails_12factor'
 end
