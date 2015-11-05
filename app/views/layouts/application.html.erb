@@ -6,10 +6,10 @@
         <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
         <%= csrf_meta_tags %>
     </head>
     <body>
-
         <header>
           <%= link_to products_path do %>
             <h1>Beehive</h1>
@@ -27,11 +27,10 @@
                 <% else %>
                   <button class="fb-bttn"><i class="fa fa-facebook fa-lg"></i><%# link_to 'Sign In With Facebook', "/auth/facebook" %></button>
                   <button class="tw-bttn"><i class="fa fa-twitter fa-lg"></i><%# link_to 'Sign In With Twitter', "/auth/twitter" %></button>
+
                 <% end %>
                 </ul>
               </div> -->
-
-
 
               <div>
                 <ul>
@@ -58,5 +57,6 @@
           <h5>Powered by Spoonflower</h5>
         </footer>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 
     </body>
