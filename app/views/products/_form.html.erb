@@ -12,45 +12,49 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <input placeholder="Product name"<%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <textarea placeholder="Tell us about it! Dimensions, material, etc."<%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :yardage %><br>
-    <%= f.number_field :yardage %>
+    <input placeholder="How much fabric will you need?"<%= f.number_field :yardage %>
   </div>
   <div class="field">
     <%= f.label :fabric_type %><br>
-    <%= f.text_field :fabric_type %>
+    <input placeholder="What type of fabric will you need?"<%= f.text_field :fabric_type %>
   </div>
   <div class="field">
     <%= f.label :shipping %><br>
-    <%= f.text_field :shipping %>
+    <input placeholder="How much will shipping cost?"<%= f.text_field :shipping %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <input placeholder="How much will this product cost?"<%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :uploaded_file %><br>
-    <% @product.images.each do |i| %>
-      <%= image_tag i.uploaded_file %>
-      <td><%= link_to 'Show', i %></td>
-      <td><%= link_to 'Edit', edit_image_path(i) %></td>
-      <td><%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+    <table>
+      <th>
+        <%= f.label "Images" %>
+      </th>
+      <tbody>
+        <% @product.images.each do |i| %>
+        <tr>
+          <td><%= image_tag i.uploaded_file, :width => 400, :height => 400 %></td>
+          <td><%= link_to 'Show', i %></td>
+          <td><%= link_to 'Edit', edit_image_path(i) %></td>
+          <td><%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <div class="field">
-    <%= label_tag :uploaded_file %>
-    <%= file_field_tag :uploaded_file %>
+    <%= label_tag :image, "Upload product images:" %>
+    <%= file_field_tag :image %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -17,20 +17,24 @@
     display: inline-block;
 
     nav.profile-tabs {
-      border-bottom: solid 1px gray;
+      border-bottom: solid 1px lightgray;
       margin: 0;
 
       a[href] {
         text-decoration: none;
+        text-transform: uppercase;
+        color: inherit;
         padding: 1ex 3em;
-        bottom: 6px;
+        bottom: 11px;
         padding: 1ex 3em;
         position: relative;
 
         &.active {
-          border: 1px solid gray;
-          border-bottom-color: #FFF;
-          border-top: 2px solid gray;
+          // border: 1px solid gray;
+          // border-bottom-color: #FFF;
+          // border-top: 2px solid gray;
+          color: #FFAF44;
+          text-decoration: underline;
         }
       }
     } // END .profile-tabs
@@ -38,9 +42,24 @@
     .seller-panel {
       display: none;
       padding-top: 5%;
+      font-weight: 300;
+      padding-left: 2%;
+
+      h2 {
+        padding-bottom: 4%;
+      }
+
+      h3 {
+        padding-bottom: 4%;
+      }
 
       .buyer-info > h3 {
         cursor: pointer;
+        // margin-left: 5%;
+      }
+
+      ul.order-details {
+        margin-left: 5%;
       }
 
       &.active {
@@ -50,6 +69,39 @@
 
     ul {
       list-style: none;
+    }
+
+    .add-new {
+
+      form.add-product {
+        border: 2px solid lightgray;
+        border-radius: 4px;
+        padding: 1em 2em;
+        label {
+          font-size: 16px;
+        }
+        input {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 5px;
+          font-size: 14px;
+        }
+        textarea {
+          width: 100%;
+          height: 50px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .all-seller-products {
+      padding-bottom: 5%;
+      label {
+        margin-left: 5%;
+      }
+      label, p {
+        display: inline-block;
+      }
     }
   } // END .seller-info
 } // END .user-profile

@@ -15,11 +15,11 @@ class User < ActiveRecord::Base
   end
 
   def self.create_user_from_omniauth(auth)
-  create! do |user|
-    user.provider = auth["provider"]
-    user.uid = auth["uid"]
-    user.name = auth["info"]["name"]
-  end
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"]
+    end
   end
 
 end
