@@ -2,28 +2,83 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Oswald', sans-serif;
 
   header {
     max-width: 80%;
     margin: 0 auto;
+    margin-top: 2%;
     text-transform: lowercase;
     padding: 2em 0 2em 0;
     // display: inline-block;
+    border-top: 5px solid #FFAF44;
+    overflow: hidden;
+
+    // p {
+    //   font-weight: 300;
+    // }
 
     h1 {
-      font-weight: 300;
+      font-weight: 400;
       float: left;
+      font-size: 5vw;
+      text-decoration: none;
+      color: black;
+      padding-left: 5px;
+      font-family: 'Dancing Script', cursive;
+      // text-align: center;
     }
     div {
       width: auto;
       nav.login-register {
+        // font-family: 'Dancing Script', cursive;
+        // margin-left: 65%;
+        float: right;
+        margin-right: 10px;
+        text-transform: uppercase;
+
+        p {
+          display: inline-block;
+          border-right: 1px solid black;
+          padding: 0 2em;
+          cursor: pointer;
+
+          &:nth-child(3) {
+            border-right: none;
+          }
+        }
         ul {
           list-style-type: none;
-          margin-left: 65%;
-          li {
-            display: inline-block;
-          }
+          // margin-top: 10px;
+          // padding: 2em 1em;
+          // border: 1px solid black;
+          //
+          // button {
+          //   display: block;
+          //   padding: 10px 0;
+          //   width: 100%;
+          //   border: solid;
+          //   text-decoration: none;
+          //   color: #FFF;
+          //
+          //   i.fa {
+          //     float: left;
+          //     padding-left: 10px;
+          //   }
+          //
+          //   &.fb-bttn {
+          //     margin-bottom: 5px;
+          //     background: #44619D;
+          //     border-color: #44619D;
+          //   }
+          //   &.tw-bttn {
+          //     background: #55ACEE;
+          //     border-color: #55ACEE;
+          //     font-family: Helvetica Neue;
+          //     color: #FFF;
+          //     text-decoration: none;
+          //   }
+          // }
         }
       }
     }
