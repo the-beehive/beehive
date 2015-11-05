@@ -22,43 +22,38 @@ class OrderItemsController < ApplicationController
   end
 
   # POST /order_items
-  # POST /order_items.json
   def create
-    @order_item = OrderItem.new(order_item_params)
+    @order = current_order
+    @order_item = @order.order_items.new(order_item_params)
+    @order.save
+    session[:order_id] = @order.id
 
-    respond_to do |format|
-      if @order_item.save
-        format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
-        format.json { render :show, status: :created, location: @order_item }
-      else
-        format.html { render :new }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
-      end
+    if @order_item.save
+      redirect_to @order_item, notice: 'Order item was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /order_items/1
-  # PATCH/PUT /order_items/1.json
   def update
-    respond_to do |format|
-      if @order_item.update(order_item_params)
-        format.html { redirect_to @order_item, notice: 'Order item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order_item }
-      else
-        format.html { render :edit }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
-      end
+    @order = current_order
+    @order_item = @order.order_items.find(params[:id])
+    if @order_item.update_attributes(order_item_params)
+      @order_items = @order.order_items
+      redirect_to @order_item, notice: 'Order item was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /order_items/1
-  # DELETE /order_items/1.json
   def destroy
+    @order = current_order
+    @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
-    respond_to do |format|
-      format.html { redirect_to order_items_url, notice: 'Order item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @order_items = @order.order_items
+    redirect_to order_items_url, notice: 'Order item was successfully destroyed.'
   end
 
   private

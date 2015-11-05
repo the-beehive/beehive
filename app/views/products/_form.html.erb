@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <input placeholder="Product name"<%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Product name" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <textarea placeholder="Tell us about it! Dimensions, material, etc."<%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Tell us about it! Dimensions, material, etc." %>
   </div>
   <div class="field">
     <%= f.label :yardage %><br>
-    <input placeholder="How much fabric will you need?"<%= f.number_field :yardage %>
+    <%= f.number_field :yardage, placeholder: "How much fabric will you need?" %>
   </div>
   <div class="field">
     <%= f.label :fabric_type %><br>
-    <input placeholder="What type of fabric will you need?"<%= f.text_field :fabric_type %>
+    <%= f.text_field :fabric_type, placeholder: "What type of fabric will you need?" %>
   </div>
   <div class="field">
     <%= f.label :shipping %><br>
-    <input placeholder="How much will shipping cost?"<%= f.text_field :shipping %>
+    <%= f.text_field :shipping, placeholder: "How much will shipping cost?" %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <input placeholder="How much will this product cost?"<%= f.text_field :price %>
+    <%= f.text_field :price, placeholder: "How much will this product cost?" %>
   </div>
   <div class="field">
     <table>
