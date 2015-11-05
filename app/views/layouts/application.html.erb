@@ -42,6 +42,7 @@
                 <% else %>
                   <li><%= link_to 'Sign In With Facebook', "/auth/facebook" %></li>
                   <li><%= link_to 'Sign In With Twitter', "/auth/twitter" %></li>
+                  <li><%= link_to 'register', new_user_path %></li>
                 <% end %>
                 </ul>
               </div>
@@ -54,11 +55,13 @@
 
           <%= yield %>
 
+
         </main>
         <footer>
           <%= image_tag"Spoonflower_Logo_Vector.jpeg", width: "20%" %>
         </footer>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 
 
     </body>
