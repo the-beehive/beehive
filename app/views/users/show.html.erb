@@ -32,23 +32,20 @@
       <h2>Products you offer</h2>
       <ul>
         <% @products.each do |product| %>
-
-          <li onclick="location.href='<%= edit_product_path(product) %>';">
-            <div>
-              <tr>
-                <% product.images.each do |image|%>
-                  <%= image_tag(image.uploaded_file, :width => 50, :height => 50) %>
-                <% end %>
-              </tr>
-              <h3><%=product.name%></h3>
-              <p><%=product.yardage%></p>
-              <p><%=product.shipping%></p>
-              <p><%=product.price%></p>
-
-            </div>
-          </li>
+        <li onclick="location.href='<%= edit_product_path(product) %>';">
+          <div>
+            <tr>
+              <% product.images.each do |image|%>
+                <%= image_tag(image.uploaded_file, :width => 50, :height => 50) %>
+              <% end %>
+            </tr>
+            <h3><%=product.name%></h3>
+            <p><%=product.yardage%></p>
+            <p><%=product.shipping%></p>
+            <p><%=product.price%></p>
+          </div>
+        </li>
         <% end %>
-
       </ul>
     </section>
   </section>
