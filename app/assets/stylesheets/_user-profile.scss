@@ -22,8 +22,10 @@
 
       a[href] {
         text-decoration: none;
+        text-transform: uppercase;
+        color: inherit;
         padding: 1ex 3em;
-        bottom: 6px;
+        bottom: 11px;
         padding: 1ex 3em;
         position: relative;
 
@@ -31,6 +33,7 @@
           border: 1px solid gray;
           border-bottom-color: #FFF;
           border-top: 2px solid gray;
+          // color: #FFAF44;
         }
       }
     } // END .profile-tabs
@@ -38,9 +41,24 @@
     .seller-panel {
       display: none;
       padding-top: 5%;
+      font-weight: 300;
+      padding-left: 2%;
+
+      h2 {
+        padding-bottom: 4%;
+      }
+
+      h3 {
+        padding-bottom: 4%;
+      }
 
       .buyer-info > h3 {
         cursor: pointer;
+        // margin-left: 5%;
+      }
+
+      ul.order-details {
+        margin-left: 5%;
       }
 
       &.active {
@@ -50,6 +68,15 @@
 
     ul {
       list-style: none;
+    }
+
+    .add-new {
+
+      form.add-product {
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 1em 2em;
+      }
     }
   } // END .seller-info
 } // END .user-profile
