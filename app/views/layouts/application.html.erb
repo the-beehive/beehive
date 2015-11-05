@@ -17,8 +17,10 @@
           <div>
             <nav class="login-register">
               <p>login</p>
+              <p>register</p>
+              <p>cart</p>
               <div class="user-login">
-                <ul>
+                <ul class="">
                 <% if current_user %>
                   <li>Signed in with <%= current_user.provider %> as <%= current_user.name %></li>
                   <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
