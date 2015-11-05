@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def own_products
+    @product.user_id = user.id
+  end
+
 end
