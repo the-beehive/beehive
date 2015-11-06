@@ -7,7 +7,7 @@
 
 <% @product.images.each do |image|%>
   <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
-    <% end %>
+<% end %>
 
 <p>
   <%= @product.description %>

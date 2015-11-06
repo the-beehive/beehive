@@ -9,8 +9,6 @@ class SessionsController < ApplicationController
       end
     elsif user = User.sign_in_from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
-      user.password = SecureRandom.hex(9)
-      user.save
       redirect_to root_url, notice: "Signed in!"
     else
       flash.now[:alert] = 'Invalid email/password combination'
