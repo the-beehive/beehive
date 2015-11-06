@@ -25,6 +25,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      if params[:image]
+        @product.images.create(uploaded_file: params[:image])
+      end
       redirect_to @product, notice: 'Product was successfully created.'
     else
       render :new
