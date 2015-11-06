@@ -3,6 +3,11 @@ function overlay() {
   modal.style.visibility = (modal.style.visibility == "visible") ? "hidden" : "visible";
 }
 
+function overlayRegister() {
+  modal = document.getElementById("overlay");
+  modal.style.visibility = (modal.style.visibility == "visible") ? "hidden" : "visible";
+}
+
 // $(document).ready(function(){
 //   // LOGIN DROP-DOWN MENU
 //   $(".user-login > ul").hide();
