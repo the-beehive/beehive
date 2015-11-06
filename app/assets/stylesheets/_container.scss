@@ -78,6 +78,14 @@ body {
             &:last-child {
               border-right: none;
             }
+
+            a[href] {
+              text-decoration: none;
+              color: inherit;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
