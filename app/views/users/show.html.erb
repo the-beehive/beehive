@@ -1,3 +1,4 @@
+
 <section class="user-profile">
   <section class="user-info">
     <%= image_tag @user.uploaded_file %>
@@ -7,6 +8,10 @@
     <p><%= link_to 'Edit profile', edit_user_path(@user) %></p> <!-- : LINK TO EDIT PROF FORM -->
   </section>
   <section class="seller-info">
+    <section class="manage-profile">
+      <h2>Manage your hive</h2>
+      <p>Stay up to date on orders, add new products and edit product details. </p>
+    </section>
     <nav class="profile-tabs">
       <a href="#orders" class="active">Orders</a>
       <a href="#add-product" class="">Add Products</a>
@@ -26,9 +31,7 @@
     </section>
     <section class="seller-panel add-new" id="add-product">
       <h2>Add a new product</h2>
-      <form class="add-product">
-      <%= render :partial => "/products/form" %>
-      </form>
+      <%= render :partial => "/products/form", class: "add-product" %>
     </section>
     <section class="seller-panel all-seller-products" id="users-products">
       <h2>Manage your products</h2>
