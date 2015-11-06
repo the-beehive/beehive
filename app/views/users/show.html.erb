@@ -36,7 +36,7 @@
     <section class="seller-panel all-seller-products" id="users-products">
       <h2>Manage your products</h2>
       <ul>
-        <% @products.each do |product| %>
+        <% @user.products.each do |product| %>
           <li onclick="location.href='<%= edit_product_path(product) %>';">
             <div>
               <tr>
