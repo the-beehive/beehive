@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  get 'carts/show'
-
-  resources :order_items
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
   resources :orders
   resources :users
   resources :images

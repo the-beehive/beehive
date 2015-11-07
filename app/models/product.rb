@@ -8,6 +8,6 @@ class Product < ActiveRecord::Base
   validates :fabric_type, presence: true
   validates :shipping, presence: true
   validates :price, presence: true
-  
+
   default_scope { where(active: true) }
 end

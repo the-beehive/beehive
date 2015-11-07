@@ -5,11 +5,14 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    # THIS MIGHT NEED TO GO IN INDEX. ACCORDING TO RICH ON RAILS.
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/new
@@ -24,7 +27,12 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = Product.new(product_params)
+
+    @order_item = current_order.order_items.new
     if @product.save
+      if params[:image]
+        @product.images.create(uploaded_file: params[:image])
+      end
       redirect_to @product, notice: 'Product was successfully created.'
     else
       render :new
@@ -34,6 +42,8 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+
+    @order_item = current_order.order_items.new
     if @product.update(product_params)
       if params[:image]
         @product.images.create(uploaded_file: params[:image])

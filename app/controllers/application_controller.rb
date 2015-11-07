@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       Order.new
     end
   end
-  
+
   private
 
     def current_user
