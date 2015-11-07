@@ -1,3 +1,5 @@
+$main: #FFAF44;
+
 body {
   width: 100%;
   margin-left: auto;
@@ -11,7 +13,7 @@ body {
     text-transform: lowercase;
     padding: 2em 0 2em 0;
     // display: inline-block;
-    border-top: 5px solid #FFAF44;
+    border-top: 5px solid $main;
     overflow: hidden;
 
     // p {
@@ -109,8 +111,6 @@ body {
         border: solid 0px;
         text-decoration: none;
         margin: 0 auto;
-        // margin-left: 30px;
-        // margin-right: 30px;
 
         a[href] {
           color: #FFF;
@@ -129,12 +129,22 @@ body {
           margin-bottom: 5px;
           background: #44619D;
           border-color: #44619D;
+
+          &:hover {
+            background: darken(#44619D, 10%);
+            cursor: pointer;
+          }
+
         }
 
         &.login-twitter {
           background: #55ACEE;
           border-color: #55ACEE;
           margin-bottom: 5%;
+
+          &:hover {
+            background: darken(#55ACEE, 10%);
+          }
         }
       }
 
@@ -146,6 +156,7 @@ body {
 
        form {
          width: 100%;
+
          div {
            padding: 0 30px 5px 30px;
            input {
@@ -154,44 +165,41 @@ body {
              display: block;
              line-height: 2em;
            }
-           input.login-submit {
-             color: #FFAF44;
+
+           .login-submit {
+             background: $main;
+             margin-left: 30px;
+             width: 100%;
            }
          }
+       }
+
+       form.new-user-form {
+        //  display: none;
+         label {
+           text-transform: uppercase;
+           font-weight: 300;
+         }
+           .register-button {
+             background: lighten($main, 10%);
+             border: solid lighten($main, 10%);
+             display: block;
+             padding: 10px 0;
+             width: 60%;
+             border: solid 0px;
+             margin: 0 auto;
+
+             &:hover{
+               background: $main;
+               cursor: pointer;
+             }
+
+             a[href] {
+               text-decoration: none;
+               color: #FFF;
+             }
+           }
        }
     }
   }
 }
-
-
-/* FB BUTTONS IF WE NEED */
-// margin-top: 10px;
-// padding: 2em 1em;
-// border: 1px solid black;
-//
-// button {
-//   display: block;
-//   padding: 10px 0;
-//   width: 100%;
-//   border: solid;
-//   text-decoration: none;
-//   color: #FFF;
-//
-//   i.fa {
-//     float: left;
-//     padding-left: 10px;
-//   }
-//
-//   &.fb-bttn {
-//     margin-bottom: 5px;
-//     background: #44619D;
-//     border-color: #44619D;
-//   }
-//   &.tw-bttn {
-//     background: #55ACEE;
-//     border-color: #55ACEE;
-//     font-family: Helvetica Neue;
-//     color: #FFF;
-//     text-decoration: none;
-//   }
-// }

@@ -1,6 +1,7 @@
 <p>Login to Beehive</p>
 <%= form_tag(sign_in_path)do %>
-  <div>Email: <%= text_field_tag :email %></div>
-  <div>Password: <%= password_field_tag :password %></div>
-  <%= submit_tag :submit %>
+  <div>Email <%= text_field_tag :email %></div>
+  <div>Password <%= password_field_tag :password %></div>
+  <%= submit_tag :submit, :class => "login-submit" %>
+  <p>Don't have an account? <a href="#register">Register</a>
 <% end %>
