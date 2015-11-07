@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @users = User.find(current_user.id)
   end
 
   # GET /users/1
@@ -68,6 +69,7 @@ class UsersController < ApplicationController
     end
 
     def validate_user
-      redirect_to root_path unless current_user and current_user.id == params[:id]
+      #redirect_to root_path unless current_user and current_user.id == params[:id]
+      redirect_to root_path unless current_user and current_user.id == User.find(params[:id]).id
     end
 end
