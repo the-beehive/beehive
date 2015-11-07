@@ -7,7 +7,7 @@
 
 <% @product.images.each do |image|%>
   <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
-    <% end %>
+<% end %>
 
 <p>
   <%= @product.description %>
@@ -28,3 +28,24 @@
   <strong>Price:</strong>
   $<%= (number_with_precision(@product.price, :precision => 2)) %>
 </p>
+
+</br>
+</br>
+<div>
+  <%= form_tag product_path, :method => 'get' do %>
+    <%= label_tag(:q, "Customize fabric: ") %>
+    <table>
+    <tr>
+      <td><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
+      <td><%= submit_tag "Search", :name => nil %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>
+</br>
+
+<% if params[:search] == "" || params[:search] == nil %>
+  <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
+<% end %>
+
+<%= render :partial => 'fabric' %>

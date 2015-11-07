@@ -2,15 +2,14 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
-  # GET /products.json
   def index
     @products = Product.all
     @user = User.new
   end
 
   # GET /products/1
-  # GET /products/1.json
   def show
+    @fabric_search_results = Product.fabric_search(params[:search])
   end
 
   # GET /products/new
@@ -20,6 +19,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    
   end
 
   # POST /products
@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
   end
 
   # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     if @product.update(product_params)
       if params[:image]
