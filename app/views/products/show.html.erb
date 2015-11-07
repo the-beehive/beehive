@@ -44,9 +44,8 @@
 </div>
 </br>
 
-
-<% if params[:search] == "" %>
-  <%= render plain: "Or choose from these popular designs: " %></br></br>
+<% if params[:search] == "" || params[:search] == nil %>
+  <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
 <% end %>
 
 <%= render :partial => 'fabric' %>

@@ -1,5 +1,3 @@
-<div>
-  <% @fabric_search_results.each do |result| %>
-    <%= image_tag result["thumbnail_url"]%>
-  <% end %>
-</div>
+<% @fabric_search_results.each do |result| %>
+  <%= image_tag result["thumbnail_url"]%>
+<% end %>
