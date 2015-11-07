@@ -28,3 +28,25 @@
   <strong>Price:</strong>
   $<%= (number_with_precision(@product.price, :precision => 2)) %>
 </p>
+
+</br>
+</br>
+<div>
+  <%= form_tag product_path, :method => 'get' do %>
+    <%= label_tag(:q, "Customize fabric: ") %>
+    <table>
+    <tr>
+      <td><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
+      <td><%= submit_tag "Search", :name => nil %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>
+</br>
+
+
+<% if params[:search] == "" %>
+  <%= render plain: "Or choose from these popular designs: " %></br></br>
+<% end %>
+
+<%= render :partial => 'fabric' %>

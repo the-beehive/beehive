@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   # before_action :user_logged_in?
+  before_filter :validate_user
 
   # GET /users
   # GET /users.json
@@ -64,5 +65,9 @@ class UsersController < ApplicationController
 
     def user_logged_in?
       redirect_to sign_in_path, notice: "you must sign in to view this page." unless session[:logged_in_user]
+    end
+
+    def validate_user
+      redirect_to root_path unless current_user and current_user.id == params[:id]
     end
 end
