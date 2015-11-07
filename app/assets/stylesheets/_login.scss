@@ -143,6 +143,11 @@ form.new-user-form {
     width: 60%;
     border: solid 0px;
     margin: 0 auto;
+    color: #FFF;
+    font-family: "Oswald";
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
 
     &:hover{
       background: $main;
@@ -151,7 +156,6 @@ form.new-user-form {
 
     a[href] {
       text-decoration: none;
-      color: #FFF;
     }
   }
 }
