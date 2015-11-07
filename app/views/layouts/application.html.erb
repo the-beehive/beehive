@@ -58,6 +58,7 @@
             <a href='#' class="close" onclick='overlay()'><i class="fa fa-times fa-lg"></i></a><br>
             <button class="login-fb"><i class="fa fa-facebook fa-lg"></i><%= link_to 'Sign In With Facebook', "/auth/facebook" %></button>
             <button class="login-twitter"><i class="fa fa-twitter fa-lg"></i><%= link_to 'Sign In With Twitter', "/auth/twitter" %></button>
+            <hr>
             <%= render :partial => "/sessions/new", class: "login-modal" %>
             <%= render :partial => "/users/form", class: "reg-modal" %>
           </div>
