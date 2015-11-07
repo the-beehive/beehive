@@ -1,3 +1,4 @@
+<h2>Register your Beehive account</h2>
 <%= form_for(@user, html: { multipart: true, :class => "new-user-form" }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,6 @@
     </div>
   <% end %>
 
-  <p>Register your Beehive account</p>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -49,11 +49,11 @@
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :uploaded_file %><br>
+    <%= f.label :uploaded_profile_picture %><br>
     <%= f.file_field :uploaded_file %>
   </div>
   <div class="actions">
     <%= f.submit "Register", :class => "register-button" %>
   </div>
-  <p>Already have an account? <a href=#>Log in</a>
+  <p>Already have an account? <%= link_to 'Log in', new_session_path %>
 <% end %>
