@@ -1,15 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  #before_action :set_fabric_search_results, only: [:show]
 
   # GET /products
-  # GET /products.json
   def index
     @products = Product.all
   end
 
   # GET /products/1
-  # GET /products/1.json
   def show
     @fabric_search_results = Product.fabric_search(params[:search])
   end
@@ -37,7 +34,6 @@ class ProductsController < ApplicationController
   end
 
   # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     if @product.update(product_params)
       if params[:image]
@@ -61,10 +57,6 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
-
-    # def set_fabric_search_results
-    #   @fabric_search_results = Product.fabric_search(params[:search])
-    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
