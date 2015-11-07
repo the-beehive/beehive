@@ -52,14 +52,12 @@
 
           <%= yield %>
 
-
         </main>
         <div id="overlay">
           <div class="modal-view">
-            Click here to [<a href='#' onclick='overlay()'>close</a>]
-            <li><%= link_to 'Sign In With Facebook', "/auth/facebook", class: "login-fb" %></li>
-            <li><%= link_to 'Sign In With Twitter', "/auth/twitter", class: "login-twitter" %></li>
-            <p>OR</p>
+            <a href='#' class="close" onclick='overlay()'><i class="fa fa-times fa-lg"></i></a><br>
+            <button class="login-fb"><i class="fa fa-facebook fa-lg"></i><%= link_to 'Sign In With Facebook', "/auth/facebook" %></button>
+            <button class="login-twitter"><i class="fa fa-twitter fa-lg"></i><%= link_to 'Sign In With Twitter', "/auth/twitter" %></button>
             <%= render :partial => "/sessions/new", class: "login-modal" %>
             <%= render :partial => "/users/form", class: "reg-modal" %>
           </div>
@@ -67,8 +65,7 @@
         <footer>
           <%= image_tag"Spoonflower_Logo_Vector.jpeg", width: "20%" %>
         </footer>
+
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-
 
     </body>
