@@ -23,8 +23,10 @@
                   <li><%= link_to 'Manage', user_path(current_user) %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                 <% else %>
-                  <li onclick='overlay()'><%= link_to 'Login', "#" %></li><!-- TODO: change link for modal? -->
-                  <li onclick='overlay()'><%= link_to 'register', "#register" %></li>
+                  <li><%= link_to 'Login', new_session_path %></li>
+                  <li><%= link_to 'Register', new_user_path %></li>
+                  <!-- <li onclick='overlay()'><%# link_to 'Login', "#" %></li> -->
+                  <!-- <li onclick='overlay()'><%# link_to 'register', "#register" %></li> -->
                 <% end %>
                 </ul>
               </div>
@@ -38,16 +40,7 @@
           <%= yield %>
 
         </main>
-        <div id="overlay">
-          <div class="modal-view">
-            <a href='#' class="close" onclick='overlay()'><i class="fa fa-times fa-lg"></i></a><br>
-            <button class="login-fb"><i class="fa fa-facebook fa-lg"></i><%= link_to 'Sign In With Facebook', "/auth/facebook" %></button>
-            <button class="login-twitter"><i class="fa fa-twitter fa-lg"></i><%= link_to 'Sign In With Twitter', "/auth/twitter" %></button>
-            <hr>
-            <%= render :partial => "/sessions/new", class: "login-modal" %>
-            <%= render :partial => "/users/form", class: "reg-modal" %>
-          </div>
-        </div>
+
         <footer>
           <%= image_tag"Spoonflower_Logo_Vector.jpeg", width: "20%" %>
         </footer>

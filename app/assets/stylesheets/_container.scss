@@ -83,16 +83,16 @@ body {
   }
 
   /* LOGIN MODAL */
-  #overlay {
-    visibility: hidden;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+  // #overlay {
+  //   visibility: hidden;
+  //   position: absolute;
+  //   left: 0px;
+  //   top: 0px;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 1000;
 
-    div.modal-view {
+    form {
       width: 30%;
       margin: 20px auto; /* centers modal */
       background-color: #fff;
@@ -201,5 +201,5 @@ body {
            }
        }
     }
-  }
+  // }
 }
