@@ -24,31 +24,45 @@
 
   .col-1-3 {
     width: 100% * (1/3);
-    // padding: 0 5%;
-    // margin-left: 5%;
   }
 
   .col-3-3 {
     width: 100%;
   }
 
-  .sf-fabric {
-
-  }
-
-  .more-seller {
-
-  }
 } /* END grid-row layout */
 
+/* PRODUCT IMAGES & DESCRIPTION */
 .product-overview {
+  padding-bottom: 5%;
   .col-1-3 {
     font-weight: 300;
     h2 {
+      text-transform: uppercase;
+      padding-bottom: 3%;
+    }
+    .seller-details {
+      padding-bottom: 3%;
+    }
+    h4 {
       text-transform: uppercase;
     }
     p {
 
     }
   }
-}
+} /* END product-overview */
+
+/* SPOONFLOWER PATTERN SELECTION */
+.sf-fabric {
+  padding-bottom: 5%;
+
+
+} /* END Spoonflower pattern selection */
+
+/* MORE ITEMS FROM SELLER */
+.more-seller {
+  padding-bottom: 5%;
+
+
+} /* END more items */
