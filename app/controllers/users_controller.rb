@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  # before_action :user_logged_in?
-  before_filter :validate_user
+  before_filter :validate_user,  only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -63,11 +62,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
     end
 
-    def user_logged_in?
-      redirect_to sign_in_path, notice: "you must sign in to view this page." unless session[:logged_in_user]
-    end
-
     def validate_user
-      redirect_to root_path unless current_user and current_user.id == User.find(params[:id]).id
+      redirect_to new_session_path, notice: 'Access denied.' unless current_user and current_user.id == User.find(params[:id]).id
     end
 end
