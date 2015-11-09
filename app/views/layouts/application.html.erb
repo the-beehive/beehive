@@ -16,20 +16,6 @@
           <% end %>
           <div>
             <nav class="login-register">
-
-              <!-- <div class="user-login">
-                <ul class="login-form">
-                <% if current_user %>
-                  <li>Signed in with <%# current_user.provider %> as <%= current_user.name %></li>
-                  <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
-                <% else %>
-                  <button class="fb-bttn"><i class="fa fa-facebook fa-lg"></i><%# link_to 'Sign In With Facebook', "/auth/facebook" %></button>
-                  <button class="tw-bttn"><i class="fa fa-twitter fa-lg"></i><%# link_to 'Sign In With Twitter', "/auth/twitter" %></button>
-
-                <% end %>
-                </ul>
-              </div> -->
-              <!-- <a href='#' onclick='overlay()'>Click here to show the overlay</a> -->
               <div>
                 <ul>
                 <% if current_user %>
@@ -38,11 +24,10 @@
                   <li><%= link_to 'Manage', user_path(current_user) %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                 <% else %>
-                  <li onclick='overlay()'><%= link_to 'Sign In Here!', new_session_path %></li><!-- TODO: change link for modal? -->
-                  <li>register</li>
-                  <li><%= link_to 'Sign In With Facebook', "/auth/facebook" %></li>
-                  <li><%= link_to 'Sign In With Twitter', "/auth/twitter" %></li>
-                  <li><%= link_to 'register', new_user_path %></li>
+                  <li><%= link_to 'Login', new_session_path %></li>
+                  <li><%= link_to 'Register', new_user_path %></li>
+                  <!-- <li onclick='overlay()'><%# link_to 'Login', "#" %></li> -->
+                  <!-- <li onclick='overlay()'><%# link_to 'register', "#register" %></li> -->
                 <% end %>
                 </ul>
               </div>
@@ -55,20 +40,13 @@
 
           <%= yield %>
 
-
         </main>
-        <div id="overlay">
-          <div>
-            <!-- TODO: show login form -->
-            Click here to [<a href='#' onclick='overlay()'>close</a>]
-          </div>
-        </div>
+
         <footer>
           <%= image_tag"Spoonflower_Logo_Vector.jpeg", width: "20%" %>
           <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         </footer>
 
-
-
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
     </body>
