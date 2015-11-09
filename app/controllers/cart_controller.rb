@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  before_action :authenticate_user, except: [:index]
 
   def index
     # If cart exists, pass it to the page.  Otherwise, create a new empty cart.
@@ -32,6 +33,15 @@ class CartController < ApplicationController
   def destroy
     session[:cart] = nil
     redirect_to cart_path
+  end
+
+private
+
+  def authenticate_user
+    if @current_user.nil?
+      flash[:notice] = 'You must be signed in to edit your cart.'
+      redirect_to sign_in_path
+    end
   end
 
 end
