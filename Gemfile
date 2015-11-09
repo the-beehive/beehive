@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'puma'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -27,11 +27,14 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'faker'
+
+gem 'httparty'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
 # Paperclip and AWS S3
 gem 'paperclip'
 gem 'aws-sdk', '~> 1.6'
@@ -42,6 +45,8 @@ gem 'aws-sdk', '~> 1.6'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'pg'
+
+  gem 'puma'
 
   gem 'rails_12factor'
 end

@@ -1,4 +1,5 @@
-<%= form_for(@user, html: { multipart: true }) do |f| %>
+<h2 class="form">Register your Beehive account</h2>
+<%= form_for(@user, html: { multipart: true, :class => "new-user-form" }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -18,6 +19,10 @@
   <div class="field">
     <%= f.label :username %><br>
     <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
@@ -44,18 +49,11 @@
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :uid %><br>
-    <%= f.number_field :uid %>
-  </div>
-  <div class="field">
-    <%= f.label :provider %><br>
-    <%= f.text_field :provider %>
-  </div>
-  <div class="field">
-    <%= f.label :uploaded_file %><br>
+    <%= f.label :uploaded_profile_picture %><br>
     <%= f.file_field :uploaded_file %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Register", :class => "register-button" %>
   </div>
+  <p>Already have an account? <%= link_to 'Log in', new_session_path %>
 <% end %>

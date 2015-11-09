@@ -1,8 +1,8 @@
-<%= form_for(@product, html: { multipart: true }) do |f| %>
+<%= form_for(@product, html: {multipart: true, :class => "edit-product"}) do |f| %>
+
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
       <ul>
       <% @product.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -25,7 +25,12 @@
   </div>
   <div class="field">
     <%= f.label :fabric_type %><br>
-    <%= f.text_field :fabric_type, placeholder: "What type of fabric will you need?" %>
+    <%= f.select :fabric_type, [['Basic Cotton Ultra'], ['Satin'], ['Kona'],
+        ['Performance Pique'], ['Cotton Poplin'], ['Poly Crepe de Chine'], ['Cotton Lawn Ultra'],
+        ['Silky Faille'], ['Performance Knit'], ['Modern Jersey'], ['Minky'],
+        ['Linen-Cotton Canvas'], ['Organic Cotton Interlock Knit'], ['Organic Cotton Sateen'],
+        ['Sport Lycra'], ['Eco Canvas'], ['Heavy Cotton Twill'], ['Faux Suede'],
+        ['Silk Crepe de Chine']], placeholder: "What type of fabric will you need?" %>
   </div>
   <div class="field">
     <%= f.label :shipping %><br>
@@ -34,6 +39,9 @@
   <div class="field">
     <%= f.label :price %><br>
     <%= f.text_field :price, placeholder: "How much will this product cost?" %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, value: params[:id]%>
   </div>
   <div class="field">
     <table>
@@ -57,6 +65,6 @@
     <%= file_field_tag :image %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add new product", :class => "add-new-button" %>
   </div>
 <% end %>

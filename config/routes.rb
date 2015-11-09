@@ -2,15 +2,22 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  resource :cart, only: [:show]
-  resources :order_items, only: [:create, :update, :destroy]
+  resources :order_items
   resources :orders
   resources :users
   resources :images
   resources :products
+  resources :sessions
+  # resource :cart, only: [:index, :create]
+
+  get 'cart' => 'cart#index'
+  get 'cart/:id' => 'cart#create'
+  delete 'cart' => "cart#destroy"
 
   get 'auth/facebook/callback', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#create'
+  post 'sign_in', to: 'sessions#create'
+  get  'sign_in', to: 'sessions#new'
 
   delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
 

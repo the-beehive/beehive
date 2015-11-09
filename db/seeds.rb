@@ -35,17 +35,12 @@ Product.create!(user_id: 3, name: "Set of Five Dinner Napkins", description: "A 
 Product.create!(user_id: 3, name: "5 inch wristlet with ID pocket", description: "Use it as a purse or wallet! Small enough for the essentials and then some.",
   yardage: 1, fabric_type: "eco canvas", shipping: 3.00, price: 18.00)
 
-# 3.times do
-#   Order.create!(user_id: rand(1..10))
-# end
-#
-# 10.times do
-#   OrderItem.create!(
-#       product_id: rand(1..5),
-#       order_id: rand(1..3),
-#       fabric_design: Faker::Number.number(8),
-#       order_item_status: rand(0..3),
-#       shipping: 4.99,
-#       name: Faker::Commerce.product_name,
-#       quantity: rand(1..5))
-# end
+3.times do
+  Order.create!(user_id: rand(1..10), total: rand(100.00..200.00), order_status: rand(0..3))
+end
+
+10.times do
+  OrderItem.create!(
+      product_id: rand(1..5),
+      order_id: rand(1..3), fabric_design: Faker::Number.number(8), order_item_status: rand(0..3), shipping: 4.99, price: rand(10.00..50.00), name: Faker::Commerce.product_name)
+end

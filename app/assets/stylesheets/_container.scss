@@ -1,3 +1,5 @@
+$main: #FFAF44;
+
 body {
   width: 100%;
   margin-left: auto;
@@ -11,7 +13,7 @@ body {
     text-transform: lowercase;
     padding: 2em 0 2em 0;
     // display: inline-block;
-    border-top: 5px solid #FFAF44;
+    border-top: 5px solid $main;
     overflow: hidden;
 
     // p {
@@ -37,48 +39,27 @@ body {
         margin-right: 10px;
         text-transform: uppercase;
 
-        p {
-          display: inline-block;
-          border-right: 1px solid black;
-          padding: 0 2em;
-          cursor: pointer;
-
-          &:nth-child(3) {
-            border-right: none;
-          }
-        }
         ul {
           list-style-type: none;
-          // margin-top: 10px;
-          // padding: 2em 1em;
-          // border: 1px solid black;
-          //
-          // button {
-          //   display: block;
-          //   padding: 10px 0;
-          //   width: 100%;
-          //   border: solid;
-          //   text-decoration: none;
-          //   color: #FFF;
-          //
-          //   i.fa {
-          //     float: left;
-          //     padding-left: 10px;
-          //   }
-          //
-          //   &.fb-bttn {
-          //     margin-bottom: 5px;
-          //     background: #44619D;
-          //     border-color: #44619D;
-          //   }
-          //   &.tw-bttn {
-          //     background: #55ACEE;
-          //     border-color: #55ACEE;
-          //     font-family: Helvetica Neue;
-          //     color: #FFF;
-          //     text-decoration: none;
-          //   }
-          // }
+
+          li {
+            display: inline-block;
+            border-right: 1px solid black;
+            padding: 0 2em;
+            cursor: pointer;
+
+            &:last-child {
+              border-right: none;
+            }
+
+            a[href] {
+              text-decoration: none;
+              color: inherit;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
@@ -87,16 +68,20 @@ body {
   main.container {
     max-width: 80%;
     margin: 0 auto;
-    padding-top: 5%;
+    padding-top: 3%;
+    overflow: hidden;
   }
 
   footer {
     max-width: 80%;
     margin: 0 auto;
     padding: 2em 0 2em 0;
-
-    h5 {
-      text-align: right;
+    img {
+      float: right;
+      overflow: hidden;
     }
   }
 }
+// *, *:after, *:before {
+//   box-sizing: border-box;
+// }

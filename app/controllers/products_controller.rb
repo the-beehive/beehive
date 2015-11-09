@@ -2,17 +2,14 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
-  # GET /products.json
   def index
     @products = Product.all
-    @order_item = current_order.order_items.new
+    @user = User.new
   end
 
   # GET /products/1
-  # GET /products/1.json
   def show
-    # THIS MIGHT NEED TO GO IN INDEX. ACCORDING TO RICH ON RAILS.
-    @order_item = current_order.order_items.new
+    @fabric_search_results = Product.fabric_search(params[:search])
   end
 
   # GET /products/new
@@ -22,6 +19,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+
   end
 
   # POST /products
@@ -40,7 +38,6 @@ class ProductsController < ApplicationController
   end
 
   # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
 
     @order_item = current_order.order_items.new
