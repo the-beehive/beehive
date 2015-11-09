@@ -1,8 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h2 class="form">Login to Beehive</h2>
+<%= form_tag(sign_in_path, {:class => 'login-form'})do %>
+  <button class="login-fb"><i class="fa fa-facebook fa-lg"></i><%= link_to 'Sign In With Facebook', "/auth/facebook" %></button>
+  <button class="login-twitter"><i class="fa fa-twitter fa-lg"></i><%= link_to 'Sign In With Twitter', "/auth/twitter" %></button>
+  <hr>
+  <div>Email <%= text_field_tag :email %></div>
+  <div>Password <%= password_field_tag :password %></div>
+  <%= submit_tag :submit, :class => "login-submit" %>
+  <p>Don't have an account? <%= link_to 'Register', new_user_path %>
 
-<p>Please enter your email and password to login:</p>
-<%= form_tag(sign_in_path)do %>
-  <div>Email: <%= text_field_tag :email %></div>
-  <div>Password: <%= password_field_tag :password %></div>
-  <%= submit_tag :submit %>
-<% end %>
+
+  <% end %>
