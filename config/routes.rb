@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
 
+  root 'products#index'
+
   resources :order_items
   resources :orders
   resources :users
   resources :images
   resources :products
   resources :sessions
+  # resource :cart, only: [:index, :create]
+
+  get 'cart' => 'cart#index'
+  get 'cart/:id' => 'cart#create'
+  delete 'cart' => "cart#destroy"
 
   get 'auth/facebook/callback', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#create'
@@ -18,8 +25,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
-  root 'products#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
