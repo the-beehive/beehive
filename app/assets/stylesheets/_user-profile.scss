@@ -166,6 +166,14 @@
         display: inline-block;
       }
     } /* END manage products tab */
+
+    /* PURCHASES TAB/PANEL */
+    .user-purchase {
+      h2 {
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+    }
   } // END .seller-info
 } // END .user-profile
 
