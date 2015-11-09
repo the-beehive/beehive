@@ -41,7 +41,6 @@
     }
   } // END .user-info
 
-
   .seller-info {
     width: 100% * (2/3);
     display: inline-block;
@@ -57,7 +56,7 @@
         color: inherit;
         padding: 1ex 3em;
         bottom: 11px;
-        padding: 1ex 3em;
+        padding: 1ex 2em;
         position: relative;
 
         &:hover {
@@ -65,9 +64,6 @@
         }
 
         &.active {
-          // border: 1px solid gray;
-          // border-bottom-color: #FFF;
-          // border-top: 2px solid gray;
           color: #FFAF44;
           text-decoration: underline;
         }
