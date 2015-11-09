@@ -32,7 +32,7 @@
       <%= label_tag(:q, "Search Spoonflower's custom fabrics") %>
       <table>
       <tr>
-        <td><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
+        <td id="input"><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
         <td><%= submit_tag "Search", :name => nil, :class => 'search-button' %></td>
       </tr>
     </table>
