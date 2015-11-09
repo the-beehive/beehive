@@ -148,6 +148,10 @@
       background: $main;
       cursor: pointer;
     }
+    a[href] {
+      text-decoration: none;
+      color: #FFF;
+    }
   }
 
 } /* END Spoonflower pattern selection */
