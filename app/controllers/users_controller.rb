@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :validate_user,  only: [:index, :show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @product = Product.new
-    @products = Product.all
   end
 
   # GET /users/new
@@ -60,5 +60,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
+    end
+
+    def validate_user
+      redirect_to new_session_path, notice: 'Access denied.' unless current_user and current_user.id == User.find(params[:id]).id
     end
 end

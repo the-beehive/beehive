@@ -36,6 +36,6 @@ end
 
 10.times do
   OrderItem.create!(
-      product_id: rand(1..5), 
+      product_id: rand(1..5),
       order_id: rand(1..3), fabric_design: Faker::Number.number(8), order_item_status: rand(0..3), shipping: 4.99, price: rand(10.00..50.00), name: Faker::Commerce.product_name)
 end

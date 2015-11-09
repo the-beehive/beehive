@@ -1,12 +1,17 @@
+
 <section class="user-profile">
   <section class="user-info">
     <%= image_tag @user.uploaded_file %>
     <h2 class="full-name">
       <%= @user.name %>
     </h2>
-    <p><%= link_to 'Edit profile', edit_user_path(@user) %></p> <!-- TODO: LINK TO EDIT PROF FORM -->
+    <p><%= link_to 'Edit profile', edit_user_path(@user) %></p> <!-- : LINK TO EDIT PROF FORM -->
   </section>
   <section class="seller-info">
+    <section class="manage-profile">
+      <h2>Manage your hive</h2>
+      <p>Stay up to date on orders, add new products and edit product details. </p>
+    </section>
     <nav class="profile-tabs">
       <a href="#orders" class="active">Orders</a>
       <a href="#add-product" class="">Add Products</a>
@@ -26,14 +31,14 @@
     </section>
     <section class="seller-panel add-new" id="add-product">
       <h2>Add a new product</h2>
-      <form class="add-product">
-      <%= render :partial => "/products/form" %>
-      </form>
+
+      <%= render :partial => "/products/form", class: "add-product" %>
+
     </section>
     <section class="seller-panel all-seller-products" id="users-products">
       <h2>Manage your products</h2>
       <ul>
-        <% @products.each do |product| %>
+        <% @user.products.each do |product| %>
           <li onclick="location.href='<%= edit_product_path(product) %>';">
             <div>
               <tr>
@@ -52,84 +57,3 @@
     </section>
   </section>
 </section>
-
-<!-- <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%# @user.email %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @user.street %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @user.zip %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>Uid:</strong>
-  <%= @user.uid %>
-</p>
-
-<p>
-  <strong>Provider:</strong>
-  <%= @user.provider %>
-</p>
-
-<p>
-  <strong>Ordered Items:</strong>
-  <table>
-    <thead>
-      <tr>
-        <th>User id as buyer</th>
-        <th>Total</th>
-        <th>Order status</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @user.orders.each do |order| %>
-        <tr>
-          <td><%= order.user_id %></td>
-          <td><%= order.total %></td>
-          <td><%= order.order_status %></td>
-          <td><%= link_to 'Show', order %></td>
-          <td><%= link_to 'Edit', edit_order_path(order) %></td>
-          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> -->

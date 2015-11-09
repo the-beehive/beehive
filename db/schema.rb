@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105192350) do
+ActiveRecord::Schema.define(version: 20151107175356) do
+
+  create_table "authorizations", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.integer  "product_id"
@@ -27,12 +35,14 @@ ActiveRecord::Schema.define(version: 20151105192350) do
     t.integer  "product_id"
     t.integer  "order_id"
     t.integer  "fabric_design"
-    t.integer  "order_item_status", default: 1
+    t.integer  "order_item_status",                          default: 1
     t.decimal  "shipping"
-    t.decimal  "price"
     t.string   "name"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+    t.decimal  "unit_price",        precision: 12, scale: 3
+    t.integer  "quantity"
+    t.decimal  "total_price",       precision: 12, scale: 3
   end
 
   create_table "orders", force: :cascade do |t|
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(version: 20151105192350) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
+    t.string   "password_digest"
   end
 
 end

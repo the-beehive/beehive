@@ -1,0 +1,25 @@
+<h1>Your Cart</h1>
+<p><%= link_to "Empty Cart", cart_path, method: :delete %></p>
+<hr/>
+
+<% total = 0 %>
+
+<ul>
+<% @cart.each do |id, quantity| %>
+  <% product = Product.find_by_id(id) %>
+  <% if product.blank? %>
+    <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
+  <% else %>
+  <li>
+    <p><%= link_to product.name, product %></p>
+    <p><%= product.description %></p>
+    <p><%= number_to_currency(product.price, unit: "$") %></p>
+    <p>Quantity: <%= quantity %></p>
+  </li>
+  <% end %>
+  <br/>
+  <% total += quantity * product.price %>
+<% end %>
+<hr/>
+Total: <%= number_to_currency(total, unit: "$") %>
+</ul>
