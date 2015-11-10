@@ -1,6 +1,7 @@
 <section class="hex-grid">
 
   <ul id="hex-products" class="clr" >
+
     <% @products.each do |product| %>
 
       <li class="hex-container" onclick="location.href='<%= product_path(product) %>';">
@@ -19,5 +20,3 @@
 
   </ul>
 </section>
-
-<!-- <%# link_to 'Sign In Here!', new_session_path %> -->
