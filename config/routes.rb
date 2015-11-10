@@ -9,12 +9,6 @@ Rails.application.routes.draw do
   resources :products
   resources :sessions
   resources :user_steps
-  # resource :cart, only: [:index, :create]
-
-  get 'cart' => 'cart#index'
-  get 'cart/checkout' => 'cart#checkout'
-  get 'cart/:id' => 'cart#create'
-  delete 'cart' => "cart#destroy"
   resources :carts, only: [:index, :create, :destroy]
 
   get 'auth/facebook/callback', to: "sessions#create"
