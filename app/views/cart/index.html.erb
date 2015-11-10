@@ -2,6 +2,12 @@
 <p><%= link_to "Empty Cart", cart_path, method: :delete %></p>
 <hr/>
 
+<p><% unless current_user %>
+  <p>Hello</p>
+  <p><%= link_to  %></p>
+<% end %>
+
+
 <% total = 0 %>
 
 <ul>

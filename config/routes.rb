@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :images
   resources :products
   resources :sessions
+  resources :user_steps
   # resource :cart, only: [:index, :create]
 
   get 'cart' => 'cart#index'
