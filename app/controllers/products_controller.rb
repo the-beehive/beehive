@@ -25,6 +25,8 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = Product.new(product_params)
+
+    @order_item = current_order.order_items.new
     if @product.save
       if params[:image]
         @product.images.create(uploaded_file: params[:image])
@@ -37,6 +39,8 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1
   def update
+
+    @order_item = current_order.order_items.new
     if @product.update(product_params)
       if params[:image]
         @product.images.create(uploaded_file: params[:image])

@@ -11,6 +11,7 @@
 
     </head>
     <body>
+
         <header>
           <%= link_to products_path do %>
             <h1><%= image_tag asset_path('logo7.png'), width: "20%" %>Beehive</h1>
@@ -23,7 +24,7 @@
                   <!-- <li>Signed in with <%# current_user.provider %> as <%# current_user.name %></li> -->
                   <li><%= link_to 'Shop', products_path %></li>
                   <li><%= link_to 'Manage', user_path(current_user) %></li>
-                  <li><%= link_to 'Cart', cart_path %></li>
+                  <li><%= link_to 'Cart', carts_path %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                 <% else %>
                   <li><%= link_to 'Login', new_session_path %></li>
@@ -36,6 +37,7 @@
           </div>
         </header>
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
+
         <main class="container">
 
           <%= yield %>

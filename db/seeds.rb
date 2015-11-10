@@ -12,8 +12,13 @@
     zip: Faker::Address.zip_code, phone: Faker::PhoneNumber.phone_number, username: Faker::Name.first_name)
 end
 
-Product.create!(user_id: 1, name: "Small Ottoman", description: "Small, perfect for putting your feet on.",
-  yardage: 2, fabric_type: "organic cotton sateen", shipping: 12.00, price: 32.50)
+Product.create!(user_id: 1,
+    name: "Small Ottoman",
+    description: "Small, perfect for putting your feet on.",
+    yardage: 2,
+    fabric_type: "organic cotton sateen",
+    shipping: 12.00,
+    price: 32.50)
 
 Product.create!(user_id: 1, name: "Large Ottoman", description: "For when you have a lot of legs to prop up.",
   yardage: 4, fabric_type: "organic cotton sateen", shipping: 18.00, price: 54.00)
