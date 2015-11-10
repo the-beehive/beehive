@@ -16,12 +16,13 @@
       <a href="#orders" class="active">Orders</a>
       <a href="#add-product" class="">Add Products</a>
       <a href="#users-products" class="">Your Products</a>
+      <a href="#purchases" class="">Purchases</a>
     </nav>
     <section class="seller-panel seller-orders active" id="orders">
-      <h2>Current orders</h2>
+      <h3>Current orders</h3>
       <ul class="current-orders"> <!-- TODO: repeat/loop for each order -->
         <li class="buyer-info">
-          <h3>Buyer name and date order was placed</h3>
+          <h4>Buyer name and date order was placed</h4>
             <ul class="order-details">
               <li>Item name</li>
               <li><span class="fab-thumbnail">Spoonflower pattern</li>
@@ -30,30 +31,34 @@
       </ul>
     </section>
     <section class="seller-panel add-new" id="add-product">
-      <h2>Add a new product</h2>
+      <h3>Add a new product</h3>
 
       <%= render :partial => "/products/form", class: "add-product" %>
 
     </section>
     <section class="seller-panel all-seller-products" id="users-products">
-      <h2>Manage your products</h2>
+      <h3>Manage your products</h3>
       <ul>
         <% @user.products.each do |product| %>
-          <li onclick="location.href='<%= edit_product_path(product) %>';">
+          <li>
             <div>
               <tr>
                 <% product.images.each do |image|%>
                   <%= image_tag(image.uploaded_file, :width => 50, :height => 50) %>
                 <% end %>
               </tr>
-              <h3><%=product.name%></h3>
-              <label>Yardage: <p><%=product.yardage%></p>
-              <label>Shipping cost: <p><%=product.shipping%></p>
-              <label>Price: <p><%=product.price%></p>
+              <h4 onclick="location.href='<%= edit_product_path(product) %>';"><%=product.name%></h4>
+              <label>Yardage: <%=product.yardage%>
+              <label>Shipping cost: <%=product.shipping%>
+              <label>Price: <%=product.price%>
             </div>
           </li>
         <% end %>
       </ul>
+    </section>
+    <section class="seller-panel user-purchase" id="purchases">
+      <h3>Purchases</h3>
+
     </section>
   </section>
 </section>
