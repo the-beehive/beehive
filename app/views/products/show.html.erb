@@ -53,7 +53,7 @@
 
   </br>
 
-  <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id), method: :post %></button>
+  <%= link_to "Add to Cart", carts_path(id: @product.id), method: :post, :class => 'add-cart' %>
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>
