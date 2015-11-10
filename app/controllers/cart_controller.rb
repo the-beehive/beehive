@@ -7,7 +7,7 @@ class CartController < ApplicationController
     else
       @cart = {}
     end
-    
+    @product = Product.new
   end
 
   def create
@@ -30,8 +30,6 @@ class CartController < ApplicationController
     redirect_to cart_path
   end
 
-  def edit
-  end
 
   def destroy
     session[:cart] = nil
