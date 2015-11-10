@@ -1,5 +1,7 @@
 <h1>Your Cart</h1>
 
+<hr/>
+
 <% if @cart.empty? %>
   <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
 <% else %>
@@ -31,8 +33,24 @@
     <% end %>
   </li>
   <br/>
-
 <% end %>
 <hr/>
 Total: <%= number_to_currency(total, unit: "$") %>
 </ul>
+
+<% if current_user.phone.nil? ||
+      current_user.phone.empty? ||
+      current_user.street.nil? ||
+      current_user.street.empty? ||
+      current_user.city.nil? ||
+      current_user.city.empty? ||
+      current_user.state.nil? ||
+      current_user.state.empty? ||
+      current_user.zip.nil? ||
+      current_user.zip.empty? ||
+      current_user.phone.nil? ||
+      current_user.phone.empty?%>
+  <%= link_to "Checkout", user_steps_path %>
+<% else %>
+  <%= link_to "Checkout", carts_checkout_path %>
+<% end %>
