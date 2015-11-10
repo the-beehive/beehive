@@ -7,7 +7,7 @@ class CartController < ApplicationController
     else
       @cart = {}
     end
-    @product = Product.new
+    
   end
 
   def create
