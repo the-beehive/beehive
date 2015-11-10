@@ -1,10 +1,3 @@
-<p>
-  <%= @product.name %>
-</p>
-
-<% @product.images.each do |image|%>
-  <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
-<% end %>
 <section class="grid-row product-overview">
   <div class="col-2-3">
     <% @product.images.each do |image|%>
@@ -48,7 +41,7 @@
   <% if params[:search] == "" || params[:search] == nil %>
     <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
   <% end %>
-  
+
   <%= render :partial => 'fabric' %>
 
   </br>
