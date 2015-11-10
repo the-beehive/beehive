@@ -22,9 +22,13 @@
     <p><%= product.description %></p>
     <p><%= number_to_currency(product.price, unit: "$") %></p>
     <% stuff.each do | thing, value | %>
-      <p><%= thing + ": " + value.to_s %></p>
       <% if thing == "quantity" %>
+        <p><%= thing + ": " + value.to_s %></p>
         <% total += value * product.price %>
+      <% elsif thing == "design" %>
+        <p><%= thing + ": " + value.to_s %></p>
+      <% else thing == "source" %>
+        <%= image_tag value %>
       <% end %>
     <% end %>
   </li>
@@ -39,6 +43,7 @@ Total: <%= number_to_currency(total, unit: "$") %>
       current_user.city.blank? ||
       current_user.state.blank? ||
       current_user.zip.blank? || %>
+
   <%= link_to "Checkout", user_steps_path %>
 <% else %>
   <%= link_to "Checkout", carts_checkout_path %>
