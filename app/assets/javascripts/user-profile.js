@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   // CURRENT ORDERS ACCORDION
   $('.order-details  > li').hide(); // hides on page load
-  $('.buyer-info > h3').on('click', function(){
+  $('.buyer-info > h4').on('click', function(){
     if ($('.order-details > li').is(':hidden')) {
       $('.order-details > li').show();
     } else {

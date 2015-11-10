@@ -20,15 +20,13 @@
               <div>
                 <ul>
                 <% if current_user %>
-                  <li>Signed in with <%= current_user.provider %> as <%= current_user.name %></li>
+                  <!-- <li>Signed in with <%# current_user.provider %> as <%# current_user.name %></li> -->
                   <li><%= link_to 'Shop', products_path %></li>
                   <li><%= link_to 'Manage', user_path(current_user) %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                 <% else %>
                   <li><%= link_to 'Login', new_session_path %></li>
                   <li><%= link_to 'Register', new_user_path %></li>
-                  <!-- <li onclick='overlay()'><%# link_to 'Login', "#" %></li> -->
-                  <!-- <li onclick='overlay()'><%# link_to 'register', "#register" %></li> -->
                 <% end %>
                 </ul>
               </div>
