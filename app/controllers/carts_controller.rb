@@ -35,6 +35,10 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
+  def checkout
+
+  end
+
 private
 
   def authenticate_user
