@@ -40,16 +40,14 @@ body {
     h1 {
       font-weight: 400;
       float: left;
-      font-size: 5vw;
       text-decoration: none;
       color: black;
       padding-left: 5px;
       font-family: 'Dancing Script', cursive;
-      // text-align: center;
     }
     div {
       width: auto;
-      padding-top: 1.3em;
+      padding-top: 1.5em;
       nav.login-register {
         // font-family: 'Dancing Script', cursive;
         // margin-left: 65%;
@@ -69,6 +67,7 @@ body {
 
             &:last-child {
               border-right: none;
+              padding-right: 0
             }
 
             a[href] {
