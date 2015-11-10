@@ -161,12 +161,24 @@
     /* MANAGE PRODUCTS */
     .all-seller-products {
       padding-bottom: 5%;
-      label {
-        margin-left: 5%;
+      div {
+        border-bottom: solid 1px lightgray;
+        padding-bottom: 2%;
+        padding-top: 2%;
+        h4 {
+          padding-bottom: 0;
+
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+        label {
+          // margin-left: 5%;
+          display: block;
+        }
       }
-      label, p {
-        display: inline-block;
-      }
+
     } /* END manage products tab */
 
     /* PURCHASES TAB/PANEL */

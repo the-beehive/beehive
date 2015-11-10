@@ -40,17 +40,17 @@
       <h3>Manage your products</h3>
       <ul>
         <% @user.products.each do |product| %>
-          <li onclick="location.href='<%= edit_product_path(product) %>';">
+          <li>
             <div>
               <tr>
                 <% product.images.each do |image|%>
                   <%= image_tag(image.uploaded_file, :width => 50, :height => 50) %>
                 <% end %>
               </tr>
-              <h4><%=product.name%></h4>
-              <label>Yardage: <p><%=product.yardage%></p>
-              <label>Shipping cost: <p><%=product.shipping%></p>
-              <label>Price: <p><%=product.price%></p>
+              <h4 onclick="location.href='<%= edit_product_path(product) %>';"><%=product.name%></h4>
+              <label>Yardage: <%=product.yardage%>
+              <label>Shipping cost: <%=product.shipping%>
+              <label>Price: <%=product.price%>
             </div>
           </li>
         <% end %>
