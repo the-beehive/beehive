@@ -1,19 +1,28 @@
 <h1>Your Cart</h1>
-<p><%= link_to "Empty Cart", cart_path, method: :delete %></p>
+<p>
+<%= link_to "Empty Cart", cart_path, method: :delete %>
+<%# unless current_user %>
+  <!-- <%= link_to 'update your stuff!', user_steps_path %> -->
+<%# end %>
+</p>
 <hr/>
-
-<p><% unless current_user %>
+<% unless current_user %>
+<%= link_to 'this' %>
+<% end %>
+<p><% if current_user == nil %>
   <p>Hello</p>
-  <p><%= link_to  %></p>
+  <p><%= link_to 'this' %></p>
 <% end %>
 
-
+<% if @cart.empty? %>
+  <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
+<% end %>
 <% total = 0 %>
 
 <ul>
 <% @cart.each do |id, quantity| %>
   <% product = Product.find_by_id(id) %>
-  <% if product.blank? %>
+  <% if @cart.empty? %>
     <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
   <% else %>
   <li>
