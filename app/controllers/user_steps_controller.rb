@@ -17,6 +17,10 @@ end
 
 private
 
+  def redirect_to_finish_wizard
+    redirect_to carts_checkout_url, notice: "Thank you!"
+  end
+
   def user_params
     params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
   end
