@@ -14,7 +14,7 @@
 
         <header>
           <%= link_to products_path do %>
-            <h1>Beehive</h1>
+            <h1><%= image_tag asset_path('logo7.png'), width: "20%" %>Beehive</h1>
           <% end %>
           <div>
             <nav class="login-register">
@@ -46,7 +46,6 @@
 
         <footer>
           <%= image_tag asset_path('Spoonflower_Logo_Vector.jpeg'), width: "20%" %>
-          <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         </footer>
 
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
