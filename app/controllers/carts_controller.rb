@@ -13,14 +13,19 @@ class CartsController < ApplicationController
 
   def create
     id = params[:id]
+    design = params[:design]
 
     # If cart is already created, use existing cart to create a new one.  Else, create a new cart and add item in.
     session[:cart] ||= {}
     @cart = session[:cart]
 
-    # If a product has already been added to cart, increment the value.  Else, set value to one.
-    @cart[id] ||= 0
-    @cart[id] += 1
+    # If a product has already been added to cart, increment the quantity value.  Else, set value to one.
+    @cart[id] = {}
+    @cart[id][:quantity] ||= 0
+    @cart[id][:quantity] += 1
+    @cart[id][:design] = design
+
+
 
     redirect_to carts_path
   end

@@ -3,14 +3,14 @@
 <% if @cart.empty? %>
   <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
 <% else %>
-  <p><%= link_to "Empty Cart", cart_path("joshisawesome"), method: :delete %></p>
+  <p><%= link_to "Empty Cart", cart_path("beehiveisyourfriend"), method: :delete %></p>
   <hr/>
 <% end %>
 
 <% total = 0 %>
 
 <ul>
-<% @cart.each do |id, quantity| %>
+<% @cart.each do |id, stuff| %>
   <% product = Product.find_by_id(id) %>
   <li>
     <% product.images.each do |image|%>
@@ -19,10 +19,15 @@
     <p><%= link_to product.name, product %></p>
     <p><%= product.description %></p>
     <p><%= number_to_currency(product.price, unit: "$") %></p>
-    <p>Quantity: <%= quantity %></p>
+    <% stuff.each do | thing, value | %>
+      <p><%= thing + ": " + value.to_s %></p>
+      <% if thing == "quantity" %>
+        <% total += value * product.price %>
+      <% end %>
+    <% end %>
   </li>
   <br/>
-  <% total += quantity * product.price %>
+
 <% end %>
 <hr/>
 Total: <%= number_to_currency(total, unit: "$") %>
