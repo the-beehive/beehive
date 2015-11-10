@@ -34,18 +34,11 @@
 Total: <%= number_to_currency(total, unit: "$") %>
 </ul>
 
-<% if current_user.phone.empty? ||
-      current_user.phone.nil? ||
-      current_user.street.empty? ||
-      current_user.street.nil? ||
-      current_user.city.empty? ||
-      current_user.city.nil? ||
-      current_user.state.empty? ||
-      current_user.state.nil? ||
-      current_user.zip.empty? ||
-      current_user.zip.nil? ||
-      current_user.phone.empty? ||
-      current_user.phone.nil? %>
+<% if current_user.phone.blank? ||
+      current_user.street.blank? ||
+      current_user.city.blank? ||
+      current_user.state.blank? ||
+      current_user.zip.blank? || %>
   <%= link_to "Checkout", user_steps_path %>
 <% else %>
   <%= link_to "Checkout", carts_checkout_path %>
