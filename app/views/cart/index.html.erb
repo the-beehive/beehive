@@ -1,10 +1,6 @@
 <h1>Your Cart</h1>
-<p>
-<%= link_to "Empty Cart", cart_path, method: :delete %>
-<%# unless current_user %>
-  <!-- <%= link_to 'update your stuff!', user_steps_path %> -->
-<%# end %>
-</p>
+<p><%= link_to "Empty Cart", cart_path, method: :delete %></p>
+
 <hr/>
 <% unless current_user %>
 <%= link_to 'this' %>
@@ -41,3 +37,9 @@
 <hr/>
 Total: <%= number_to_currency(total, unit: "$") %>
 </ul>
+
+
+<% unless current_user %>
+  <%= link_to 'Sign in to check out.', new_session_path %>
+<% end %>
+<%= link_to 'Sign in to check out.', new_session_path %>

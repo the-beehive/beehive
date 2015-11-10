@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'cart' => 'cart#index'
   get 'cart/:id' => 'cart#create'
+  get 'cart/checkout'
   delete 'cart' => "cart#destroy"
 
   get 'auth/facebook/callback', to: "sessions#create"

@@ -30,6 +30,10 @@ class CartController < ApplicationController
     redirect_to cart_path
   end
 
+  def checkout
+
+  end
+
   def destroy
     session[:cart] = nil
     redirect_to cart_path
