@@ -31,6 +31,9 @@
     </p>
   </div>
 </section>
+
+
+
 <section class="grid-row sf-fabric">
   <div class="col-3-3">
     <%= form_tag product_path, :method => 'get' do %>
@@ -53,15 +56,10 @@
 
   </br>
 
-  <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id, design: "not the bees!"), method: :post %></button>
+  <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id, design: $fabric_id), method: :post, id: "add_to_cart" %></button>
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>
 <section class="grid-row more-seller">
   <div class="col-3-3">More from this seller</div>
 </section>
-
-<p>
-  <strong>Price:</strong>
-  $<%= (number_with_precision(@product.price, :precision => 2)) %>
-</p>
