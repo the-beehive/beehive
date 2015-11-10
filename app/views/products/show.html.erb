@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <%= @product.name %>
 </p>
@@ -55,7 +53,7 @@
 
   </br>
 
-  <button class="add-cart"><a href="/cart/<%= @product.id %>">Add to Cart</a></button>
+  <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id), method: :post %></button>
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>
