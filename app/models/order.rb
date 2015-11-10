@@ -1,5 +1,4 @@
 class Order < ActiveRecord::Base
-
   has_many :order_items
   belongs_to :user
 
@@ -11,16 +10,15 @@ class Order < ActiveRecord::Base
 
   enum order_status: [ :cancelled, :in_progress, :completed, :invoiced ]
 
-  def total
-    order_items.collect { |oi| oi.valid? ? oi.price : 0 }.sum
+  def subtotal
+    order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
+  end
+private
+  def set_order_status
+    self.in_progress!
   end
 
-  private
-    def set_order_status
-      self.order_status = 1
-    end
-
-    def update_subtotal
-      self[:total] = total
-    end
+  def update_subtotal
+    self[:subtotal] = subtotal
+  end
 end

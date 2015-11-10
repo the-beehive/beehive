@@ -1,5 +1,10 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <%= @product.name %>
+</p>
 
+<% @product.images.each do |image|%>
+  <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
+<% end %>
 <section class="grid-row product-overview">
   <div class="col-2-3">
     <% @product.images.each do |image|%>
@@ -48,7 +53,7 @@
 
   </br>
 
-  <button class="add-cart"><a href="/cart/<%= @product.id %>">Add to Cart</a></button>
+  <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id), method: :post %></button>
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>
@@ -56,8 +61,7 @@
   <div class="col-3-3">More from this seller</div>
 </section>
 
-
-
-</br>
-</br>
-<%# render :partial => 'fabric' %>
+<p>
+  <strong>Price:</strong>
+  $<%= (number_with_precision(@product.price, :precision => 2)) %>
+</p>
