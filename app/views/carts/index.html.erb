@@ -20,6 +20,7 @@
     <p><%= product.description %></p>
     <p><%= number_to_currency(product.price, unit: "$") %></p>
     <p>Quantity: <%= quantity %></p>
+    <p><%= link_to 'add a custom design to this product!', edit_cart_path("joshisawesome") %></p>
   </li>
   <br/>
   <% total += quantity * product.price %>

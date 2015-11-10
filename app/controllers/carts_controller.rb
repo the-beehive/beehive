@@ -25,6 +25,9 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
+  def edit
+    @product = Product.new
+  end
 
   def destroy
     session[:cart] = nil

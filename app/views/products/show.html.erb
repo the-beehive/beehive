@@ -1,10 +1,3 @@
-<p>
-  <%= @product.name %>
-</p>
-
-<% @product.images.each do |image|%>
-  <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
-<% end %>
 <section class="grid-row product-overview">
   <div class="col-2-3">
     <% @product.images.each do |image|%>
@@ -31,27 +24,7 @@
     </p>
   </div>
 </section>
-<section class="grid-row sf-fabric">
-  <div class="col-3-3">
-    <%= form_tag product_path, :method => 'get' do %>
-      <%= label_tag(:q, "Search Spoonflower's custom fabrics") %>
-      <table>
-      <tr>
-        <td id="input"><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
-        <td><%= submit_tag "Search", :name => nil, :class => 'search-button' %></td>
-      </tr>
-    </table>
-    <% end %>
-  </div>
-  </br>
 
-  <% if params[:search] == "" || params[:search] == nil %>
-    <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
-  <% end %>
-
-  <%= render :partial => 'fabric' %>
-
-  </br>
 
   <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id), method: :post %></button>
 

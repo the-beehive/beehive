@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :images
   resources :products
   resources :sessions
-  resources :carts, only: [:index, :create, :destroy]
+  resources :carts, only: [:index, :create, :destroy, :edit]
 
   get 'auth/facebook/callback', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#create'
