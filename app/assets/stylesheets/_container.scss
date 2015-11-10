@@ -4,14 +4,31 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+  }
+
+  h2 {
+    font-size: 2.827em;
+  }
+
+  h3 {
+    font-size: 1.999em;
+  }
+
+  h4 {
+    font-size: 1.414em;
+  }
 
   header {
     max-width: 80%;
     margin: 0 auto;
     margin-top: 2%;
     text-transform: lowercase;
-    padding: 2em 0 2em 0;
+    padding: 0 0 2em 0;
     // display: inline-block;
     border-top: 5px solid $main;
     overflow: hidden;
@@ -23,21 +40,21 @@ body {
     h1 {
       font-weight: 400;
       float: left;
-      font-size: 5vw;
       text-decoration: none;
       color: black;
       padding-left: 5px;
       font-family: 'Dancing Script', cursive;
-      // text-align: center;
     }
     div {
       width: auto;
+      padding-top: 1.5em;
       nav.login-register {
         // font-family: 'Dancing Script', cursive;
         // margin-left: 65%;
         float: right;
         margin-right: 10px;
         text-transform: uppercase;
+        font-weight: 700;
 
         ul {
           list-style-type: none;
@@ -50,6 +67,7 @@ body {
 
             &:last-child {
               border-right: none;
+              padding-right: 0
             }
 
             a[href] {

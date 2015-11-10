@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
 
   def create
+    #render :json => request.env['omniauth.auth'].to_json
+    #render :json => request.env['omniauth.auth']["info"]["name"].to_json
     if request.post?
       user = User.find_by_email(params[:email])
       if user && user.authenticate(params[:password])
