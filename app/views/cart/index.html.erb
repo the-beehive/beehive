@@ -37,9 +37,3 @@
 <hr/>
 Total: <%= number_to_currency(total, unit: "$") %>
 </ul>
-
-
-<% unless current_user %>
-  <%= link_to 'Sign in to check out.', new_session_path %>
-<% end %>
-<%= link_to 'Sign in to check out.', new_session_path %>
