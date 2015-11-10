@@ -1,0 +1,49 @@
+<h1>Your Cart</h1>
+
+<hr/>
+
+<% if @cart.empty? %>
+  <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
+<% else %>
+  <p><%= link_to "Empty Cart", cart_path("beehiveisyourfriend"), method: :delete %></p>
+  <hr/>
+<% end %>
+
+<% total = 0 %>
+<% @cart.each do |id, stuff| %>
+  <% product = Product.find_by_id(id) %>
+  <div>
+    <% product.images.each do |image|%>
+      <%= image_tag(image.uploaded_file, :width => 100, :height => 100) %>
+    <% end %>
+    <p><%= link_to product.name, product %></p>
+    <p><%= product.description %></p>
+    <p><%= number_to_currency(product.price, unit: "$") %></p>
+    <% stuff.each do | thing, value | %>
+      <% if thing == "quantity" %>
+        <p><%= thing + ": " + value.to_s %></p>
+        <% total += value * product.price %>
+      <% elsif thing == "design" %>
+        <p><%= thing + ": " + value.to_s %></p>
+      <% else thing == "source" %>
+    </div>
+    <div>
+        <%= image_tag value %>
+      </div>
+      <% end %>
+    <% end %>
+  <br/>
+<% end %>
+<hr/>
+Total: <%= number_to_currency(total, unit: "$") %>
+
+<% if current_user.phone.blank? ||
+      current_user.street.blank? ||
+      current_user.city.blank? ||
+      current_user.state.blank? ||
+      current_user.zip.blank? || %>
+
+  <%= link_to "Checkout", user_steps_path %>
+<% else %>
+  <%= link_to "Checkout", carts_checkout_path %>
+<% end %>

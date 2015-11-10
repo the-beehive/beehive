@@ -35,6 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem "omniauth-google-oauth2"
+gem 'wicked'
 # Paperclip and AWS S3
 gem 'paperclip'
 gem 'aws-sdk', '~> 1.6'

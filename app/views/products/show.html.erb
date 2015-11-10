@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <section class="grid-row product-overview">
   <div class="col-2-3">
     <% @product.images.each do |image|%>
-      <%= image_tag(image.uploaded_file, :width => 400, :height => 400) %>
+      <%= image_tag(image.uploaded_file, :width => 550, :height => 550) %>
     <% end %>
   </div>
   <div class="col-1-3">
@@ -26,6 +24,9 @@
     </p>
   </div>
 </section>
+
+
+
 <section class="grid-row sf-fabric">
   <div class="col-3-3">
     <%= form_tag product_path, :method => 'get' do %>
@@ -48,16 +49,10 @@
 
   </br>
 
-  <button class="add-cart"><a href="/cart/<%= @product.id %>">Add to Cart</a></button>
+  <%= link_to "Add to Cart", carts_path(id: @product.id), method: :post, id: "add-to-cart" %>
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>
 <section class="grid-row more-seller">
   <div class="col-3-3">More from this seller</div>
 </section>
-
-
-
-</br>
-</br>
-<%# render :partial => 'fabric' %>
