@@ -1,13 +1,15 @@
 <h1>Your Cart</h1>
 <p><%= link_to "Empty Cart", cart_path, method: :delete %></p>
 <hr/>
-
+<% if @cart.empty? %>
+  <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
+<% end %>
 <% total = 0 %>
 
 <ul>
 <% @cart.each do |id, quantity| %>
   <% product = Product.find_by_id(id) %>
-  <% if product.blank? %>
+  <% if @cart.empty? %>
     <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
   <% else %>
   <li>
