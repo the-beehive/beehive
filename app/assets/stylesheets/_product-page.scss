@@ -73,7 +73,7 @@
       border: solid 0px;
       // margin: 0 auto;
       margin-top: 5%;
-      font-size: 12px;
+      // font-size: 12px;
       text-transform: uppercase;
       border-radius: 5px;
       background: lighten($main, 10%);
@@ -91,7 +91,8 @@
 
 /* SPOONFLOWER PATTERN SELECTION */
 .sf-fabric {
-  padding-bottom: 5%;
+  padding: 5% 0;
+  // padding-bottom: 5%;
   label {
   text-transform: uppercase;
   }
@@ -156,7 +157,7 @@
       width: 30%;
       border: solid 0px;
       margin: 0 auto;
-      font-size: 12px;
+      // font-size: 12px;
       text-transform: uppercase;
       border-radius: 5px;
       background: lighten($main, 10%);
