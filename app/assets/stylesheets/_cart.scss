@@ -1,0 +1,80 @@
+h2 {
+  text-transform: uppercase;
+}
+.cart-content {
+  width: 100% * (2/3);
+  float: left;
+  padding-right: 3%;
+
+  .content-container {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 3%;
+
+    div {
+      display: inline-block;
+
+      &.item-img {
+
+      }
+      &.item-details {
+        h4 {
+          a[href] {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: inherit;
+
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+        }
+      }
+    }
+  }
+  }
+  a[href].empty-cart {
+    text-decoration: none;
+    color: $main;
+    float: right;
+
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+.cart-total {
+  width: 100% * (1/4);
+  display: inline-block;
+
+  h4 {
+    text-transform: uppercase;
+    padding-bottom: 3%;
+  }
+  a[href].checkout-bttn {
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    padding: 10px 0;
+    width: 100%;
+    border: solid 0px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: lighten($main, 10%);
+    border: solid lighten($main, 10%);
+    display: block;
+    float: left;
+
+    &:hover{
+      background: $main;
+      cursor: pointer;
+      border-color: $main;
+    }
+  }
+  p {
+    padding-bottom: 5%;
+  }
+}
