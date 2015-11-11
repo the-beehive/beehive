@@ -1,5 +1,5 @@
+<h2> Varify your address</h2>
 <%= form_for @user, url: wizard_path do |f| %>
-  <h2> Varify your address</h2>
   <div class="field">
     <%= f.label :street %><br>
     <%= f.text_field :street %>
@@ -17,6 +17,6 @@
     <%= f.text_field :zip %>
   </div>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", :class => "form-bttn" %>
   </div>
 <% end %>
