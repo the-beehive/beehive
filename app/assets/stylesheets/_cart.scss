@@ -1,0 +1,19 @@
+.cart-content {
+  width: 100% * (2/3);
+  float: left;
+
+  div {
+    display: inline-block;
+
+    .item-img {
+      display: table;
+    }
+    .item-details {
+      display: table-cell;
+    }
+  }
+}
+.cart-total {
+  width: 100% * (1/4);
+  display: inline-block;
+}

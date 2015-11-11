@@ -1,4 +1,4 @@
-<h1>Your Cart</h1>
+<h2>Your Cart</h2>
 
 <hr/>
 
@@ -9,34 +9,35 @@
   <hr/>
 <% end %>
 
-<% total = 0 %>
-<% @cart.each do |id, stuff| %>
-  <% product = Product.find_by_id(id) %>
-  <div>
-    <% product.images.each do |image|%>
-      <%= image_tag(image.uploaded_file, :width => 100, :height => 100) %>
-    <% end %>
-    <p><%= link_to product.name, product %></p>
-    <p><%= product.description %></p>
-    <p><%= number_to_currency(product.price, unit: "$") %></p>
-    <% stuff.each do | thing, value | %>
-      <% if thing == "quantity" %>
-        <p><%= thing + ": " + value.to_s %></p>
-        <% total += value * product.price %>
-      <% elsif thing == "design" %>
-        <p><%= thing + ": " + value.to_s %></p>
-      <% else thing == "source" %>
-    </div>
-    <div>
-        <%= image_tag value %>
-      </div>
+<section class="cart-content">
+  <% total = 0 %>
+  <% @cart.each do |id, stuff| %>
+    <% product = Product.find_by_id(id) %>
+    <div class="item-img">
+      <% product.images.each do |image|%>
+        <%= image_tag(image.uploaded_file, :width => 175, :height => 175) %>
       <% end %>
-    <% end %>
-  <br/>
-<% end %>
-<hr/>
-Total: <%= number_to_currency(total, unit: "$") %>
-
+    </div>
+    <div class="item-details">
+      <p><%= link_to product.name, product %></p>
+      <p><%= number_to_currency(product.price, unit: "$") %></p>
+      <% stuff.each do | thing, value | %>
+        <% if thing == "quantity" %>
+          <p><%= thing + ": " + value.to_s %></p>
+          <% total += value * product.price %>
+        <% elsif thing == "design" %>
+          <p><%= thing + ": " + value.to_s %></p>
+        <% else thing == "source" %>
+        <%= image_tag value, :width => 100, :height => 100 %>
+    </div>
+        <% end %>
+      <% end %>
+    <br/>
+  <% end %>
+</section>
+<section class="cart-total">
+  Total: <%= number_to_currency(total, unit: "$") %>
+</section>
 <% if current_user.phone.blank? ||
       current_user.street.blank? ||
       current_user.city.blank? ||
