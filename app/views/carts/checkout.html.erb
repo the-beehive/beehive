@@ -4,6 +4,7 @@
 <p>Gather all of the session and product data and create Order and OrderItem entries.</p>
 <p>The only thing that will need to be passed to Stripe is the total on the order, in cents.</p>
 
+
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
