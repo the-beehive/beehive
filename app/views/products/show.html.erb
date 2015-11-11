@@ -1,9 +1,30 @@
 <section class="grid-row product-overview">
-  <div class="col-2-3">
-    <% @product.images.each do |image|%>
+
+  <div id="MainDiv">
+    <% @product.images 1 do |image|%>
       <%= image_tag(image.uploaded_file, :width => 550, :height => 550) %>
     <% end %>
+      <div id="child">
+        <i class="fa fa-arrow-left img-responsive pre-button" id="previous"></i>
+        <i class="fa fa-arrow-right img-responsive next-button" id="next"></i>
+      </div>
   </div>
+  <div id="slider">
+    <ul class="slides">
+      <% @product.images.each do |image|%>
+        <li class="slide">
+          <%= image_tag(image.uploaded_file, :width => 200) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <!-- <div class="col-2-3">
+    <%# @product.images.each do |image|%>
+      <%# image_tag(image.uploaded_file, :width => 550, :height => 550) %>
+    <%# end %>
+  </div> -->
   <div class="col-1-3">
     <h2>
       <%= @product.name %>
