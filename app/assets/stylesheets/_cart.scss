@@ -2,17 +2,25 @@
   width: 100% * (2/3);
   float: left;
 
-  div {
-    display: inline-block;
+  .content-container {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 3%;
 
-    .item-img {
-      display: table;
-    }
-    .item-details {
-      display: table-cell;
+    div {
+      display: inline-block;
+
+      .item-img {
+        img {
+          vertical-align: top;
+        }
+      }
+      .item-details {
+        display: table-cell;
+        line-height: 1;
+      }
     }
   }
-}
+  }
 .cart-total {
   width: 100% * (1/4);
   display: inline-block;
