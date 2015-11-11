@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   #validates :name, presence: true
 
   with_options :if => -> { required_for_step?(:personal) } do |step|
+    step.validates :name, presence: true
     step.validates :street, presence: true
     step.validates :city, presence: true
     step.validates :state, presence: true
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
 
   with_options :if => -> { required_for_step?(:social) } do |step|
     step.validates :email, presence: true
-    step.validates :password, presence: true
+    step.validates :password_digest, presence: true
   end
 
   def self.sign_in_from_omniauth(auth)
