@@ -27,7 +27,6 @@ class CartsController < ApplicationController
     @cart[id][:design] = design
     @cart[id][:source] = source
 
-
     redirect_to carts_path
   end
 
