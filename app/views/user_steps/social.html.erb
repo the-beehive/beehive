@@ -1,9 +1,6 @@
 <%= form_for @user, url: wizard_path do |f| %>
-  <h1> Please add your login credentials</h1>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
+  <h1> Please confirm your email and password</h1>
+
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
@@ -13,6 +10,6 @@
     <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Confirm" %>
   </div>
 <% end %>
