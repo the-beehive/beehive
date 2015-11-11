@@ -100,7 +100,6 @@
         padding: 10px 0;
         border: solid 0px;
         color: #FFF;
-        font-family: "Oswald";
         font-size: 12px;
         text-transform: uppercase;
         border-radius: 5px;
@@ -128,26 +127,6 @@
     }
   }
 
-  // button.add-cart {
-    // float: right;
-    // width: 100% * (1/3);
-    // background: lighten($main, 10%);
-    // border: solid lighten($main, 10%);
-    // display: block;
-    // padding: 10px 0;
-    // width: 30%;
-    // border: solid 0px;
-    // margin: 0 auto;
-    // color: #FFF;
-    // font-family: "Oswald";
-    // font-size: 12px;
-    // text-transform: uppercase;
-    // border-radius: 5px;
-
-    // &:hover{
-    //   background: $main;
-    //   cursor: pointer;
-    // }
     a[href]#add-to-cart {
       text-decoration: none;
       text-align: center;
@@ -170,7 +149,6 @@
         border-color: $main;
       }
     }
-  // }
 
 } /* END Spoonflower pattern selection */
 
