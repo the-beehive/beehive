@@ -92,12 +92,16 @@
 /* SPOONFLOWER PATTERN SELECTION */
 .sf-fabric {
   padding: 5% 0;
-  // padding-bottom: 5%;
   label {
   text-transform: uppercase;
   }
   div.col-3-3 {
     padding-bottom: 3%;
+
+    h2 {
+      text-align: left;
+      padding-bottom: 3%;
+    }
   }
   table {
     border-collapse: collapse;
