@@ -9,6 +9,8 @@ class CartsController < ApplicationController
       @cart = {}
     end
     @product = Product.new
+    OrderMailer.buyer_confirmation.deliver_now
+    OrderMailer.seller_confirmation.deliver_now
   end
 
   def create

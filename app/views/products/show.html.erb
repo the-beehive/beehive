@@ -43,10 +43,10 @@
   <% end %>
 
   <%= render :partial => 'fabric' %>
+  
+</br>
 
-  <button class="add-cart"><%= link_to "Add to Cart", carts_path(id: @product.id, design: $fabric_id), method: :post, id: "add_to_cart" %>
-  </button>
-  </br>
+  <%= link_to "Add to Cart", carts_path(id: @product.id), method: :post, id: "add-to-cart" %>
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>

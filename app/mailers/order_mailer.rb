@@ -8,7 +8,7 @@ class OrderMailer < ApplicationMailer
   def buyer_confirmation
     @user = "Ashley"
 
-    mail to: "amason@spoonflower.com"
+    mail(to: "amason@spoonflower.com", subject: "it worked!", from: "mailgun@mailgun.com")
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -19,6 +19,6 @@ class OrderMailer < ApplicationMailer
   def seller_confirmation
     @user = "Ashley"
 
-    mail to: "amason@spoonflower.com"
+    mail(to: "amason@spoonflower.com", subject: "it worked!", from: "mailgun@mailgun.com")
   end
 end
