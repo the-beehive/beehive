@@ -58,24 +58,50 @@
       padding-bottom: 3%;
       border-bottom: 1px solid lightgray;
     }
+
     h4 {
       text-transform: uppercase;
       padding-top: 3%
     }
-    p {
 
+    a[href].fabric-bttn {
+      text-decoration: none;
+      text-align: center;
+      color: #FFF;
+      padding: 10px 0;
+      width: 80%;
+      border: solid 0px;
+      // margin: 0 auto;
+      margin-top: 5%;
+      // font-size: 12px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      background: lighten($main, 10%);
+      border: solid lighten($main, 10%);
+      display: block;
+
+      &:hover{
+        background: $main;
+        cursor: pointer;
+        border-color: $main;
+      }
     }
   } /* END product description */
 } /* END product-overview */
 
 /* SPOONFLOWER PATTERN SELECTION */
 .sf-fabric {
-  padding-bottom: 5%;
+  padding: 5% 0;
   label {
   text-transform: uppercase;
   }
   div.col-3-3 {
     padding-bottom: 3%;
+
+    h2 {
+      text-align: left;
+      padding-bottom: 3%;
+    }
   }
   table {
     border-collapse: collapse;
@@ -135,7 +161,7 @@
       width: 30%;
       border: solid 0px;
       margin: 0 auto;
-      font-size: 12px;
+      // font-size: 12px;
       text-transform: uppercase;
       border-radius: 5px;
       background: lighten($main, 10%);
