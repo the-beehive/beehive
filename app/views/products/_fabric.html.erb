@@ -1,4 +1,3 @@
 <% @fabric_search_results.each do |result| %>
   <%= image_tag result["thumbnail_url"], alt: result["id"], class: "fabric-design" %>
-  <%= hidden_field :id, value: result["id"]%>
 <% end %>
