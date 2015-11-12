@@ -19,7 +19,7 @@ class CartsController < ApplicationController
         end
       end
     end
-    flash[:notice] = @total
+    flash[:notice] = @total.to_s.to_i
   end
 
   def create
