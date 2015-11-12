@@ -13,7 +13,7 @@
 html {
     color: #222;
     font-size: 1em;
-    line-height: 1.4;
+    // line-height: 1.4;
 }
 
 /*
@@ -59,7 +59,7 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+    // vertical-align: middle;
 }
 
 /*
@@ -99,6 +99,8 @@ textarea {
 @import "user-profile";
 @import "login";
 @import "product-page";
+@import "cart";
+@import "checkout";
 
 
 

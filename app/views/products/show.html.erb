@@ -22,13 +22,13 @@
       <strong>Shipping:</strong>
       $<%= (number_with_precision(@product.shipping, :precision => 2)) %>
     </p>
+    <a href="#pick-fabric" class="fabric-bttn">Choose fabric</a>
   </div>
 </section>
 
-
-
-<section class="grid-row sf-fabric">
+<section class="grid-row sf-fabric" id="pick-fabric">
   <div class="col-3-3">
+    <h2>Pick your pattern</h2>
     <%= form_tag product_path, :method => 'get' do %>
       <%= label_tag(:q, "Search Spoonflower's custom fabrics") %>
       <table>

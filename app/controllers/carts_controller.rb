@@ -9,6 +9,17 @@ class CartsController < ApplicationController
       @cart = {}
     end
     @product = Product.new
+
+    @total = 0
+    @cart.each do |id, stuff|
+      product = Product.find_by_id(id)
+      stuff.each do | thing, value |
+        if thing == "quantity"
+          @total += value * product.price
+        end
+      end
+    end
+    flash[:notice] = @total.to_s.to_i
   end
 
   def create
@@ -29,7 +40,6 @@ class CartsController < ApplicationController
 
     redirect_to carts_path
   end
-
 
   def destroy
     session[:cart] = nil

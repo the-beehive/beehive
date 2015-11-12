@@ -1,6 +1,6 @@
 class UserStepsController < ApplicationController
   include Wicked::Wizard
-  steps :personal, :social, :checkout
+  steps :personal, :credentials, :checkout
 
   def show
     @user = current_user
@@ -17,7 +17,7 @@ class UserStepsController < ApplicationController
 private
 
   def redirect_to_finish_wizard
-    redirect_to carts_checkout_url, notice: "Thank you!"
+    redirect_to carts_checkout_path, notice: "Thank you!"
   end
 
   def user_params

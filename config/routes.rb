@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :sessions
   resources :user_steps
   resources :carts, only: [:index, :create, :destroy]
+  resources :charges
   get 'carts/checkout'
+  patch 'carts/checkout'
 
   get 'auth/facebook/callback', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#create'
