@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    @order_item = current_order.order_items.new
+    #@order_item = current_order.order_items.new
     if @product.save
       if params[:image]
         @product.images.create(uploaded_file: params[:image])
