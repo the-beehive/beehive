@@ -1,8 +1,11 @@
-h2 {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 300;
+.address-form {
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
 }
+
 form.edit_user {
   width: 40%;
   margin: 20px auto; /* centers modal */
