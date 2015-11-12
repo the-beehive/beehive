@@ -1,10 +1,3 @@
-<h1>Placeholder checkout view.</h1>
-<p>This page may end up in orders/index or something similar.</p>
-<p>Display list of cart items, much like the carts/index page.</p>
-<p>Gather all of the session and product data and create Order and OrderItem entries.</p>
-<p>The only thing that will need to be passed to Stripe is the total on the order, in cents.</p>
-
-
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
