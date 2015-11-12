@@ -1,7 +1,3 @@
-<% @checkout_total = notice %>
-<% session[:cart_total] = @checkout_total %>
-<p>Your total is <%= number_to_currency(@checkout_total)%></p>
-
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -10,13 +6,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span></span>
+      <span>Amount: $5.00</span>
     </label>
   </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <button class="btn">Checkout</button>
+  <script src="https://checkout.stripe.com/checkout.js"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="<%= number_to_currency(@checkout_total) %>"
+          data-amount="1000"
           data-locale="auto"></script>
 <% end %>

@@ -13,10 +13,11 @@
     <body>
 
         <header>
-          <%= link_to products_path do %>
-            <h1><%= image_tag asset_path('logo7.png'), width: "20%" %> Beehive</h1>
-          <% end %>
+
           <div>
+            <%= link_to products_path do %>
+              <%= image_tag asset_path('beehive_logo.png'), width: "30%" %>
+            <% end %>
             <nav class="login-register">
               <div>
                 <ul>
@@ -45,7 +46,7 @@
         </main>
 
         <footer>
-          <%= image_tag asset_path('Spoonflower_Logo_Vector.jpeg'), width: "20%" %>
+          <%= image_tag asset_path('Spoonflower_Logo_Vector.png'), width: "20%" %>
         </footer>
 
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
