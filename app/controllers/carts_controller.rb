@@ -9,7 +9,7 @@ class CartsController < ApplicationController
       @cart = {}
     end
     @product = Product.new
-    OrderMailer.buyer_confirmation(current_user).deliver_now
+    # OrderMailer.buyer_confirmation(current_user).deliver_now
     # @cart.each do |k,v|
     #   OrderMailer.seller_confirmation(Product.find(k)).deliver_now
     # end

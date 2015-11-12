@@ -1,6 +1,6 @@
 <section class="grid-row product-overview">
   <div class="col-2-3">
-    <% @product.images.each do |image|%>
+    <% @product.images 1.times do |image|%>
       <%= image_tag(image.uploaded_file, :width => 550, :height => 550) %>
     <% end %>
   </div>
