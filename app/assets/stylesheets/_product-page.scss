@@ -41,7 +41,7 @@
     vertical-align: middle;
     display: table-cell;
 
-    .img-display {
+    .img-display { /* big image */
       img {
         width: 500px;
         height: 500px;
@@ -49,11 +49,15 @@
       }
     }
 
-    img.thumb {
+    img.thumb { /* thumbnails */
       position: relative;
       float: right;
       padding-right: 3%;
       padding-bottom: 1%;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   } /* END image display */
 
@@ -63,6 +67,7 @@
       text-transform: uppercase;
       padding-bottom: 3%;
       text-align: left;
+      font-weight: 300;
     }
     h3 {
 
