@@ -44,13 +44,9 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-<<<<<<< HEAD
   def edit
     @product = Product.new
   end
-
-=======
->>>>>>> 6ec3c6a8d70a2e4269e99d1e4bf7b7e4e64452e9
   def destroy
     session[:cart] = nil
     redirect_to carts_path
