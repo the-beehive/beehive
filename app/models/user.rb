@@ -44,4 +44,9 @@ class User < ActiveRecord::Base
     form_step.nil? ||
     form_steps.index(step.to_s) <= form_steps.index(form_step)
   end
+
+  def get_incomplete_order
+    self.orders.where(order_status: 1).last || self.orders.create!
+  end
+
 end

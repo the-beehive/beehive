@@ -3,48 +3,43 @@
 <hr/>
 
 <section class="cart-content">
-  <% total = 0 %>
-  <% @cart.each do |id, stuff| %>
-    <% product = Product.find_by_id(id) %>
-  <div class="content-container">
-    <div class="item-img">
-      <% product.images.each do |image|%>
-        <%= image_tag(image.uploaded_file, :width => 150, :height => 150) %>
-      <% end %>
-    </div>
-    <div class="item-details">
-      <h4><%= link_to product.name, product %></h4>
-      <h5><%= number_to_currency(product.price, unit: "$") %></h5>
-      <% stuff.each do | thing, value | %>
-        <% if thing == "quantity" %>
-          <p><%= thing + ": " + value.to_s %></p>
-          <% total += value * product.price %>
-        <% elsif thing == "design" %>
-          <p><%= thing + ": " + value.to_s %></p>
-        <% else thing == "source" %>
-        <%= image_tag value, :width => 75, :height => 75 %>
-    </div>
-  </div>
+  <% @order.order_items.each do |o| %>
+    <div class="content-container">
+      <div class="item-details">
+        <div class="item-img">
+          <% img = o.product.images.first %>
+          <% if img %>
+            <%= image_tag img.uploaded_file, width: 150, height: 150 %>
+          <% else %>
+            <p>Image Not Available</p>
+          <% end %>
+        </div>
+        <h4>Name: <%= o.name %></h4>
+        <h5>Unit Price: <%= number_to_currency(o.unit_price, unit: "$") %></h5>
+        <p>Design: <%= image_tag o.fabric_design_url, width: 75, height: 75 %></p>
+        <% o.product_id %>
+        <% o.order_id %>
+        <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
+        <%= form_for o do |q| %>
+          <%= q.number_field :quantity %>
+          <%= q.submit 'Update Quantity'%>
         <% end %>
-      <% end %>
-    <br/>
-  <% end %>
-  <% if @cart.empty? %>
-    <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
-  <% else %>
-    <p><%= link_to "Empty Cart", cart_path("beehiveisyourfriend"), method: :delete, :class => 'empty-cart' %></p>
-    <!-- <hr/> -->
-  <% end %>
+        <p>Total Price: <%= number_to_currency(o.total_price, unit: "$") %></p>
+        <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
+        <p><%= link_to "Remove Item", o, method: :delete %></p>
+        <hr/>
+    <% end %>
+  </div>
+  </div>
 </section>
 <section class="cart-total">
   <h4>Order Summary</h4>
-  <p>Subtotal: <%= number_to_currency(total, unit: "$") %></p>
+  <p>Subtotal: <%= number_to_currency(@order.total) %></p>
 <% if current_user.phone.blank? ||
       current_user.street.blank? ||
       current_user.city.blank? ||
       current_user.state.blank? ||
       current_user.zip.blank? || %>
-
   <%= link_to "Checkout", user_steps_path, :class => 'checkout-bttn' %>
 <% else %>
   <%= link_to "Checkout", carts_checkout_path, :class => 'checkout-bttn' %>

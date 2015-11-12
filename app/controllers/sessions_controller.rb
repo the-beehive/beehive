@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
       user = User.find_by_email(params[:email])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
+        @order = user.get_incomplete_order
+        session[:order_id] = @order.id
         redirect_to user_path(user), notice: "You successfully signed in."
       end
     elsif user = User.sign_in_from_omniauth(request.env["omniauth.auth"])
