@@ -1,6 +1,6 @@
 class UserStepsController < ApplicationController
   include Wicked::Wizard
-  steps :personal, :social, :checkout
+  steps :personal, :credentials, :checkout
 
   def show
     @user = current_user
@@ -13,14 +13,14 @@ class UserStepsController < ApplicationController
     #@user.attributes = params[:user]
     render_wizard @user
   end
-end
 
 private
 
   def redirect_to_finish_wizard
-    redirect_to carts_checkout_url, notice: "Thank you!"
+    redirect_to carts_checkout_path, notice: "Thank you!"
   end
 
   def user_params
     params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
   end
+end

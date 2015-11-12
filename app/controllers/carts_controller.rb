@@ -13,6 +13,16 @@ class CartsController < ApplicationController
     # @cart.each do |k,v|
     #   OrderMailer.seller_confirmation(Product.find(k)).deliver_now
     # end
+    @total = 0
+    @cart.each do |id, stuff|
+      product = Product.find_by_id(id)
+      stuff.each do | thing, value |
+        if thing == "quantity"
+          @total += value * product.price
+        end
+      end
+    end
+    flash[:notice] = @total.to_s.to_i
   end
 
   def create
@@ -31,14 +41,16 @@ class CartsController < ApplicationController
     @cart[id][:design] = design
     @cart[id][:source] = source
 
-
     redirect_to carts_path
   end
 
+<<<<<<< HEAD
   def edit
     @product = Product.new
   end
 
+=======
+>>>>>>> 6ec3c6a8d70a2e4269e99d1e4bf7b7e4e64452e9
   def destroy
     session[:cart] = nil
     redirect_to carts_path
