@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = Product.new(product_params)
+
     if @product.save
       if params[:image]
         @product.images.create(uploaded_file: params[:image])
@@ -51,7 +52,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product.destroy
-    redirect_to products_url, notice: 'Product was successfully destroyed.'
+    redirect_to products_path, notice: 'Product was successfully destroyed.'
   end
 
   private
