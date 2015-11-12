@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109180119) do
+ActiveRecord::Schema.define(version: 20151112150227) do
 
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20151109180119) do
     t.decimal  "unit_price",        precision: 12, scale: 3
     t.integer  "quantity"
     t.decimal  "total_price",       precision: 12, scale: 3
+    t.string   "fabric_design_url"
   end
 
   create_table "orders", force: :cascade do |t|

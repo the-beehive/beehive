@@ -13,7 +13,6 @@ class UserStepsController < ApplicationController
     #@user.attributes = params[:user]
     render_wizard @user
   end
-end
 
 private
 
@@ -24,3 +23,4 @@ private
   def user_params
     params.require(:user).permit(:name, :username, :email, :password, :street, :city, :state, :zip, :phone, :uid, :provider, :uploaded_file)
   end
+end

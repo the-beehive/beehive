@@ -3,48 +3,32 @@
 <hr/>
 
 <section class="cart-content">
-  <% total = 0 %>
-  <% @cart.each do |id, stuff| %>
-    <% product = Product.find_by_id(id) %>
-  <div class="content-container">
-    <div class="item-img">
-      <% product.images.each do |image|%>
-        <%= image_tag(image.uploaded_file, :width => 150, :height => 150) %>
-      <% end %>
-    </div>
-    <div class="item-details">
-      <h4><%= link_to product.name, product %></h4>
-      <h5><%= number_to_currency(product.price, unit: "$") %></h5>
-      <% stuff.each do | thing, value | %>
-        <% if thing == "quantity" %>
-          <p><%= thing + ": " + value.to_s %></p>
-          <% total += value * product.price %>
-        <% elsif thing == "design" %>
-          <p><%= thing + ": " + value.to_s %></p>
-        <% else thing == "source" %>
-        <%= image_tag value, :width => 75, :height => 75 %>
-    </div>
-  </div>
-        <% end %>
-      <% end %>
-    <br/>
-  <% end %>
-  <% if @cart.empty? %>
-    <p>You have no items in your cart.  Please add some from the <%= link_to 'store', root_path%>.</p>
-  <% else %>
-    <p><%= link_to "Empty Cart", cart_path("beehiveisyourfriend"), method: :delete, :class => 'empty-cart' %></p>
-    <!-- <hr/> -->
+  <% @order.order_items.each do |o| %>
+    <p>Product Images: </p>
+    <% Product.find(o.product_id).images.each do |image| %>
+      <%= image_tag(image.uploaded_file, :width => 150, :height => 150) %>
+    <% end %>
+    <p>Name: <%= o.name %></p>
+    <p>Unit Price: <%= number_to_currency(o.unit_price, unit: "$") %></p>
+    <p>Design ID: <%= o.fabric_design_url %></p>
+    <p>Product ID: <%= o.product_id %></p>
+    <p>Order ID: <%= o.order_id %></p>
+    <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
+    <p>Quantity: <%= o.quantity %></p>
+    <p>Total Price: <%= number_to_currency(o.total_price, unit: "$") %></p>
+    <p><%= link_to "Edit", o %></p>
+    <p><%= link_to "Remove", o, method: :delete %></p>
+    <hr/>
   <% end %>
 </section>
 <section class="cart-total">
   <h4>Order Summary</h4>
-  <p>Subtotal: <%= number_to_currency(total, unit: "$") %></p>
+  <p>Subtotal: <%=  %></p>
 <% if current_user.phone.blank? ||
       current_user.street.blank? ||
       current_user.city.blank? ||
       current_user.state.blank? ||
       current_user.zip.blank? || %>
-
   <%= link_to "Checkout", user_steps_path, :class => 'checkout-bttn' %>
 <% else %>
   <%= link_to "Checkout", carts_checkout_path, :class => 'checkout-bttn' %>

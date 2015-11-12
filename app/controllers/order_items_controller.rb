@@ -52,11 +52,9 @@ class OrderItemsController < ApplicationController
 
   # DELETE /order_items/1
   def destroy
-    @order = current_order
-    @order_item = @order.order_items.find(params[:id])
+    @order_item = OrderItem.find(params[:id])
     @order_item.destroy
-    @order_items = @order.order_items
-    # redirect_to order_items_url, notice: 'Order item was successfully destroyed.'
+    redirect_to carts_path
   end
 
   private
