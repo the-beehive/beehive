@@ -40,8 +40,20 @@
     text-align: center;
     vertical-align: middle;
     display: table-cell;
-    img {
+
+    .img-display {
+      img {
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+    }
+
+    img.thumb {
       position: relative;
+      float: right;
+      padding-right: 3%;
+      padding-bottom: 1%;
     }
   } /* END image display */
 
@@ -183,11 +195,3 @@
 .more-seller {
   padding-bottom: 5%;
 } /* END more items */
-
-.img-display {
-  // border: 1px solid black;
-  img {
-    width: 550px;
-    height: 550px;
-  }
-}
