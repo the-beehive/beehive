@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20151109180119) do
     t.integer  "order_item_status",                          default: 1
     t.decimal  "shipping"
     t.string   "name"
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.decimal  "unit_price",        precision: 12, scale: 3
     t.integer  "quantity"
     t.decimal  "total_price",       precision: 12, scale: 3
