@@ -3,8 +3,6 @@ class OrderItem < ActiveRecord::Base
   belongs_to :product
   belongs_to :order
 
-  # validates :fabric_design, presence: true
-
   enum order_item_status: [ :cancelled, :in_progress, :completed, :invoiced ]
 
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
@@ -38,8 +36,4 @@ private
     end
   end
 
-  def finalize
-    self[:unit_price] = unit_price
-    self[:total_price] = quantity * self[:unit_price]
-  end
 end
