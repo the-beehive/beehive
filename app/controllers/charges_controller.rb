@@ -23,4 +23,9 @@ class ChargesController < ApplicationController
     flash[:error] = e.message
     redirect_to new_charge_path
   end
+
+  # OrderMailer.buyer_confirmation(current_user).deliver_now
+  # @cart.each do |k,v|
+  #   OrderMailer.seller_confirmation(Product.find(k)).deliver_now
+  # end
 end

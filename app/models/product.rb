@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   default_scope { where(active: true) }
 
   def self.fabric_search(search)
-    @fabric_search_results = HTTParty.get("https://api.spoonflower.com:443/design/search?q=#{search}&limit=15&availability=for_sale", {format: :json})
+    @fabric_search_results = HTTParty.get("https://api.spoonflower.com:443/design/search?q=#{search}&sort=freshtastic&limit=15&substrate=fabric&availability=for_sale", {format: :json})
     return @fabric_search_results["results"].first["results"]
   end
 end
