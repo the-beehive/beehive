@@ -7,9 +7,7 @@ class SessionsController < ApplicationController
       user = User.find_by_email(params[:email])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        unless @order = Order.where(order_status: 1).last
-          @order = Order.create(user_id: session[:user_id])
-        end
+        @order = user.get_incomplete_order
         session[:order_id] = @order.id
         redirect_to user_path(user), notice: "You successfully signed in."
       end
