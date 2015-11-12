@@ -27,7 +27,6 @@
     <a href="#pick-fabric" class="fabric-bttn">Choose fabric</a>
   </div>
 </section>
-
 <section class="grid-row sf-fabric" id="pick-fabric">
   <div class="col-3-3">
     <h2>Pick your pattern</h2>
@@ -49,7 +48,7 @@
 
   <%= render :partial => 'fabric' %>
 
-  </br>
+</br>
 
   <%= link_to "Add to Cart", carts_path(id: @product.id), method: :post, id: "add-to-cart" %>
 
