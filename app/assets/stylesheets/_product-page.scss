@@ -40,8 +40,24 @@
     text-align: center;
     vertical-align: middle;
     display: table-cell;
-    img {
+
+    .img-display { /* big image */
+      img {
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+    }
+
+    img.thumb { /* thumbnails */
       position: relative;
+      float: right;
+      padding-right: 3%;
+      padding-bottom: 1%;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   } /* END image display */
 
@@ -50,6 +66,8 @@
     h2 {
       text-transform: uppercase;
       padding-bottom: 3%;
+      text-align: left;
+      font-weight: 300;
     }
     h3 {
 
