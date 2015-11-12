@@ -15,10 +15,10 @@ class User < ActiveRecord::Base
     step.validates :zip, presence: true
   end
 
-  with_options :if => -> { required_for_step?(:social) } do |step|
-    step.validates :email, presence: true
-    step.validates :password_digest, presence: true
-  end
+  # with_options :if => -> { required_for_step?(:social) } do |step|
+  #   step.validates :email, presence: true
+  #   step.validates :password_digest, presence: true
+  # end
 
   def self.sign_in_from_omniauth(auth)
    find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth)
