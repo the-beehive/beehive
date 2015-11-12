@@ -32,21 +32,9 @@ body {
     border-top: 5px solid $main;
     overflow: hidden;
 
-    // p {
-    //   font-weight: 300;
-    // }
-
-    // h1 {
-    //   font-weight: 400;
-    //   float: left;
-    //   text-decoration: none;
-    //   color: black;
-    //   padding-left: 5px;
-    //   font-family: 'Dancing Script', cursive;
-    // }
     div {
       width: auto;
-      padding-top: 1.5em;
+      padding-top: 1em;
       // display: inline;
       nav.login-register {
         float: right;
@@ -84,7 +72,7 @@ body {
   main.container {
     max-width: 80%;
     margin: 0 auto;
-    padding-top: 3%;
+    // padding-top: 3%;
     overflow: hidden;
   }
 
