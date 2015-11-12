@@ -9,7 +9,10 @@ class CartsController < ApplicationController
       @cart = {}
     end
     @product = Product.new
-
+    # OrderMailer.buyer_confirmation(current_user).deliver_now
+    # @cart.each do |k,v|
+    #   OrderMailer.seller_confirmation(Product.find(k)).deliver_now
+    # end
     @total = 0
     @cart.each do |id, stuff|
       product = Product.find_by_id(id)
@@ -39,6 +42,10 @@ class CartsController < ApplicationController
     @cart[id][:source] = source
 
     redirect_to carts_path
+  end
+
+  def edit
+    @product = Product.new
   end
 
   def destroy

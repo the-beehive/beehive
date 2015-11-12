@@ -1,0 +1,27 @@
+<h2 class="form">Add a Design</h2>
+
+<section class="grid-row sf-fabric">
+  <div class="col-3-3">
+    <%= form_tag cart_path, :method => 'get' do %>
+      <%= label_tag(:q, "Search Spoonflower's custom fabrics") %>
+      <table>
+      <tr>
+        <td id="input"><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
+        <td><%= submit_tag "Search", :name => nil, :class => 'search-button' %></td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+  </br>
+
+  <% if params[:search] == "" || params[:search] == nil %>
+    <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
+  <% end %>
+
+  <% @product.fabric_search %>
+    <% @fabric_search_results.each do |result| %>
+    <%= link_to image_tag result["thumbnail_url"]%>
+    <%= hidden_field :id, value: result["id"]%>
+  <% end %>
+
+<%= link_to 'Back', carts_path("thebeesknees") %>
