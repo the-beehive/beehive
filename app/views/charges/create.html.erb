@@ -1,1 +1,1 @@
-<h2>Thanks for your payment of <%= number_to_currency(session[:cart_total]) %></h2>
+<h2>Thanks for your payment of <%= number_to_currency(@order.total) %></h2>
