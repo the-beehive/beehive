@@ -77,46 +77,155 @@ h2 {
     padding-bottom: 5%;
   }
 }
-.hex-border {
-  margin-top: 28px;
-    width: 114px;
-    height: 60px;
-  background: black;
-  position: relative;
-}
 
-.hex-border:before,
-.hex-border:after {
-  content:"";
-  border-left: 57px solid transparent; /* pointy ends */
-  border-right: 57px solid transparent; /* pointy ends */
-  position: absolute;
-}
-
-.hex-border:before {
-  top: -38px;
-  border-bottom: 38px solid black;
-}
-
-.hex-border:after {
-  bottom: -38px;
- border-top: 38px solid black;
-}
-.hexagon-thumb {
-  width: 90px;
-  -webkit-clip-path: polygon(
-    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-  );
-  -webkit-transform: scale(.8, .8);
-    -moz-transform: scale(.8, .8);
-    transform: scale(.8, .8);
-    z-index:1;
-}
-.hexagon-thumb:before {
-    border-bottom: 60px solid black;
-}
-.hexagon-thumb:after {
-    border-top: 60px solid black;
-}
+// .hex-border {
+//   margin-top: 28px;
+//     width: 114px;
+//     height: 60px;
+//   background: black;
+//   position: relative;
+// }
+//
+// .hex-border:before,
+// .hex-border:after {
+//   content:"";
+//   border-left: 57px solid transparent; /* pointy ends */
+//   border-right: 57px solid transparent; /* pointy ends */
+//   position: absolute;
+// }
+//
+// .hex-border:before {
+//   top: -38px;
+//   border-bottom: 38px solid black;
+// }
+//
+// .hex-border:after {
+//   bottom: -38px;
+//  border-top: 38px solid black;
+// }
+// .hexagon-thumb {
+//   width: 90px;
+//   -webkit-clip-path: polygon(
+//     50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+//   );
+//   -webkit-transform: scale(.8, .8);
+//     -moz-transform: scale(.8, .8);
+//     transform: scale(.8, .8);
+//     z-index:3;
+// }
+// .hexagon-thumb:before {
+//     border-bottom: 60px solid black;
+// }
+// .hexagon-thumb:after {
+//     border-top: 60px solid black;
+// }
 
 // }
+
+// .hexagon-thumb {
+//   position: relative;
+//   height: 90px;
+//   width: 90px;
+//   -webkit-transform: scale(.8, .8);
+//   -moz-transform: scale(.8, .8);
+//   transform: scale(.8, .8);
+//   z-index:1;
+//   // background: black;
+// }
+// .hexagon-thumb:before, .hex-border:after {
+//   position: absolute;
+//   content: '';
+// }
+// .hexagon-thumb:before {
+//   top: 4px;  /* border width */
+//   left: 4px;  /* border width */
+//   height: calc(100% - 8px);  /* 100% - (2 * border width) */
+//   width: calc(100% - 8px);  /* 100% - (2 * border width) */
+//   // background: #6c6;
+// }
+// .hexagon-thumb, .hexagon-thumb:before, .hex-border:after {
+//   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+//   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+// }
+// // img:before {
+// //   background: url(http://lorempixel.com/150/150/nature/1);
+// // }
+// .hex-border:after {
+//   top: 8px;
+//   left: 8px;
+//   height: calc(100% - 16px);
+//   width: calc(100% - 16px);
+//   background: black;
+// }
+
+
+// .hexagon {
+//   position: relative;
+//   height: 150px;
+//   width: 150px;
+//   // background: black;
+// }
+// .hexagon:before, .double:after {
+//   position: absolute;
+//   content: '';
+// }
+// .hexagon:before {
+//   top: 4px;  /* border width */
+//   left: 4px;  /* border width */
+//   height: calc(100% - 8px);  /* 100% - (2 * border width) */
+//   width: calc(100% - 8px);  /* 100% - (2 * border width) */
+//   background: #6c6;
+// }
+// .hexagon, .hexagon:before, .double:after {
+//   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+//   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+// }
+// .double:after {
+//   top: 8px;
+//   left: 8px;
+//   height: calc(100% - 16px);
+//   width: calc(100% - 16px);
+//   background: black;
+// }
+
+
+//FABRIC HEX
+.hex-fabric {
+  position: relative;
+  .hexagon-thumb {
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    width: 90px;
+    -webkit-clip-path: polygon(
+      50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+  }
+  .hexagon {
+    position: relative;
+    width: 98px;
+    height: 55.58px;
+    background-color: #000000;
+    margin: 28.29px 0;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 49px solid transparent;
+    border-right: 49px solid transparent;
+  }
+
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 28.29px solid #000000;
+  }
+
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 28.29px solid #000000;
+  }
+}
