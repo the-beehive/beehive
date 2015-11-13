@@ -42,11 +42,10 @@ class User < ActiveRecord::Base
     self.orders.where(order_status: 1).last || self.orders.create!
   end
 
-private
+  private
 
   def required_for_step?(step)
     form_step.nil? ||
     form_steps.index(step.to_s) <= form_steps.index(form_step)
   end
-
 end
