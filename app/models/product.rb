@@ -12,18 +12,13 @@ class Product < ActiveRecord::Base
   default_scope { where(active: true) }
 
 
+
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "#{search}"])
+      where(['name LIKE ?', "#{search}"])
     else
-      find(:all)
+      self.all
     end
-      if params[:search]
-        @products = Product.find(:all, :conditions => ['name LIKE ?', "#{{params[:search]}}"])
-      else
-        @products = Product.find(:all )
-        @user = User.new
-      end
   end
 
   def self.fabric_search(search)
