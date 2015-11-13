@@ -34,7 +34,8 @@ h2 {
   a[href].empty-cart {
     text-decoration: none;
     color: $main;
-    float: right;
+    float: left;
+    font-weight: 300;
 
     &:hover{
       cursor: pointer;
