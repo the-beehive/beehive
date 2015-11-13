@@ -19,9 +19,11 @@
           <%= q.number_field :quantity %>
           <%= q.submit 'Update Quantity'%>
         <% end %>
+        <div class="hex-border">
         <p><%= image_tag o.fabric_design_url, width: 100, height: 100, :class => "hexagon-thumb" %></p>
         <% o.product_id %>
         <% o.order_id %>
+        </div>
         <p><%= link_to "Remove from cart", o, method: :delete, :class => 'empty-cart' %></p>
     <% end %>
   </div>

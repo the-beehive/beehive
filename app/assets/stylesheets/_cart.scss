@@ -77,10 +77,46 @@ h2 {
     padding-bottom: 5%;
   }
 }
+.hex-border {
+  margin-top: 28px;
+    width: 114px;
+    height: 60px;
+  background: black;
+  position: relative;
+}
+
+.hex-border:before,
+.hex-border:after {
+  content:"";
+  border-left: 57px solid transparent; /* pointy ends */
+  border-right: 57px solid transparent; /* pointy ends */
+  position: absolute;
+}
+
+.hex-border:before {
+  top: -38px;
+  border-bottom: 38px solid black;
+}
+
+.hex-border:after {
+  bottom: -38px;
+ border-top: 38px solid black;
+}
 .hexagon-thumb {
   width: 90px;
-  // border: 1px solid black;
   -webkit-clip-path: polygon(
     50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
   );
+  -webkit-transform: scale(.8, .8);
+    -moz-transform: scale(.8, .8);
+    transform: scale(.8, .8);
+    z-index:1;
 }
+.hexagon-thumb:before {
+    border-bottom: 60px solid black;
+}
+.hexagon-thumb:after {
+    border-top: 60px solid black;
+}
+
+// }
