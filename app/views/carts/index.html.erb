@@ -1,33 +1,31 @@
 <h2>Your Cart</h2>
-
-<hr/>
-
 <section class="cart-content">
   <% @order.order_items.each do |o| %>
     <div class="content-container">
-      <div class="item-details">
-        <div class="item-img">
-          <% img = o.product.images.first %>
-          <% if img %>
-            <%= image_tag img.uploaded_file, width: 150, height: 150 %>
-          <% else %>
-            <p>Image Not Available</p>
-          <% end %>
-        </div>
-        <h4>Name: <%= o.name %></h4>
-        <h5>Unit Price: <%= number_to_currency(o.unit_price, unit: "$") %></h5>
-        <p>Design: <%= image_tag o.fabric_design_url, width: 75, height: 75 %></p>
+      <div class="item-img">
+        <% img = o.product.images.first %>
+        <% if img %>
+          <%= image_tag img.uploaded_file, width: 150, height: 150 %>
+        <% else %>
+          <p>Image Not Available</p>
+        <% end %>
+      </div>
+      <div class="hex-fabric">
+        <div class="hexagon"></div>
+        <p><%= image_tag o.fabric_design_url, width: 100, height: 100, :class => "hexagon-thumb" %></p>
         <% o.product_id %>
         <% o.order_id %>
+      </div>
+      <div class="item-details">
+        <h4><%= o.name %></h4>
+        <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
+        <p>Total Price: <%= number_to_currency(o.total_price, unit: "$") %></p>
         <%= form_for o do |q| %>
           <%= q.number_field :quantity %>
           <%= q.submit 'Update Quantity'%>
         <% end %>
-        <p>Total Price: <%= number_to_currency(o.total_price, unit: "$") %></p>
-        <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
-        <p><%= link_to "Remove Item", o, method: :delete %></p>
-        <hr/>
+        <p><%= link_to "Remove from cart", o, method: :delete, :class => 'empty-cart' %></p>
     <% end %>
   </div>
   </div>

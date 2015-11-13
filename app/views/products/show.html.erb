@@ -15,15 +15,11 @@
     </h3>
     <div class="seller-details">Seller photo and name</div>
     <h4>Description</h4>
-      <p><%= @product.description %></p>
-    <p>
-      <strong>Fabric type:</strong>
-      <%= @product.fabric_type %>
-    </p>
-    <p>
-      <strong>Shipping:</strong>
-      $<%= (number_with_precision(@product.shipping, :precision => 2)) %>
-    </p>
+    <p><%= @product.description %></p>
+    <div class="fab-ship">
+      <p>Fabric type: <%= @product.fabric_type %></p>
+      <p>Shipping: $<%= (number_with_precision(@product.shipping, :precision => 2)) %></p>
+    </div>
     <a href="#pick-fabric" class="fabric-bttn">Choose fabric</a>
   </div>
 </section>
