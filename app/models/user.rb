@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     @product.user_id = user.id
   end
 
+  def get_incomplete_order
+    self.orders.where(order_status: 1).last || self.orders.create!
+  end
+
   private
 
   def required_for_step?(step)
