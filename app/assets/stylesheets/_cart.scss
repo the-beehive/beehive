@@ -192,6 +192,8 @@ h2 {
 //FABRIC HEX
 .hex-fabric {
   position: relative;
+  left: -75px;
+
   .hexagon-thumb {
     position: absolute;
     left: 4px;
@@ -205,7 +207,7 @@ h2 {
     position: relative;
     width: 98px;
     height: 55.58px;
-    background-color: #000000;
+    background-color: #FFF;
     margin: 28.29px 0;
   }
 
@@ -220,12 +222,12 @@ h2 {
 
   .hexagon:before {
     bottom: 100%;
-    border-bottom: 28.29px solid #000000;
+    border-bottom: 28.29px solid #FFF;
   }
 
   .hexagon:after {
     top: 100%;
     width: 0;
-    border-top: 28.29px solid #000000;
+    border-top: 28.29px solid #FFF;
   }
 }

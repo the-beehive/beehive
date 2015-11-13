@@ -22,9 +22,10 @@
         <div class="hex-fabric">
           <div class="hexagon"></div>
           <p><%= image_tag o.fabric_design_url, width: 100, height: 100, :class => "hexagon-thumb" %></p>
+          <% o.product_id %>
+          <% o.order_id %>
         </div>
-        <% o.product_id %>
-        <% o.order_id %>
+
         <p><%= link_to "Remove from cart", o, method: :delete, :class => 'empty-cart' %></p>
     <% end %>
   </div>
