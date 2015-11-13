@@ -5,7 +5,7 @@ class ProductTest < ActiveSupport::TestCase
     product = Product.new(name: "test", yardage: 1, fabric_type: "test", shipping: 1, price: 2)
     assert product.respond_to?(:images)
   end
-  #
+  # 
   # test "belongs to user" do
   #   product = Product.new(user_id: 1, name: "test", yardage: 1, fabric_type: "test", shipping: 1, price: 2)
   #   user = User.new(id: 1)

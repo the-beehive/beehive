@@ -33,6 +33,7 @@
 <section class="cart-total">
   <h4>Order Summary</h4>
   <p>Subtotal: <%= number_to_currency(@order.total) %></p>
+  <% if @order.total > 0 %>
 <% if current_user.phone.blank? ||
       current_user.street.blank? ||
       current_user.city.blank? ||
@@ -41,5 +42,9 @@
   <%= link_to "Checkout", user_steps_path, :class => 'checkout-bttn' %>
 <% else %>
   <%= link_to "Checkout", carts_checkout_path, :class => 'checkout-bttn' %>
+<% end %>
+<%= link_to "Empty Cart", cart_path("empty"), method: :delete %>
+<% else %>
+  You have no items in your cart.
 <% end %>
 </section>

@@ -3,9 +3,16 @@
 one:
   user_id: 1
   total: 9.99
-  order_status: MyString
+  order_status: 1
+  tax: 1.09
+  subtotal: 10.99
+  shipping: 2.09
+
 
 two:
   user_id: 1
   total: 9.99
-  order_status: MyString
+  order_status: 1
+  tax: 1.09
+  subtotal: 10.99
+  shipping: 2.09

@@ -4,16 +4,22 @@ one:
   product_id: 1
   order_id: 1
   fabric_design: 1
-  order_item_status: MyString
+  order_item_status: 1
   shipping: 9.99
-  price: 9.99
-  name: MyString
+  total_price: 9.99
+  name: "small ottoman"
+  quantity: 1
+  unit_price: 100.99
+  fabric_design_url: "string.com"
 
 two:
   product_id: 1
   order_id: 1
   fabric_design: 1
-  order_item_status: MyString
+  order_item_status: 1
   shipping: 9.99
-  price: 9.99
-  name: MyString
+  total_price: 9.99
+  name: "large ottoman"
+  quantity: 1
+  unit_price: 100.99
+  fabric_design_url: "string.com"

@@ -58,7 +58,15 @@
     </section>
     <section class="seller-panel user-purchase" id="purchases">
       <h3>Purchases</h3>
-      
+      <% @user.orders.each do |order| %>
+        <% order.order_items.each do |item| %>
+          <div><label><%= item.name %></div>
+          <div><label>Order Date: <%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %></div>
+          <div><label>Order Status: <%= item.order_item_status %></div>
+          <div><label>Total: $<%= (number_with_precision(item.total_price, :precision => 2)) %></div>
+          </br>
+        <% end %>
+      <% end %>
     </section>
   </section>
 </section>

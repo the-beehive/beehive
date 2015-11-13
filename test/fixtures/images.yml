@@ -2,8 +2,12 @@
 
 one:
   product_id: 1
-  uploaded_file_file_name: MyString
+  uploaded_file_file_name: "photo"
+  uploaded_file_content_type: "photo.jpeg"
+  uploaded_file_file_size:  1
 
 two:
   product_id: 1
-  uploaded_file_file_name: MyString
+  uploaded_file_file_name: "also_photo"
+  uploaded_file_content_type: "also_photo.jpeg"
+  uploaded_file_file_size:  1
