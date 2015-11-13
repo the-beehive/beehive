@@ -1,6 +1,6 @@
 <% @checkout_total = notice %>
 <% session[:cart_total] = @checkout_total %>
-<p>Your total is <%= number_to_currency(@checkout_total)%></p>
+<p>Your total is <%= number_to_currency(@order.total)%></p>
 
 <%= form_tag charges_path do %>
   <article>
