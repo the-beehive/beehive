@@ -48,4 +48,5 @@ class User < ActiveRecord::Base
     form_step.nil? ||
     form_steps.index(step.to_s) <= form_steps.index(form_step)
   end
+  
 end
