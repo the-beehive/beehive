@@ -8,17 +8,6 @@ class CartsController < ApplicationController
       i.total_price = (i.quantity * i.unit_price) + i.shipping
       @order.total += i.total_price
     end
-    @product = Product.new
-    @total = 0
-    @cart.each do |id, stuff|
-      product = Product.find_by_id(id)
-      stuff.each do | thing, value |
-        if thing == "quantity"
-          @total += value * product.price
-        end
-      end
-    end
-    flash[:notice] = @total.to_s.to_i
   end
 
   def create
