@@ -11,6 +11,21 @@ class Product < ActiveRecord::Base
 
   default_scope { where(active: true) }
 
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "#{search}"])
+    else
+      find(:all)
+    end
+      if params[:search]
+        @products = Product.find(:all, :conditions => ['name LIKE ?', "#{{params[:search]}}"])
+      else
+        @products = Product.find(:all )
+        @user = User.new
+      end
+  end
+
   def self.fabric_search(search)
     @fabric_search_results = HTTParty.get("https://api.spoonflower.com:443/design/search?q=#{search}&sort=classic&limit=15&substrate=fabric&availability=for_sale", {format: :json})
     return @fabric_search_results["results"].first["results"]
