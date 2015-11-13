@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
       end
     elsif user = User.sign_in_from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
+      @order = user.get_incomplete_order
+      session[:order_id] = @order.id
       redirect_to root_url, notice: "Signed in!"
     else
       flash.now[:alert] = 'Invalid email/password combination'
