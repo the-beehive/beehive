@@ -8,12 +8,6 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-    # if params[:search]
-    #   @products = Product.find(:all, :conditions => ['name LIKE ?', "#{{params[:search]}}"])
-    # else
-    #   @products = Product.find(:all )
-    #   @user = User.new
-    # end
   end
 
   # GET /products/1
