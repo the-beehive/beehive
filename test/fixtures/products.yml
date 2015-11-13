@@ -3,17 +3,21 @@
 one:
   user_id: 1
   name: "Small Ottoman"
-  description: MyText
+  description: "this is a description"
   yardage: 1
-  fabric_type: MyString
+  fabric_type: "eco canvas"
   shipping: 9.99
   price: 9.99
+  active: true
+  design: 12345
 
 two:
   user_id: 1
   name: MyString
-  description: MyText
+  description: "this is a description"
   yardage: 1
-  fabric_type: MyString
+  fabric_type: "linen cotton canvas"
   shipping: 9.99
   price: 9.99
+  active: true
+  design: 12345

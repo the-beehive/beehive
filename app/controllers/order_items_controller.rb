@@ -15,6 +15,7 @@ class OrderItemsController < ApplicationController
     redirect_to carts_path
   end
 
+
   # DELETE /order_items/1
   def destroy
     @order_item.destroy

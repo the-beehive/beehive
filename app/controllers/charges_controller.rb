@@ -32,4 +32,9 @@ class ChargesController < ApplicationController
     # @new_order = Order.create!(user_id: session[:user_id])
     # session[:order_id] = @new_order.id
   end
+
+  # OrderMailer.buyer_confirmation(current_user).deliver_now
+  # @cart.each do |k,v|
+  #   OrderMailer.seller_confirmation(Product.find(k)).deliver_now
+  # end
 end
