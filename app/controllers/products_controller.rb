@@ -3,8 +3,12 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
-    @user = User.new
+    if params[:search]
+      @products = Product.find(:all, :conditions => ['name LIKE ?', "#{{params[:search]}}"])
+    else
+      @products = Product.all
+      @user = User.new
+    end
   end
 
   # GET /products/1
