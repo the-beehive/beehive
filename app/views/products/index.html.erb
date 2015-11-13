@@ -1,14 +1,15 @@
-<div>
-  <%= form_tag products_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-  <% end %>
-</div>
+
 <section class="hex-grid">
   <h2>We make it easy to bee creative!</h2>
-  <h4>Browse our artisan offerings.</h4>
+  <h4>Browse our artisan offerings, or search here.</h4>
+  <div>
+    <%= form_tag products_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+    <% end %>
+  </div>
 
   <ul id="hex-products" class="clr" >
 
