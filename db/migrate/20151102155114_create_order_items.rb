@@ -4,7 +4,7 @@ class CreateOrderItems < ActiveRecord::Migration
       t.integer :product_id
       t.integer :order_id
       t.integer :fabric_design
-      t.string :order_item_status
+      t.integer :order_item_status
       t.decimal :shipping
       t.decimal :price
       t.string :name
