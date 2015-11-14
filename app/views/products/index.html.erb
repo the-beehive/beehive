@@ -21,9 +21,7 @@
       <li class="hex-container" onclick="location.href='<%= product_path(product) %>';">
         <div>
           <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.uploaded_file, :width => 200, :height => 200) %>
-            <% end %>
+            <%= image_tag product.images.first.uploaded_file, :width => 200, :height => 200 %>
           </tr>
           <h3><%=product.name%></h3>
           <p><%=product.description%></p>
