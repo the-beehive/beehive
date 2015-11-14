@@ -20,10 +20,10 @@
         <h4><%= o.name %></h4>
         <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
-        <p>Total Price: <%= number_to_currency(o.total_price, unit: "$") %></p>
+        <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
         <%= form_for o do |q| %>
           <%= q.number_field :quantity %>
-          <%= q.submit 'Update Quantity'%>
+          <%= q.submit 'Update Quantity', :class => 'quantity-bttn'%>
         <% end %>
         <p><%= link_to "Remove from cart", o, method: :delete, :class => 'empty-cart' %></p>
       </div>

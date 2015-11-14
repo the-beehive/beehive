@@ -1,5 +1,7 @@
 h2 {
   text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 3%;
 }
 .cart-content {
   width: 100% * (2/3);
@@ -31,14 +33,44 @@ h2 {
           font-weight: 300;
           color: inherit;
         }
+        h5 {
+          padding-bottom: 3%;
+        }
+        input {
+          width: 15%;
+          line-height: 1.5em;
+
+          &.quantity-bttn {
+            width: 45%;
+            background: lighten($main, 10%);
+            border: solid lighten($main, 10%);
+            padding: 3px 0;
+            border: solid 0px;
+            margin: 0 auto;
+            color: #FFF;
+            font-size: 10px;
+            text-transform: uppercase;
+            border-radius: 5px;
+
+            &:hover{
+              background: $main;
+              cursor: pointer;
+            }
+
+            a[href] {
+              text-decoration: none;
+            }
+          }
+        }
       }
     }
   }
   a[href].empty-cart {
     text-decoration: none;
-    color: $main;
+    color: gray;
     float: left;
     font-weight: 300;
+    padding-top: 5%;
 
     &:hover{
       cursor: pointer;
