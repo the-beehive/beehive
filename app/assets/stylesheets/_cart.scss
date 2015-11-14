@@ -144,6 +144,16 @@ h2.cart-header {
   }
 } /* END cart summary */
 
+.continue-shop {
+  text-decoration: none;
+  color: $main;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
 /* FABRIC HEX */
 .hex-fabric {
   position: relative;

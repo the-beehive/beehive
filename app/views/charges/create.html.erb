@@ -1,1 +1,5 @@
-<h2>Thanks for your payment of <%= number_to_currency(@order.total) %></h2>
+<section class="thx-order">
+  <h2>Your order has been placed</h2>
+  <h3>Thanks for your payment of <%= number_to_currency(@order.total) %></h3>
+  <%= link_to 'Return home', products_path %>
+</section>
