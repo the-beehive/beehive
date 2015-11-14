@@ -1,4 +1,4 @@
-<h2>Your Cart</h2>
+<h2 class="cart-header">Your Cart</h2>
 <section class="cart-content">
   <% @order.order_items.each do |o| %>
     <div class="content-container">
@@ -25,14 +25,19 @@
           <%= q.number_field :quantity %>
           <%= q.submit 'Update Quantity', :class => 'quantity-bttn'%>
         <% end %>
-        <p><%= link_to "Remove from cart", o, method: :delete, :class => 'empty-cart' %></p>
+        <p><%= link_to "Remove from cart", o, method: :delete, :class => 'remove-item' %></p>
       </div>
     </div>
     <% end %>
 </section>
 <section class="cart-total">
   <h4>Order Summary</h4>
-  <p>Subtotal: <%= number_to_currency(@order.total) %></p>
+  <ul class="cart-summary">
+    <li><p>Subtotal:</p></li>
+    <li class="order-total">
+      <%= number_to_currency(@order.total) %>
+    </li>
+  </ul>
   <% if @order.total > 0 %>
 <% if current_user.phone.blank? ||
       current_user.street.blank? ||
@@ -43,7 +48,7 @@
 <% else %>
   <%= link_to "Checkout", carts_checkout_path, :class => 'checkout-bttn' %>
 <% end %>
-<%= link_to "Empty Cart", cart_path("empty"), method: :delete %>
+<%= link_to "Empty Cart", cart_path("empty"), method: :delete, :class => 'empty-cart' %>
 <% else %>
   You have no items in your cart.
 <% end %>
