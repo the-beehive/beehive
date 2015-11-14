@@ -8,7 +8,12 @@ h2 {
 
   .content-container {
     border-bottom: 1px solid lightgray;
-    padding-bottom: 3%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+
+    &:first-child {
+      padding-top: 0;
+    }
 
     div {
       display: inline-block;
@@ -17,19 +22,17 @@ h2 {
 
       }
       &.item-details {
+        vertical-align: top;
+        position: relative;
+        left: -75px;
         h4 {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 300;
-        color: inherit;
-
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 300;
+          color: inherit;
         }
       }
     }
-  }
   }
   a[href].empty-cart {
     text-decoration: none;
@@ -43,6 +46,8 @@ h2 {
     }
   }
 }
+
+/* CART SUMMARY CARD */
 .cart-total {
   width: 100% * (1/4);
   display: inline-block;
@@ -76,9 +81,9 @@ h2 {
   p {
     padding-bottom: 5%;
   }
-}
+} /* END cart summary */
 
-//FABRIC HEX
+/* FABRIC HEX */
 .hex-fabric {
   position: relative;
   left: -75px;
@@ -119,4 +124,4 @@ h2 {
     width: 0;
     border-top: 28.29px solid #FFF;
   }
-}
+} /* END hex fabric */
