@@ -3,6 +3,9 @@ class ChargesController < ApplicationController
   def new
   end
 
+  def checkout
+  end
+
   def create
     # Amount in cents
     @order = Order.find(session[:order_id])
