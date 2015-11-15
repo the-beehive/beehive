@@ -30,27 +30,27 @@ product_names = ["Authulf", "Hrafnkel", "Hreitharr", "Sighvat", "Audbjorg", "Fro
     "Thorve", "Gudny", "Ranveig", "Ragnhild", "Halldora", "Katla", "Kadlin", "Svala", "Ragnhild", "Thraslaug",
     "Hedinfrid", "Greiland"]
 
-Product.create!(user_id: 1, name: product_names.sample,
+Product.create!(user_id: 1, name: "Ragnhild",
     description: "This book cover is just great.  The best around.",
     yardage: 2, fabric_type: "Organic Cotton Sateen", shipping: 12.00, price: 32.50)
 
-Product.create!(user_id: 1, name: product_names.sample,
+Product.create!(user_id: 1, name: "Armod",
     description: "Need a place to sit back and read a book?  Try this super comfortable chair.",
     yardage: 4, fabric_type: "Organic Cotton Sateen", shipping: 18.00, price: 54.00)
 
-Product.create!(user_id: 1, name: product_names.sample,
+Product.create!(user_id: 1, name: "Frostulf",
     description: "Do you typically disregard the people outside of your house?  This drape will allow you to never know they existed.",
     yardage: 2, fabric_type: "Minky", shipping: 6.00, price: 37.00)
 
-Product.create!(user_id: 2, name: product_names.sample,
+Product.create!(user_id: 2, name: "Thraslaug",
     description: "Tiny elephants are making a comeback.  Don't miss out!  Get yours today!",
     yardage: 2, fabric_type: "Minky", shipping: 6.00, price: 35.00)
 
-Product.create!(user_id: 2, name: product_names.sample,
+Product.create!(user_id: 2, name: "Svala",
     description: "Do you love wearing clothes?  Addicted to russian music?  Love squares and shapes made of squares?  This dress was made for you.",
     yardage: 1, fabric_type: "Basic Combed Cotton", shipping: 2.00, price: 15.00)
 
-Product.create!(user_id: 2, name: product_names.sample,
+Product.create!(user_id: 2, name: "Sighvat",
     description: "A tie for your neck meats.",
     yardage: 1, fabric_type: "Eco Canvas", shipping: 3.00, price: 18.00)
 
