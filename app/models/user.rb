@@ -7,13 +7,13 @@ class User < ActiveRecord::Base
   has_many :orders
   #validates :name, presence: true
 
-  with_options :if => -> { required_for_step?(:personal) } do |step|
-    step.validates :name, presence: true
-    step.validates :street, presence: true
-    step.validates :city, presence: true
-    step.validates :state, presence: true
-    step.validates :zip, presence: true
-  end
+  # with_options :if => -> { required_for_step?(:personal) } do |step|
+  #   step.validates :name, presence: true
+  #   step.validates :street, presence: true
+  #   step.validates :city, presence: true
+  #   step.validates :state, presence: true
+  #   step.validates :zip, presence: true
+  # end
 
   # with_options :if => -> { required_for_step?(:social) } do |step|
   #   step.validates :email, presence: true
@@ -48,5 +48,5 @@ class User < ActiveRecord::Base
     form_step.nil? ||
     form_steps.index(step.to_s) <= form_steps.index(form_step)
   end
-  
+
 end

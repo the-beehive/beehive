@@ -1,5 +1,6 @@
+/* VERIFY ADDRESS FORM */
 .address-form {
-  h2 {
+  h3 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
@@ -43,6 +44,87 @@ form.edit_user {
         background: $main;
         cursor: pointer;
       }
+    }
+  }
+} /* END veryify address */
+
+/* CONFIRM EMAIL/PW FORM */
+.confirm-form {
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .confirm-bttn {
+    background: lighten($main, 10%);
+    border: solid lighten($main, 10%);
+    display: block;
+    padding: 10px 0;
+    width: 60%;
+    border: solid 0px;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    &:hover{
+      background: $main;
+      cursor: pointer;
+    }
+  }
+} /* END confirm email/pw */
+
+/* PAYMENT-PROCESS */
+.payment-process {
+  h3 {
+    padding-bottom: 1%;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+} /* END payment-process */
+button.stripe-button-el {
+  background: lighten($main, 10%);
+  border: solid lighten($main, 10%);
+  width: 20%;
+  border: solid 0px;
+  margin: 0 auto;
+  color: #FFF;
+  font-size: 12px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  &:hover{
+    background: $main;
+    cursor: pointer;
+  }
+  span {
+    background: lighten($main, 10%);
+    text-shadow: none;
+    border: solid 0;
+    padding: 0;
+  }
+}
+
+/* PAYMENT CONFIRMATION */
+.thx-order {
+  h2 {
+    text-transform: uppercase;
+  }
+  h3 {
+    font-weight: 300;
+  }
+
+  a[href] {
+    text-decoration: none;
+    color: $main;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      color: lightgray;
     }
   }
 }

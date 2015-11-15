@@ -1,18 +1,7 @@
 
 <section class="hex-grid">
   <h2>We make it easy to bee creative!</h2>
-  <h4>Browse our artisan offerings, or search here.</h4>
-
-
-  <div>
-    <%= form_tag products_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-    <% end %>
-  </div>
-
+  <h4>Browse our artisan offerings</h4>
 
   <ul id="hex-products" class="clr" >
 
@@ -21,9 +10,7 @@
       <li class="hex-container" onclick="location.href='<%= product_path(product) %>';">
         <div>
           <tr>
-            <% product.images.each do |image|%>
-              <%= image_tag(image.uploaded_file, :width => 200, :height => 200) %>
-            <% end %>
+            <%= image_tag product.images.first.uploaded_file, :width => 200, :height => 200 %>
           </tr>
           <h3><%=product.name%></h3>
           <p><%=product.description%></p>

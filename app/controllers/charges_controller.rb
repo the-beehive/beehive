@@ -3,6 +3,9 @@ class ChargesController < ApplicationController
   def new
   end
 
+  def checkout
+  end
+
   def create
     # Amount in cents
     @order = Order.find(session[:order_id])
@@ -27,10 +30,6 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
-
-    # @order.completed!
-    # @new_order = Order.create!(user_id: session[:user_id])
-    # session[:order_id] = @new_order.id
   end
 
   # OrderMailer.buyer_confirmation(current_user).deliver_now
