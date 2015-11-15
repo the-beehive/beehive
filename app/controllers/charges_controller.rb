@@ -3,6 +3,9 @@ class ChargesController < ApplicationController
   def new
   end
 
+  def checkout
+  end
+
   def create
     # Find current order to finalize
     @order = Order.find(session[:order_id])
