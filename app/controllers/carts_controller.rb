@@ -12,9 +12,6 @@ class CartsController < ApplicationController
   end
 
   def create
-    # id = params[:id]
-    # design = params[:design]
-    # source = params[:source]
     @product = Product.find_by_id(params[:id])
     @order_item = OrderItem.create(
         product_id: @product.id,
@@ -28,17 +25,6 @@ class CartsController < ApplicationController
 
     @order_item.total_price = @order_item.quantity * @order_item.unit_price
     @order_item.save
-    # # The following allows for passing the fabric design selection to order items.
-    # # If cart is already created, use existing cart to create a new one.  Else, create a new cart and add item in.
-    # session[:cart] ||= {}
-    # @cart = session[:cart]
-    #
-    # # If a product has already been added to cart, increment the quantity value.  Else, set value to one.
-    # @cart[id] ||= {}
-    # # @cart[id][:quantity] ||= 0
-    # # @cart[id][:quantity] += 1
-    # @cart[id][:design] = design
-    # @cart[id][:source] = source
 
     redirect_to carts_path
   end
