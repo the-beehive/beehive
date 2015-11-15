@@ -1,6 +1,6 @@
 <div class="address-form"><h2> Verify your address</h2></div>
 <%= form_for @user, url: wizard_path do |f| %>
-  <h1> Please update your contact information.</h1>
+  <h1> Please verify your contact information.</h1>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -22,6 +22,6 @@
     <%= f.text_field :zip %>
   </div>
   <div class="actions">
-    <%= f.submit "Update", :class => "form-bttn" %>
+    <%= f.submit "Confirm", :class => "form-bttn" %>
   </div>
 <% end %>
