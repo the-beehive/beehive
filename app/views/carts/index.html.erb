@@ -49,10 +49,10 @@
   <%= link_to "Checkout", carts_checkout_path, :class => 'checkout-bttn' %>
 <% end %>
 <%= link_to "Empty Cart", cart_path("empty"), method: :delete, :class => 'empty-cart' %>
+</section>
 <div class="empty">
 <% else %>
-  <p>You have no items in your cart.</p>
+    <p>You have no items in your cart.</p>
   <%= link_to "Continue shopping", products_path, :class => 'continue-shop' %>
 </div>
 <% end %>
-</section>
