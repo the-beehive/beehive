@@ -182,7 +182,19 @@
 
     /* PURCHASES TAB/PANEL */
     .user-purchase {
+      width: 100%;
+      ul.order-history {
+        li {
+          
+          h4 {
+            padding-bottom: 0;
+          }
 
+          &.order-status {
+            float: right;
+          }
+        }
+      }
     }
   } // END .seller-info
 } // END .user-profile

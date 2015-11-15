@@ -1,4 +1,4 @@
-<h2>Your Cart</h2>
+<h2 class="cart-header">Your Cart</h2>
 <section class="cart-content">
   <% @order.order_items.each do |o| %>
     <div class="content-container">
@@ -20,19 +20,24 @@
         <h4><%= o.name %></h4>
         <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
-        <p>Total Price: <%= number_to_currency(o.total_price, unit: "$") %></p>
+        <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
         <%= form_for o do |q| %>
           <%= q.number_field :quantity %>
-          <%= q.submit 'Update Quantity'%>
+          <%= q.submit 'Update Quantity', :class => 'quantity-bttn'%>
         <% end %>
-        <p><%= link_to "Remove from cart", o, method: :delete, :class => 'empty-cart' %></p>
+        <p><%= link_to "Remove from cart", o, method: :delete, :class => 'remove-item' %></p>
+      </div>
+    </div>
     <% end %>
-  </div>
-  </div>
 </section>
 <section class="cart-total">
   <h4>Order Summary</h4>
-  <p>Subtotal: <%= number_to_currency(@order.total) %></p>
+  <ul class="cart-summary">
+    <li><p>Subtotal:</p></li>
+    <li class="order-total">
+      <%= number_to_currency(@order.total) %>
+    </li>
+  </ul>
   <% if @order.total > 0 %>
 <% if current_user.phone.blank? ||
       current_user.street.blank? ||
@@ -43,8 +48,11 @@
 <% else %>
   <%= link_to "Checkout", carts_checkout_path, :class => 'checkout-bttn' %>
 <% end %>
-<%= link_to "Empty Cart", cart_path("empty"), method: :delete %>
+<%= link_to "Empty Cart", cart_path("empty"), method: :delete, :class => 'empty-cart' %>
+<div class="empty">
 <% else %>
-  You have no items in your cart.
+  <p>You have no items in your cart.</p>
+  <%= link_to "Continue shopping", products_path, :class => 'continue-shop' %>
+</div>
 <% end %>
 </section>

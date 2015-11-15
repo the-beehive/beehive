@@ -40,11 +40,11 @@ ActiveRecord::Schema.define(version: 20151112150227) do
     t.integer  "product_id"
     t.integer  "order_id"
     t.integer  "fabric_design"
-    t.integer  "order_item_status"
+    t.integer  "order_item_status",                          default: 1
     t.decimal  "shipping"
     t.string   "name"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.decimal  "unit_price",        precision: 12, scale: 3
     t.integer  "quantity"
     t.decimal  "total_price",       precision: 12, scale: 3
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 20151112150227) do
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.decimal  "total"
-    t.integer  "order_status"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.integer  "order_status",                          default: 1
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.decimal  "subtotal",     precision: 12, scale: 3
     t.decimal  "tax",          precision: 12, scale: 3
     t.decimal  "shipping",     precision: 12, scale: 3
