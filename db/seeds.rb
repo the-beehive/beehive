@@ -73,7 +73,7 @@ Image.create(product_id: 5, uploaded_file: File.open("#{Rails.root}/app/assets/i
 Image.create(product_id: 5, uploaded_file: File.open("#{Rails.root}/app/assets/images/tetress2.jpg"))
 Image.create(product_id: 5, uploaded_file: File.open("#{Rails.root}/app/assets/images/tetress3.jpg"))
 
-Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie.jpg"))
+Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie.png"))
 Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie2.jpg"))
 
 fabrics = ["http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0461/8442/Bacon_Pile_24x24_Tile_shop_thumb.png",
@@ -107,7 +107,7 @@ end
 
 25.times do
   OrderItem.create!(
-      product_id: rand(1..6), order_id: rand(1..5), quantity: rand(1..3),
+      product_id: rand(1..6), order_id: rand(6..10), quantity: rand(1..3),
       fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
       shipping: 4.99, unit_price: rand(10.00..50.00))
 end
