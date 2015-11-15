@@ -68,11 +68,13 @@
       <h3>Purchases</h3>
       <% @user.orders.each do |order| %>
         <% order.order_items.each do |item| %>
-          <div><label><%= item.name %></div>
-          <div><label>Order Date: <%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %></div>
-          <div><label>Order Status: <%= item.order_item_status %></div>
-          <div><label>Total: $<%= (number_with_precision(item.total_price, :precision => 2)) %></div>
+        <ul class="order-history">
+          <li class="order-status"><%= item.order_item_status %></li>
+          <li><h4><%= item.name %></h4></li>
+          <li><label><%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %></li>
+          <li><label>Total: $<%= (number_with_precision(item.total_price, :precision => 2)) %></li>
           </br>
+        </ul>
         <% end %>
       <% end %>
     </section>
