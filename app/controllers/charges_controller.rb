@@ -4,10 +4,15 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Amount in cents
+    # Find current order to finalize
     @order = Order.find(session[:order_id])
+    # Convert total to Amount in cents for Stripe processing
     @amount = (@order.total * 100).to_i
 
+    # Display printable order summary in the view.
+    # It'll basically look like the cart, but without any of the options available.
+
+    # Set order to completed
     @order.completed!
     @new_order = Order.create!(user_id: session[:user_id])
     session[:order_id] = @new_order.id
