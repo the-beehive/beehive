@@ -12,7 +12,11 @@ class OrderItemsController < ApplicationController
   # PATCH/PUT /order_items/1
   def update
     @order_item.update_attributes(order_item_params)
-    redirect_to carts_path
+    if @order_item.quantity_changed?
+      redirect_to carts_path
+    else
+      redirect_to user_path(id: current_user)
+    end
   end
 
 
