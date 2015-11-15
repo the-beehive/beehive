@@ -95,6 +95,12 @@ body {
         text-transform: uppercase;
         border-radius: 5px;
 
+        &::before{
+          font-family: 'FontAwesome';
+          content: "\f002";          
+        }
+
+
         &:hover{
           background: $main;
           cursor: pointer;
