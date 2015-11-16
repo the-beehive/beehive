@@ -62,8 +62,8 @@
               <div class="product-details">
                 <h4 onclick="location.href='<%= edit_product_path(product) %>';"><%=product.name%></h4>
                 <label>Yardage: <%=product.yardage%>
-                <label>Shipping cost: <%=product.shipping%>
-                <label>Price: <%=product.price%>
+                <label>Shipping: $<%=product.shipping%>
+                <label>Price: $<%=product.price%>
               </div>
               </li>
             </div>
