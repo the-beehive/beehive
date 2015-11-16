@@ -21,14 +21,15 @@
         <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
         <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
+        <%= 'thingy' %>
         <%= form_for o do |q| %>
           <%= q.number_field :quantity %>
-          <%= q.submit 'Update Quantity', method: :update, :class => 'quantity-bttn'%>
+          <%= q.submit "Update", class: 'quantity-bttn' %>
         <% end %>
         <p><%= link_to "Remove from cart", o, method: :delete, :class => 'remove-item' %></p>
       </div>
     </div>
-    <% end %>
+  <% end %>
 </section>
 <section class="cart-total">
   <h4>Order Summary</h4>
