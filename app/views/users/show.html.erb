@@ -14,7 +14,7 @@
     </section>
     <nav class="profile-tabs">
       <a href="#orders" class="active">Orders</a>
-      <a href="#add-product" class="">Add Products</a>
+      <!-- <a href="#add-product" class="">Add Products</a> -->
       <a href="#users-products" class="">Your Products</a>
       <a href="#purchases" class="">Purchases</a>
     </nav>
@@ -68,6 +68,15 @@
           </li>
         <% end %>
       </ul>
+
+
+
+      <h3>Add a new product</h3>
+
+      <%= render :partial => "/products/form", class: "add-product" %>
+
+
+
     </section>
     <section class="seller-panel user-purchase" id="purchases">
       <h3>Purchases</h3>
