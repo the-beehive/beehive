@@ -29,12 +29,12 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-  def update
-    @order.order_items.each do |o|
-      o.update
-    end
-    redirect_to carts_path
-  end
+  # def update
+  #   # @order.order_items.each do |o|
+  #   #   o.update
+  #   # end
+  #   # redirect_to carts_path
+  # end
 
   def destroy
     @order.order_items.each do |o|
