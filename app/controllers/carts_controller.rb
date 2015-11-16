@@ -29,10 +29,6 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-  def update
-
-  end
-
   def destroy
     @order.order_items.each do |o|
       o.destroy

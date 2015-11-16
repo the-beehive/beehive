@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :charges
   get 'carts/checkout'
   patch 'carts/checkout'
+<<<<<<< HEAD
+=======
+
+>>>>>>> farmerjosh2
 
   get 'auth/facebook/callback', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#create'
