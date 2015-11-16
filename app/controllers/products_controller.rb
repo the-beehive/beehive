@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+
+    if @products.blank?
+      flash.now[:notice] = "No products matched your search. Please try another term."
+      @products = Product.all
+    end
   end
 
   # GET /products/1
