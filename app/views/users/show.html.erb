@@ -77,10 +77,12 @@
           <li><h4><%= item.name %></h4></li>
           <li><label><%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %></li>
           <li><label>Total: $<%= (number_with_precision(item.total_price, :precision => 2)) %></li>
-          <li><%= link_to 'view invoice', charge_path(item.order_id) %></li>
-          </br>
         </ul>
         <% end %>
+        <% if order.id != session[:order_id] %>
+          <%= link_to 'view invoice', charge_path(order.id) %>
+        <% end %>
+        </br>
       <% end %>
     </section>
   </section>
