@@ -18,6 +18,7 @@
       <a href="#users-products" class="">Your Products</a>
       <a href="#purchases" class="">Order History</a>
     </nav>
+
     <section class="seller-panel seller-orders active" id="orders">
       <h3>Current orders</h3>
       <ul class="current-orders"> <!-- TODO: repeat/loop for each order -->
@@ -29,6 +30,10 @@
                 <% @user.products.each do |product| %>
                   <% product.order_items.each do |order_item| %>
                     <div><label>Product: <%= order_item.name %></div>
+                      <div>
+                        <% p = product.images.first %>
+                        <%= image_tag p.uploaded_file, width: 150, height: 150 %>
+                      </div>
                     <div><label>Ordered On: <%= order_item.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
                     <div><label>Fabric Choice:</br> <%= image_tag order_item.fabric_design_url, width: 100, height: 100, :class => "hexagon-thumb" %></div>
                     <%= form_for order_item do |f| %>
@@ -74,6 +79,8 @@
         <% order.order_items.each do |item| %>
         <ul class="order-history">
           <li class="order-status"><%= item.order_item_status %></li>
+          <li><%= image_tag(item.fabric_design_url, :width => 50, :height => 50) %>
+
           <li><h4><%= item.name %></h4></li>
           <li><label><%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %></li>
           <li><label>Total: $<%= (number_with_precision(item.total_price, :precision => 2)) %></li>
