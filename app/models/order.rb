@@ -8,6 +8,6 @@ class Order < ActiveRecord::Base
   # In Progress - Customer is still shopping
   # Completed - Customer has submitted order
   # Invoiced - Seller has finished item and invoiced the customer
-  
+
   enum order_status: [ :cancelled, :in_progress, :completed, :invoiced ]
 end
