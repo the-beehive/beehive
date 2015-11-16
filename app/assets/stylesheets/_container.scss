@@ -97,7 +97,7 @@ body {
 
         &::before{
           font-family: 'FontAwesome';
-          content: "\f002";          
+          content: "\f002";
         }
 
 
@@ -118,6 +118,13 @@ body {
     margin: 0 auto;
     // padding-top: 3%;
     overflow: hidden;
+
+    .flash-message {
+      font-weight: 300;
+      color: $main;
+      text-transform: uppercase;
+      padding-bottom: 1%;
+    }
   }
 
   footer {
