@@ -15,10 +15,9 @@ class OrderItemsController < ApplicationController
     if @order_item.quantity_changed?
       redirect_to carts_path
     else
-      redirect_to user_path(id: current_user)
+      redirect_to carts_path
     end
   end
-
 
   # DELETE /order_items/1
   def destroy
