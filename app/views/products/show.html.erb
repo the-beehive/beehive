@@ -26,11 +26,11 @@
 <section class="grid-row sf-fabric" id="pick-fabric">
   <div class="col-3-3">
     <h2>Pick your pattern</h2>
-    <%= form_tag product_path, :method => 'get' do %>
-      <%= label_tag(:q, "Search Spoonflower's custom fabrics") %>
+    <%= form_tag fabric_path, method: :get, remote: true do %>
+      <%= label_tag(:fabric, "Search Spoonflower's custom fabrics") %>
       <table>
       <tr>
-        <td id="input"><%= text_field_tag :search, params[:search], :placeholder => 'Enter search term...', class: "form-control" %></td>
+        <td id="input"><%= text_field_tag :fabric, params[:fabric], :placeholder => 'Enter search term...', class: "form-control" %></td>
         <td><%= submit_tag "Search", :name => nil, :class => 'search-button' %></td>
       </tr>
     </table>
@@ -38,12 +38,12 @@
   </div>
   </br>
 
-  <% if params[:search] == "" || params[:search] == nil %>
+  <% if params[:fabric] == "" || params[:fabric] == nil %>
     <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
   <% end %>
-
-  <%= render :partial => 'fabric' %>
-
+  <div id="fabrics-container">
+    <%= render partial: 'fabric' %>
+  </div>
 </br>
 
   <%= link_to "Add to Cart", carts_path(id: @product.id), method: :post, id: "add-to-cart" %>
