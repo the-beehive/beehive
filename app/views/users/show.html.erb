@@ -42,16 +42,16 @@
         </li>
       </ul>
     </section>
-    <section class="seller-panel add-new" id="add-product">
+    <!-- <section class="seller-panel add-new" id="add-product">
 
       <h3>Add a new product</h3>
 
-      <%= render :partial => "/products/form", class: "add-product" %>
+      <%# render :partial => "/products/form", class: "add-product" %>
 
-    </section>
+    </section> -->
     <section class="seller-panel all-seller-products" id="users-products">
       <h3>Manage your products</h3>
-      <ul>
+      <ul class="user-products">
         <% @user.products.each do |product| %>
           <li>
             <div>
@@ -68,15 +68,10 @@
           </li>
         <% end %>
       </ul>
-
-
-
-      <h3>Add a new product</h3>
-
-      <%= render :partial => "/products/form", class: "add-product" %>
-
-
-
+      <div class="add-new">
+        <h3>Add a new product</h3>
+        <%= render :partial => "/products/form", class: "add-product" %>
+      </div>
     </section>
     <section class="seller-panel user-purchase" id="purchases">
       <h3>Purchases</h3>

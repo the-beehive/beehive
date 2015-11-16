@@ -110,56 +110,15 @@
       list-style: none;
     }
 
-    /* ADD NEW PRODUCT FORM */
-    .add-new {
-      #new_product {
-        border: 2px solid lightgray;
-        border-radius: 4px;
-        padding: 1em 2em;
-        label {
-          text-transform: uppercase;
-          font-weight: 300;
-        }
-        input {
-          width: 100%;
-          line-height: 2em;
-          margin-bottom: 5%;
-        }
-
-        textarea {
-          width: 100%;
-          min-height: 70px;
-          margin-bottom: 5%;
-        }
-
-        .add-new-button {
-          background: lighten($main, 10%);
-          border: solid lighten($main, 10%);
-          display: block;
-          padding: 10px 0;
-          width: 60%;
-          border: solid 0px;
-          margin: 0 auto;
-          color: #FFF;
-          font-size: 12px;
-          text-transform: uppercase;
-          border-radius: 5px;
-
-          &:hover{
-            background: $main;
-            cursor: pointer;
-          }
-
-          a[href] {
-            text-decoration: none;
-          }
-        }
-      }
-    } /* END new product form/tab */
-
     /* MANAGE PRODUCTS */
     .all-seller-products {
       padding-bottom: 5%;
+      width: 100%;
+
+      .user-products {
+        width: 100% * (2/3);
+        float: left;
+      }
       div {
         border-bottom: solid 1px lightgray;
         padding-bottom: 2%;
@@ -178,6 +137,55 @@
         }
       }
 
+      /* ADD NEW PRODUCT FORM */
+      .add-new {
+        width: 100% * (1/3);
+        display: inline-block;
+        #new_product {
+          border: 2px solid lightgray;
+          border-radius: 4px;
+          padding: 1em 2em;
+          label {
+            text-transform: uppercase;
+            font-weight: 300;
+          }
+          input {
+            width: 100%;
+            line-height: 2em;
+            margin-bottom: 5%;
+          }
+
+          textarea {
+            width: 100%;
+            min-height: 70px;
+            margin-bottom: 5%;
+          }
+
+          .add-new-button {
+            background: lighten($main, 10%);
+            border: solid lighten($main, 10%);
+            display: block;
+            padding: 10px 0;
+            width: 60%;
+            border: solid 0px;
+            margin: 0 auto;
+            color: #FFF;
+            font-size: 12px;
+            text-transform: uppercase;
+            border-radius: 5px;
+
+            &:hover{
+              background: $main;
+              cursor: pointer;
+            }
+
+            a[href] {
+              text-decoration: none;
+            }
+          }
+        }
+      } /* END new product form/tab */
+
     } /* END manage products tab */
 
     /* PURCHASES TAB/PANEL */
@@ -185,7 +193,7 @@
       width: 100%;
       ul.order-history {
         li {
-          
+
           h4 {
             padding-bottom: 0;
           }
