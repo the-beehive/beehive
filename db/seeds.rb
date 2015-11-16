@@ -76,6 +76,8 @@ Image.create(product_id: 5, uploaded_file: File.open("#{Rails.root}/app/assets/i
 Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie.png"))
 Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie2.jpg"))
 
+
+
 fabrics = ["http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0461/8442/Bacon_Pile_24x24_Tile_shop_thumb.png",
     "http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0280/0727/egg_bacon_pattern.eps_shop_thumb.png",
     "http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0437/6929/Goats_070115_Spoonflower_shop_thumb.png",
