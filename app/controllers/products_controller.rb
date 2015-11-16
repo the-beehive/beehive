@@ -17,7 +17,12 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
-    @fabric_search_results = Product.fabric_search(params[:search])
+    @fabric_search_results = Product.fabric_search(params[:fabric])
+  end
+
+  def fabric
+    @fabric_search_results = Product.fabric_search(params[:fabric])
+    render 'products/fabric'
   end
 
   # GET /products/new
