@@ -14,11 +14,7 @@ class Product < ActiveRecord::Base
 
 
   def self.search(search)
-    if search
-      where(['name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%"])
-    else
-      self.all
-    end
+    where(['name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%"])
   end
 
   def self.fabric_search(search)
