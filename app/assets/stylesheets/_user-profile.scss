@@ -137,6 +137,10 @@
             // margin-left: 5%;
             display: block;
           }
+          .product-details {
+            display: inline-block;
+            border-bottom: none;
+          }
         }
       } /* end product list */
 
@@ -147,7 +151,7 @@
         #new_product {
           border: 2px solid lightgray;
           border-radius: 4px;
-          padding: 1em 2em;
+          padding: 1em 1em;
           label {
             text-transform: uppercase;
             font-weight: 300;
