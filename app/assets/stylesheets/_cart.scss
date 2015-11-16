@@ -1,6 +1,6 @@
 h2.cart-header {
   text-transform: uppercase;
-  text-align: center;
+  // text-align: center;
   padding-bottom: 3%;
 }
 .cart-content {
@@ -27,7 +27,7 @@ h2.cart-header {
       &.item-details {
         vertical-align: top;
         position: relative;
-        left: -75px;
+        left: -60px;
         h4 {
           text-decoration: none;
           text-transform: uppercase;
