@@ -1,6 +1,8 @@
-<section class="cart-content">
-  <h2>Thank you for your order!</h2>
+<section class="thx-order">
+  <h2>Your order has been placed</h2>
   <h3>Here is your summary:</h3>
+</section>
+<section class="cart-content">
   <% @order.order_items.each do |o| %>
     <div class="content-container">
       <div class="item-img">
@@ -33,5 +35,7 @@
       <%= number_to_currency(@order.total) %>
     </li>
   </ul>
+  <div class="thx-order">
+  <%= link_to 'Return home', products_path %>
+  </div>
 </section>
-<%= link_to 'Return home', products_path %>
