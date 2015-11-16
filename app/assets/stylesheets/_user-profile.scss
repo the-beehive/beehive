@@ -322,32 +322,27 @@
         h5 {
           padding-bottom: 3%;
         }
-        // input {
-        //   width: 15%;
-        //   line-height: 1.5em;
+        input {
+          width: 57%;
+          background: lighten($main, 10%);
+          border: solid lighten($main, 10%);
+          padding: 3px 0;
+          border: solid 0px;
+          margin: 0 auto;
+          color: #FFF;
+          font-size: 10px;
+          text-transform: uppercase;
+          border-radius: 5px;
 
-          // &.quantity-bttn {
-          //   width: 45%;
-          //   background: lighten($main, 10%);
-          //   border: solid lighten($main, 10%);
-          //   padding: 3px 0;
-          //   border: solid 0px;
-          //   margin: 0 auto;
-          //   color: #FFF;
-          //   font-size: 10px;
-          //   text-transform: uppercase;
-          //   border-radius: 5px;
-          //
-          //   &:hover{
-          //     background: $main;
-          //     cursor: pointer;
-          //   }
-          //
-          //   a[href] {
-          //     text-decoration: none;
-          //   }
-          // }
-        // }
+          &:hover{
+            background: $main;
+            cursor: pointer;
+          }
+
+          a[href] {
+            text-decoration: none;
+          }
+        }
       }
     }
   }
