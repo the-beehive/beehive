@@ -23,12 +23,12 @@
         <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
         <%= form_for o do |q| %>
           <%= q.number_field :quantity %>
-          <%= q.submit 'Update Quantity', :class => 'quantity-bttn'%>
+          <%= q.submit 'Update Quantity', method: :update, :class => 'quantity-bttn'%>
         <% end %>
         <p><%= link_to "Remove from cart", o, method: :delete, :class => 'remove-item' %></p>
       </div>
     </div>
-    <% end %>
+  <% end %>
 </section>
 <section class="cart-total">
   <h4>Order Summary</h4>

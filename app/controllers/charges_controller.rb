@@ -37,6 +37,10 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
+  def show
+    @order = Order.find_by_id(params[:id])
+  end
+
   # OrderMailer.buyer_confirmation(current_user).deliver_now
   # @cart.each do |k,v|
   #   OrderMailer.seller_confirmation(Product.find(k)).deliver_now
