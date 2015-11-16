@@ -18,3 +18,9 @@ $(function() {
      e.stopPropagation();
   }).css({"background": "lightgray", "border": "none"});
 });
+
+$(document).ready(function(){
+  $('body').on('click', '.fabric-design', function(){
+    highlightOnClick();
+  });
+});
