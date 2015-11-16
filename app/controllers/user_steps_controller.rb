@@ -1,6 +1,6 @@
 class UserStepsController < ApplicationController
   include Wicked::Wizard
-  steps :personal, :credentials, :checkout
+  steps :personal
 
   def show
     @user = current_user

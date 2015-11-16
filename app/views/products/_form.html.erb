@@ -41,7 +41,7 @@
     <%= f.text_field :price, placeholder: "How much will this product cost?" %>
   </div>
   <div class="field">
-    <%= f.hidden_field :user_id, value: params[:id]%>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
   <div class="field">
     <table>
