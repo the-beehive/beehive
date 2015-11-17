@@ -1,6 +1,5 @@
 h2.cart-header {
   text-transform: uppercase;
-  // text-align: center;
   padding-bottom: 3%;
 }
 .cart-content {
@@ -28,14 +27,17 @@ h2.cart-header {
         vertical-align: top;
         position: relative;
         left: -60px;
-        h4 {
+        h3 {
           text-decoration: none;
           text-transform: uppercase;
           font-weight: 300;
           color: inherit;
         }
-        h5 {
+        h4 {
           padding-bottom: 3%;
+        }
+        p {
+          font-size: 18px;
         }
         input {
           width: 15%;
