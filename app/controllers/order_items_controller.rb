@@ -15,7 +15,7 @@ class OrderItemsController < ApplicationController
     if @order_item.quantity_changed?
       redirect_to carts_path
     else
-      redirect_to carts_path
+      redirect_to user_path(current_user)
     end
   end
 
