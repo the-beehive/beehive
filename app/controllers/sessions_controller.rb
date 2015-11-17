@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
       session[:order_id] = @order.id
       redirect_to root_url, notice: "Signed in!"
     else
-      flash.now[:alert] = 'Invalid email/password combination'
-      render :new
+      flash.now[:notice] = 'Invalid email/password combination'
+      render root_path
     end
   end
 
