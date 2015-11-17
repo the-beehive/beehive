@@ -201,64 +201,6 @@
       } /* END new product form/tab */
 
     } /* END manage products tab */
-
-    /* PURCHASES TAB/PANEL */
-    .user-purchase {
-      width: 100%;
-      .content-container {
-        border-bottom: 1px solid lightgray;
-        padding-bottom: 1%;
-        padding-top: 1%;
-        display: block;
-
-        &:first-child {
-          padding-top: 0;
-        }
-
-        div {
-          display: inline-block;
-
-          &.item-img {
-
-          }
-          &.item-details {
-            vertical-align: top;
-            position: relative;
-            left: -65px;
-            h4 {
-              text-decoration: none;
-              text-transform: uppercase;
-              font-weight: 300;
-              color: inherit;
-            }
-            h5 {
-              padding-bottom: 3%;
-            }
-            // input {
-            //   width: 57%;
-            //   background: lighten($main, 10%);
-            //   border: solid lighten($main, 10%);
-            //   padding: 3px 0;
-            //   border: solid 0px;
-            //   margin: 0 auto;
-            //   color: #FFF;
-            //   font-size: 10px;
-            //   text-transform: uppercase;
-            //   border-radius: 5px;
-            //
-            //   &:hover{
-            //     background: $main;
-            //     cursor: pointer;
-            //   }
-            //
-            //   a[href] {
-            //     text-decoration: none;
-            //   }
-            // }
-          }
-        }
-      }
-    }
   } // END .seller-info
 } // END .user-profile
 
@@ -347,9 +289,6 @@
     div {
       display: inline-block;
 
-      &.item-img {
-
-      }
       &.item-details {
         vertical-align: top;
         position: relative;
@@ -362,6 +301,11 @@
         }
         h5 {
           padding-bottom: 3%;
+        }
+        select {
+          background: transparent;
+          line-height: 1;
+          border: 1px solid gray;
         }
         input {
           width: 57%;
@@ -388,3 +332,46 @@
     }
   }
 }
+
+/* ORDER HISTORY */
+.user-purchase {
+  display: block;
+  .content-container {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    display: block;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    div {
+      display: inline-block;
+
+      &.item-details {
+        vertical-align: top;
+        position: relative;
+        left: -65px;
+        h4 {
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 300;
+          color: inherit;
+        }
+        h5 {
+          padding-bottom: 3%;
+        }
+        a[href] {
+          text-decoration: none;
+          color: $main;
+
+          &:hover {
+            color: gray;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+} /* END order history */
