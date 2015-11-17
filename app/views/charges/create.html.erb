@@ -1,7 +1,6 @@
 <section class="thx-order">
   <h2>Your order has been placed</h2>
   <h3>Here is your summary:</h3>
-</section>
 <section class="cart-content">
   <% @order.order_items.each do |o| %>
     <div class="content-container">
@@ -21,21 +20,20 @@
       </div>
       <div class="item-details">
         <h4><%= o.name %></h4>
-        <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
+        <h4><%= number_to_currency(o.unit_price, unit: "$") %></h4>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
-        <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
         <p>Quantity: <%= o.quantity %>
       </div>
     </div>
     <% end %>
-  <h4>Order Summary</h4>
   <ul class="cart-summary">
-    <li><p>Total:</p></li>
+    <h3>Order Summary</h3>
     <li class="order-total">
-      <%= number_to_currency(@order.total) %>
+      <h4>Total: <%= number_to_currency(@order.total) %></h4>
     </li>
   </ul>
   <div class="thx-order">
   <%= link_to 'Return home', products_path %>
   </div>
+</section>
 </section>
