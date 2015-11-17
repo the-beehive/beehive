@@ -36,7 +36,7 @@
                 <%= form_tag products_path, :method => 'get', :class => 'product-search' do %>
                 <p>
                   <%= text_field_tag :search, params[:search] %>
-                  <%= submit_tag "Search", :name => nil, :class => "search-bttn" %><i class="fa fa-search"></i>
+                  <%= submit_tag "Search", :name => nil, :class => "search-bttn" %>
                 </p>
                 <% end %>
             </nav>
@@ -44,15 +44,15 @@
           </div>
         </header>
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <%= notice %>
         <main class="container">
+          <h4 class="flash-message"><%= notice %></h4>
 
           <%= yield %>
 
         </main>
 
         <footer>
-          <%= image_tag asset_path('Spoonflower_Logo_Vector.png'), width: "20%" %>
+          <%= link_to image_tag(asset_path('Spoonflower_Logo_Vector.png')), 'http://www.spoonflower.com/', :target => "_blank" %>
         </footer>
 
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

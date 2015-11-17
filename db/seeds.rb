@@ -36,13 +36,13 @@ Product.create!(user_id: 1, name: "Ragnhild",
 
 Product.create!(user_id: 1, name: "Armod",
     description: "Need a place to sit back and read a book?  Try this super comfortable chair.",
-    yardage: 4, fabric_type: "Organic Cotton Sateen", shipping: 18.00, price: 54.00)
+    yardage: 4, fabric_type: "Faux Suede", shipping: 18.00, price: 54.00)
 
 Product.create!(user_id: 1, name: "Frostulf",
     description: "Do you typically disregard the people outside of your house?  This drape will allow you to never know they existed.",
-    yardage: 2, fabric_type: "Minky", shipping: 6.00, price: 37.00)
+    yardage: 2, fabric_type: "Basic Combed Cotton", shipping: 6.00, price: 37.00)
 
-Product.create!(user_id: 2, name: "Thraslaug",
+Product.create!(user_id: 1, name: "Thraslaug",
     description: "Tiny elephants are making a comeback.  Don't miss out!  Get yours today!",
     yardage: 2, fabric_type: "Minky", shipping: 6.00, price: 35.00)
 
@@ -52,7 +52,51 @@ Product.create!(user_id: 2, name: "Svala",
 
 Product.create!(user_id: 2, name: "Sighvat",
     description: "A tie for your neck meats.",
-    yardage: 1, fabric_type: "Eco Canvas", shipping: 3.00, price: 18.00)
+    yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 3.00, price: 18.00)
+
+Product.create!(user_id: 2, name: "Authulf",
+    description: "An apron to keep yourself clean in the kitchen. Who knows what might happen in there.",
+    yardage: 2, fabric_type: "Eco Canvas", shipping: 3.00, price: 19.00)
+
+Product.create!(user_id: 2, name: "Hrafnkel",
+    description: "Child's button-up shirt Size 2T. Different buttons available on request.",
+    yardage: 1, fabric_type: "Cotton Lawn", shipping: 4.00, price: 20.00)
+
+Product.create!(user_id: 3, name: "Hreitharr",
+    description: "6-inch long makeup case. Perfect for brushes, eyeshadows, liners, etc.",
+    yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 2.00, price: 15.00)
+
+Product.create!(user_id: 3, name: "Audbjorg",
+    description: "Unisex lounge pants with pockets. One size fits all.",
+    yardage: 2, fabric_type: "Cotton Lawn", shipping: 5.00, price: 22.00)
+
+Product.create!(user_id: 3, name: "Runolf",
+    description: "A tiny hand-held purse to keep all your secrets/necessities in.",
+    yardage: 1, fabric_type: "faux suede", shipping: 4.00, price: 18.00)
+
+Product.create!(user_id: 3, name: "Thorve",
+    description: "Pillow; soft, rest your head on it. Perfect for sleeping or throwing at a sleeping person.",
+    yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 3.00, price: 20.00)
+
+Product.create!(user_id: 4, name: "Ranveig",
+    description: "Are you a dog person? No, but are you REALLY a dog person? Prove it. Get your dog some jammies.",
+    yardage: 1, fabric_type: "Organic Cotton Interlock Knit", shipping: 4.00, price: 25.00)
+
+Product.create!(user_id: 4, name: "Katla",
+    description: "Keep your hair looking fantastic with these quirky ties.",
+    yardage: 1, fabric_type: "Basic Combed Cotton", shipping: 2.00, price: 7.00)
+
+Product.create!(user_id: 4, name: "Svala",
+    description: "An alternative to your normal pillow lifestyle -- now with additional flair.",
+    yardage: 1, fabric_type: "Cotton Lawn", shipping: 5.00, price: 17.00)
+
+Product.create!(user_id: 4, name: "Hedinfrid",
+    description: "A pouch for holding things or hiding them.",
+    yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 4.00, price: 15.00)
+
+Product.create!(user_id: 1, name: "Greiland",
+    description: "A specially-sized soft container for your tablet.",
+    yardage: 1, fabric_type: "Basic Combed Cotton", shipping: 4.00, price: 22.00)
 
 Image.create(product_id: 1, uploaded_file: File.open("#{Rails.root}/app/assets/images/book.jpg"))
 Image.create(product_id: 1, uploaded_file: File.open("#{Rails.root}/app/assets/images/book2.jpg"))
@@ -76,6 +120,34 @@ Image.create(product_id: 5, uploaded_file: File.open("#{Rails.root}/app/assets/i
 Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie.png"))
 Image.create(product_id: 6, uploaded_file: File.open("#{Rails.root}/app/assets/images/tie2.jpg"))
 
+Image.create(product_id: 7, uploaded_file: File.open("#{Rails.root}/app/assets/images/bunnyapron.jpg"))
+Image.create(product_id: 7, uploaded_file: File.open("#{Rails.root}/app/assets/images/bunnyaprondetail.jpg"))
+
+Image.create(product_id: 8, uploaded_file: File.open("#{Rails.root}/app/assets/images/babyshirt.jpg"))
+
+Image.create(product_id: 9, uploaded_file: File.open("#{Rails.root}/app/assets/images/makeupbox2.jpg"))
+Image.create(product_id: 9, uploaded_file: File.open("#{Rails.root}/app/assets/images/makeupcase.jpg"))
+
+Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants2.jpg"))
+Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants.jpg"))
+
+Image.create(product_id: 11, uploaded_file: File.open("#{Rails.root}/app/assets/images/clutch.jpg"))
+
+Image.create(product_id: 12, uploaded_file: File.open("#{Rails.root}/app/assets/images/difftpillow.jpg"))
+
+Image.create(product_id: 13, uploaded_file: File.open("#{Rails.root}/app/assets/images/dogpajamas.jpg"))
+
+Image.create(product_id: 14, uploaded_file: File.open("#{Rails.root}/app/assets/images/hairbobbles.jpg"))
+
+Image.create(product_id: 15, uploaded_file: File.open("#{Rails.root}/app/assets/images/pillow.jpg"))
+
+Image.create(product_id: 16, uploaded_file: File.open("#{Rails.root}/app/assets/images/pouch.jpg"))
+
+Image.create(product_id: 17, uploaded_file: File.open("#{Rails.root}/app/assets/images/tabletpouch.jpg"))
+
+
+
+
 fabrics = ["http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0461/8442/Bacon_Pile_24x24_Tile_shop_thumb.png",
     "http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0280/0727/egg_bacon_pattern.eps_shop_thumb.png",
     "http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0437/6929/Goats_070115_Spoonflower_shop_thumb.png",
@@ -98,16 +170,30 @@ fabrics = ["http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0461/84
     "http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0352/4137/rrgeo_constellation_pg_shop_thumb.png"
 ]
 
-25.times do
+10.times do
   OrderItem.create!(
-      product_id: rand(1..6), order_id: rand(1..5), quantity: rand(1..3),
+      product_id: rand(1..17), order_id: rand(1..5), quantity: rand(1..3),
       fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
       shipping: rand(0.0..20.0), unit_price: rand(10.00..200.00))
 end
 
-25.times do
+10.times do
   OrderItem.create!(
-      product_id: rand(1..6), order_id: rand(6..10), quantity: rand(1..3),
+      product_id: rand(1..17), order_id: rand(6..10), quantity: rand(1..3),
+      fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
+      shipping: 4.99, unit_price: rand(10.00..50.00))
+end
+
+10.times do
+  OrderItem.create!(
+      product_id: rand(1..17), order_id: rand(11..15), quantity: rand(1..3),
+      fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
+      shipping: 4.99, unit_price: rand(10.00..50.00))
+end
+
+10.times do
+  OrderItem.create!(
+      product_id: rand(1..17), order_id: rand(16..20), quantity: rand(1..3),
       fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
       shipping: 4.99, unit_price: rand(10.00..50.00))
 end
@@ -118,4 +204,12 @@ end
 
 5.times do
   Order.create!(user_id: 4)
+end
+
+5.times do
+  Order.create!(user_id: 1)
+end
+
+5.times do
+  Order.create!(user_id: 2)
 end

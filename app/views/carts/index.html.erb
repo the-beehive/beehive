@@ -17,13 +17,14 @@
         <% o.order_id %>
       </div>
       <div class="item-details">
-        <h4><%= o.name %></h4>
-        <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
+        <h3><%= o.name %></h3>
+        <h4><%= number_to_currency(o.unit_price, unit: "$") %></h4>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
         <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
+        <%# 'thingy' %>
         <%= form_for o do |q| %>
           <%= q.number_field :quantity %>
-          <%= q.submit 'Update Quantity', method: :update, :class => 'quantity-bttn'%>
+          <%= q.submit "Update", class: 'quantity-bttn' %>
         <% end %>
         <p><%= link_to "Remove from cart", o, method: :delete, :class => 'remove-item' %></p>
       </div>
