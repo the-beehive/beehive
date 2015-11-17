@@ -58,8 +58,14 @@ form.login-form {
 
   div {
     padding: 0 30px 5px 30px;
+
     &:first-child {
       border-top: 1px solid lightgray;
+    }
+
+    p {
+      text-align: left;
+      text-transform: uppercase;
     }
 
     input {
