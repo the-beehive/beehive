@@ -1,3 +1,4 @@
+<section class="payment-process">
 <section class="cart-content">
   <h3>Payment</h3>
   <% @checkout_total = notice %>
@@ -32,25 +33,23 @@
       </div>
     </div>
   <% end %>
+</section>
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span></span>
+    </label>
+  </article>
 
-
-
-  <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="amount">
-        <span></span>
-      </label>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="Cart Checkout"
-            data-amount="<%= number_to_currency(@checkout_total) %>"
-            data-locale="auto"></script>
-  <% end %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Cart Checkout"
+          data-amount="<%= number_to_currency(@checkout_total) %>"
+          data-locale="auto"></script>
+<% end %>
 </section>
