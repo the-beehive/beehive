@@ -83,11 +83,29 @@ form.edit_user {
     text-transform: uppercase;
     font-weight: 300;
   }
+  .cart-content {
+    h4 {
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+  .pay {
+    width: 100% * (1/4);
+    display: inline-block;
+
+    h4 {
+      text-transform: uppercase;
+    }
+  }
+  form {
+    padding-bottom: 3%;
+    // width: 100% * (1/4);
+  }
 } /* END payment-process */
 button.stripe-button-el {
   background: lighten($main, 10%);
   border: solid lighten($main, 10%);
-  width: 20%;
+  width: 100%;
   border: solid 0px;
   margin: 0 auto;
   color: #FFF;
