@@ -9,8 +9,8 @@ form.login-form {
   width: 30%;
   margin: 20px auto; /* centers modal */
   background-color: #fff;
-  border:1px solid #000;
-  padding:15px; /* centers in boxes.. maybe dont need */
+  border: 2px solid lightgray;
+  padding: 15px; /* centers in boxes.. maybe dont need */
 
   button { /* FB & Twitter buttons */
     display: block;
@@ -108,8 +108,8 @@ form.new-user-form {
   width: 40%;
   margin: 20px auto; /* centers modal */
   background-color: #fff;
-  border:1px solid #000;
-  padding:15px;
+  border: 2px solid lightgray;
+  padding: 15px;
 
   label {
     text-transform: uppercase;
