@@ -13,7 +13,6 @@
     <h3>
       $<%= (number_with_precision(@product.price, :precision => 2)) %>
     </h3>
-    <div class="seller-details">Seller photo and name</div>
     <h4>Description</h4>
     <p><%= @product.description %></p>
     <div class="fab-ship">
@@ -27,7 +26,7 @@
   <div class="col-3-3">
     <h2>Pick your pattern</h2>
     <%= form_tag fabric_path, method: :get, remote: true do %>
-      <%= label_tag(:fabric, "Search Spoonflower's custom fabrics") %>
+      <%= label_tag(:fabric, "Comb the Spoonflower marketplace") %>
       <table>
       <tr>
         <td id="input"><%= text_field_tag :fabric, params[:fabric], :placeholder => 'Enter search term...', class: "form-control" %></td>
@@ -50,6 +49,6 @@
 
   <!-- <button class="add-cart">Add to cart</button> -->
 </section>
-<section class="grid-row more-seller">
+<!-- <section class="grid-row more-seller">
   <div class="col-3-3">More from this seller</div>
-</section>
+</section> -->

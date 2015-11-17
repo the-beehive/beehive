@@ -73,33 +73,25 @@ body {
   .product-search {
     float: right;
     text-align: right;
-    padding-top: 3%;
-    // outline: 1px solid red;
+    padding-top: 5%;
     width: 100%;
+    // vertical-align: baseline;
 
     input {
       width: 100% * (2/3);
       line-height: 1.7em;
       font-size: 14px;
       vertical-align: bottom;
-      // border: 1px solid black;
 
       &.search-bttn {
         width: 100% * (1/4);
         background: lighten($main, 10%);
-        // border: solid lighten($main, 10%);
         padding: 4px 0;
         border: solid 0px;
         color: #FFF;
         font-size: 12px;
         text-transform: uppercase;
         border-radius: 5px;
-
-        &::before{
-          font-family: 'FontAwesome';
-          content: "\f002";          
-        }
-
 
         &:hover{
           background: $main;
@@ -118,6 +110,13 @@ body {
     margin: 0 auto;
     // padding-top: 3%;
     overflow: hidden;
+
+    .flash-message {
+      font-weight: 300;
+      color: $main;
+      text-transform: uppercase;
+      padding-bottom: 1%;
+    }
   }
 
   footer {
@@ -127,6 +126,7 @@ body {
     img {
       float: right;
       overflow: hidden;
+      width: 20%;
     }
   }
 }
