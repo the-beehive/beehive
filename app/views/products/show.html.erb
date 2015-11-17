@@ -38,7 +38,7 @@
   </br>
 
   <% if params[:fabric] == "" || params[:fabric] == nil %>
-    <%= render plain: "Or choose from these popular fabric designs: " %></br></br>
+    <p><%= render plain: "Or choose from these popular fabric designs: " %></p>
   <% end %>
   <div id="fabrics-container">
     <%= render partial: 'fabric' %>
