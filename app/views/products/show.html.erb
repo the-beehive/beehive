@@ -26,7 +26,7 @@
   <div class="col-3-3">
     <h2>Pick your pattern</h2>
     <%= form_tag fabric_path, method: :get, remote: true do %>
-      <%= label_tag(:fabric, "Search Spoonflower's custom fabrics") %>
+      <%= label_tag(:fabric, "Comb the Spoonflower marketplace") %>
       <table>
       <tr>
         <td id="input"><%= text_field_tag :fabric, params[:fabric], :placeholder => 'Enter search term...', class: "form-control" %></td>

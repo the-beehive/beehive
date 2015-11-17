@@ -79,6 +79,10 @@
       padding-top: 3%;
     }
 
+    p {
+      font-size: 20px;
+    }
+
     .fab-ship {
       padding-top: 2%;
       p {
@@ -116,13 +120,15 @@
   padding: 5% 0;
   label {
   text-transform: uppercase;
+  font-size: 20px;
   }
   div.col-3-3 {
     padding-bottom: 3%;
 
     h2 {
       text-align: left;
-      padding-bottom: 3%;
+      text-transform: uppercase;
+      padding-bottom: 2%;
     }
   }
   table {
