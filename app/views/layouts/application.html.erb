@@ -46,13 +46,13 @@
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <main class="container">
           <h4 class="flash-message"><%= notice %></h4>
-          
+
           <%= yield %>
 
         </main>
 
         <footer>
-          <%= image_tag asset_path('Spoonflower_Logo_Vector.png'), width: "20%" %>
+          <%= link_to image_tag(asset_path('Spoonflower_Logo_Vector.png')), 'http://www.spoonflower.com/' %>
         </footer>
 
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
