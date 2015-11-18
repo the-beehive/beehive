@@ -30,7 +30,7 @@
     <section class="seller-panel seller-orders active" id="orders">
       <h3>Current orders</h3>
       <% @user.products.each do |product| %>
-        <% product.order_items.order(order_item_status: :desc).each do |order_item| %>
+        <% product.order_items.each do |order_item| %>
           <div class="content-container">
             <div class="item-img">
               <% p = product.images.first %>
@@ -46,7 +46,7 @@
               <p>by: <%= order_item.order.user.name %></p>
               <%= form_for order_item do |f| %>
                 <%= hidden_field_tag :page, "user" %>
-                <%= f.select :order_item_status, options_for_select(OrderItem.order_item_statuses.keys.to_a, order_item.order_item_status) %>
+                <%= f.select :order_item_status, options_for_select(OrderItem.order_item_statuses.collect{|item, val| [item.humanize, item]}, order_item.order_item_status) %>
                 <%= f.submit 'Update Order Status'%>
               <% end %>
             </div>
@@ -85,8 +85,10 @@
     <section class="seller-panel user-purchase" id="purchases">
       <h3>Purchases</h3>
       <% @user.orders.each do |order| %>
+      <% if order.total != 0 %>
         <div class="content-container">
           <% order.order_items.each do |item| %>
+          <div class="product-container">
             <div class="item-img">
               <% first_image = item.product.images.first %>
               <%= image_tag(first_image.uploaded_file, :width => 150, :height => 150) %>
@@ -99,21 +101,18 @@
               <h4><%= item.product.name %></h4>
               <h4><%= number_to_currency(item.product.price)%></h4>
               <p>Quantity: <%= item.quantity %></p>
-              <br/>
               <p><%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %><p>
               <p><%= item.order_item_status %><p>
             </div>
-          <% end %>
-          <p>
-            TOTAL: <%= number_to_currency(order.total) %>
-          </p>
-          <p>
-            <%= link_to 'view invoice', charge_path(order.id), { style: "text-decoration:none; color:#FFAF44" } %>
-          </p>
           </div>
+            <% end %>
+            <%= link_to 'view invoice', charge_path(order.id) %>
         <% if order.id != session[:order_id] %>
         <% end %>
+        <% end %>
+      </div>
       <% end %>
     </section>
+
   </section>
 </section>
