@@ -11,6 +11,7 @@ class ChargesController < ApplicationController
     @order = Order.find(session[:order_id])
     # Convert total to Amount in cents for Stripe processing
     @amount = (@order.total * 100).to_i
+    
     # Display printable order summary in the view.
     # It'll basically look like the cart, but without any of the options available.
 

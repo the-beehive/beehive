@@ -1,17 +1,25 @@
 
 <section class="user-profile">
+
   <section class="user-info">
     <%= image_tag @user.uploaded_file %>
     <h2 class="full-name">
       <%= @user.name %>
     </h2>
-    <p><%= link_to 'Edit profile', edit_user_path(@user) %></p> <!-- : LINK TO EDIT PROF FORM -->
+    <p>
+      <%= link_to 'Edit profile', edit_user_path(@user) %> <!-- : LINK TO EDIT PROF FORM -->
+    </p>
   </section>
+
   <section class="seller-info">
+
     <section class="manage-profile">
       <h2>Manage your hive</h2>
-      <p>Stay up to date on orders, add new products and edit product details. </p>
+      <p>
+        Stay up to date on orders, add new products and edit product details.
+      </p>
     </section>
+
     <nav class="profile-tabs">
       <a href="#orders" class="active">Worklist</a>
       <!-- <a href="#add-product" class="">Add Products</a> -->
@@ -22,29 +30,31 @@
     <section class="seller-panel seller-orders active" id="orders">
       <h3>Current orders</h3>
       <% @user.products.each do |product| %>
-      <% product.order_items.each do |order_item| %>
-        <div class="content-container">
-                <div class="item-img">
-                  <% p = product.images.first %>
-                  <%= image_tag p.uploaded_file, width: 150, height: 150 %>
-                </div>
-                <div class="hex-fabric">
-                  <div class="hexagon"></div>
-                  <%= image_tag order_item.fabric_design_url, width: 100, height: 100, :class => "hexagon-thumb" %>
-                </div>
-              <div class="item-details">
-                <h4><%= order_item.name %></h4>
-                <label>Ordered On: <%= order_item.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
+        <% product.order_items.each do |order_item| %>
+          <div class="content-container">
+            <div class="item-img">
+              <% p = product.images.first %>
+              <%= image_tag p.uploaded_file, width: 150, height: 150 %>
+            </div>
+            <div class="hex-fabric">
+              <div class="hexagon"></div>
+              <%= image_tag order_item.fabric_design_url, width: 100, height: 100, :class => "hexagon-thumb" %>
+            </div>
+            <div class="item-details">
+              <h4><%= order_item.name %></h4>
+              <p>Ordered On: <%= order_item.created_at.strftime("%m/%d/%Y at %I:%M%p") %></p>
+              <p>by: <%= order_item.order.user.name %></p>
               <%= form_for order_item do |f| %>
                 <%= hidden_field_tag :page, "user" %>
                 <%= f.select :order_item_status, options_for_select(OrderItem.order_item_statuses.keys.to_a, order_item.order_item_status) %>
                 <%= f.submit 'Update Order Status'%>
-              </div>
+              <% end %>
             </div>
-            <% end %>
-            <% end %>
+          </div>
         <% end %>
+      <% end %>
     </section>
+
     <section class="seller-panel all-seller-products" id="users-products">
       <h3>Manage your products</h3>
       <ul class="user-products">
