@@ -276,7 +276,9 @@
 /* WORKLIST */
 .seller-orders {
   display: block;
+  width: 100%;
   .content-container {
+    width: 100%;
     border-bottom: 1px solid lightgray;
     padding-bottom: 1%;
     padding-top: 1%;
@@ -336,7 +338,9 @@
 /* ORDER HISTORY */
 .user-purchase {
   display: block;
+  width: 100%;
   .content-container {
+    width: 100%;
     border-bottom: 1px solid lightgray;
     padding-bottom: 1%;
     padding-top: 1%;
@@ -362,18 +366,18 @@
         h5 {
           padding-bottom: 3%;
         }
-        a[href] {
-          text-decoration: none;
-          color: $main;
-
-          &:hover {
-            color: gray;
-            text-decoration: underline;
-          }
-        }
       }
     }
-    &.product-errything {
+    a[href] {
+      text-decoration: none;
+      color: $main;
+
+      &:hover {
+        color: gray;
+        text-decoration: underline;
+      }
+    }
+    .product-container {
       display: block;
     }
   }
