@@ -10,4 +10,13 @@ class Order < ActiveRecord::Base
   # Invoiced - Seller has finished item and invoiced the customer
 
   enum order_status: [ :cancelled, :in_progress, :completed, :invoiced ]
+
+  def totals
+    self.total = 0
+    self.order_items.each do |i|
+      i.total_price = (i.quantity * i.unit_price) + i.shipping
+      self.total += i.total_price
+    end
+  end
+
 end

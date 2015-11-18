@@ -12,10 +12,10 @@ class OrderItemsController < ApplicationController
   # PATCH/PUT /order_items/1
   def update
     @order_item.update_attributes(order_item_params)
-    if @order_item.quantity_changed?
+    if params[:page]  == "cart"
       redirect_to carts_path
-    else
-      redirect_to carts_path
+    elsif params[:page]  == "user"
+      redirect_to user_path(current_user)
     end
   end
 
@@ -25,14 +25,14 @@ class OrderItemsController < ApplicationController
     redirect_to carts_path
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order_item
-      @order_item = OrderItem.find(params[:id])
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order_item
+    @order_item = OrderItem.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_item_params
-      params.require(:order_item).permit(:product_id, :order_id, :fabric_design, :order_item_status, :shipping, :price, :name, :quantity)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_item_params
+    params.require(:order_item).permit(:product_id, :order_id, :fabric_design, :order_item_status, :shipping, :price, :name, :quantity)
+  end
 end

@@ -5,11 +5,7 @@ class CartsController < ApplicationController
   before_action :set_order
 
   def index
-    @order.total = 0
-    @order.order_items.each do |i|
-      i.total_price = (i.quantity * i.unit_price) + i.shipping
-      @order.total += i.total_price
-    end
+    @order.totals
     @order.save
   end
 
@@ -18,14 +14,9 @@ class CartsController < ApplicationController
     @product = Product.find_by_id(params[:id])
     # Create an order item based on the product found above.
     @order_item = OrderItem.create(
-        product_id: @product.id,
-        order_id: @order.id,
-        fabric_design: params[:design],
-        fabric_design_url: params[:source],
-        shipping: @product.shipping,
-        name: @product.name,
-        unit_price: @product.price,
-        quantity: 1)
+        product_id: @product.id, order_id: @order.id, fabric_design: params[:design],
+        fabric_design_url: params[:source], shipping: @product.shipping,
+        name: @product.name, unit_price: @product.price, quantity: 1)
     # Calculate the total_price field.
     @order_item.total_price = @order_item.quantity * @order_item.unit_price
     # Save that item!
@@ -40,9 +31,7 @@ class CartsController < ApplicationController
       # One at a time, nice and slow.
       o.destroy
     end
-    # Whoops, get rid of that cart session.  (Wait.. we don't actually need it anyway.)
-    session[:cart] = nil
-    # Now show me the cart again.
+    # Now show me that cart again.
     redirect_to carts_path
   end
 
