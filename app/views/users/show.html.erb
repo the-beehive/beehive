@@ -46,7 +46,7 @@
               <p>by: <%= order_item.order.user.name %></p>
               <%= form_for order_item do |f| %>
                 <%= hidden_field_tag :page, "user" %>
-                <%= f.select :order_item_status, options_for_select(OrderItem.order_item_statuses.keys.to_a, order_item.order_item_status) %>
+                <%= f.select :order_item_status, options_for_select(OrderItem.order_item_statuses.collect{|item, val| [item.humanize, item]}, order_item.order_item_status) %>
                 <%= f.submit 'Update Order Status'%>
               <% end %>
             </div>
