@@ -30,71 +30,71 @@ product_names = ["Authulf", "Hrafnkel", "Hreitharr", "Sighvat", "Audbjorg", "Fro
     "Thorve", "Gudny", "Ranveig", "Ragnhild", "Halldora", "Katla", "Kadlin", "Svala", "Ragnhild", "Thraslaug",
     "Hedinfrid", "Greiland"]
 
-Product.create!(user_id: 1, name: "Ragnhild",
-    description: "This book cover is just great.  The best around.",
+Product.create!(user_id: 1, name: "Diary",
+    description: "This book is great for writing your secrets or shopping lists in. The best around.",
     yardage: 2, fabric_type: "Organic Cotton Sateen", shipping: 12.00, price: 32.50)
 
-Product.create!(user_id: 1, name: "Armod",
+Product.create!(user_id: 1, name: "Reading Chair",
     description: "Need a place to sit back and read a book?  Try this super comfortable chair.",
     yardage: 4, fabric_type: "Faux Suede", shipping: 18.00, price: 54.00)
 
-Product.create!(user_id: 1, name: "Frostulf",
+Product.create!(user_id: 1, name: "Single-Panel Drape",
     description: "Do you typically disregard the people outside of your house?  This drape will allow you to never know they existed.",
     yardage: 2, fabric_type: "Basic Combed Cotton", shipping: 6.00, price: 37.00)
 
-Product.create!(user_id: 1, name: "Thraslaug",
-    description: "Tiny elephants are making a comeback.  Don't miss out!  Get yours today!",
+Product.create!(user_id: 1, name: "Small Elephant Plush",
+    description: "Tiny elephants are making a comeback. Don't miss out! Get yours today!",
     yardage: 2, fabric_type: "Minky", shipping: 6.00, price: 35.00)
 
-Product.create!(user_id: 2, name: "Svala",
-    description: "Do you love wearing clothes?  Addicted to russian music?  Love squares and shapes made of squares?  This dress was made for you.",
+Product.create!(user_id: 2, name: "Peasant Dress",
+    description: "Do you love wearing clothes? This dress was made for you.",
     yardage: 1, fabric_type: "Basic Combed Cotton", shipping: 2.00, price: 15.00)
 
-Product.create!(user_id: 2, name: "Sighvat",
-    description: "A tie for your neck meats.",
+Product.create!(user_id: 2, name: "Neck Tie",
+    description: "A tie for your neck.",
     yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 3.00, price: 18.00)
 
-Product.create!(user_id: 2, name: "Authulf",
+Product.create!(user_id: 2, name: "Apron",
     description: "An apron to keep yourself clean in the kitchen. Who knows what might happen in there.",
     yardage: 2, fabric_type: "Eco Canvas", shipping: 3.00, price: 19.00)
 
-Product.create!(user_id: 2, name: "Hrafnkel",
-    description: "Child's button-up shirt Size 2T. Different buttons available on request.",
+Product.create!(user_id: 2, name: "Child's Button-Up Shirt",
+    description: "Size 2T. Different buttons available on request.",
     yardage: 1, fabric_type: "Cotton Lawn", shipping: 4.00, price: 20.00)
 
-Product.create!(user_id: 3, name: "Hreitharr",
+Product.create!(user_id: 3, name: "Makeup Case",
     description: "6-inch long makeup case. Perfect for brushes, eyeshadows, liners, etc.",
     yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 2.00, price: 15.00)
 
-Product.create!(user_id: 3, name: "Audbjorg",
+Product.create!(user_id: 3, name: "Lounge Pants",
     description: "Unisex lounge pants with pockets. One size fits all.",
     yardage: 2, fabric_type: "Cotton Lawn", shipping: 5.00, price: 22.00)
 
-Product.create!(user_id: 3, name: "Runolf",
+Product.create!(user_id: 3, name: "Purse",
     description: "A tiny hand-held purse to keep all your secrets/necessities in.",
     yardage: 1, fabric_type: "faux suede", shipping: 4.00, price: 18.00)
 
-Product.create!(user_id: 3, name: "Thorve",
+Product.create!(user_id: 3, name: "Pillow",
     description: "Pillow; soft, rest your head on it. Perfect for sleeping or throwing at a sleeping person.",
     yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 3.00, price: 20.00)
 
-Product.create!(user_id: 4, name: "Ranveig",
+Product.create!(user_id: 4, name: "Dog Pajamas",
     description: "Are you a dog person? No, but are you REALLY a dog person? Prove it. Get your dog some jammies.",
     yardage: 1, fabric_type: "Organic Cotton Interlock Knit", shipping: 4.00, price: 25.00)
 
-Product.create!(user_id: 4, name: "Katla",
+Product.create!(user_id: 4, name: "Hair Bobbles",
     description: "Keep your hair looking fantastic with these quirky ties.",
     yardage: 1, fabric_type: "Basic Combed Cotton", shipping: 2.00, price: 7.00)
 
-Product.create!(user_id: 4, name: "Svala",
+Product.create!(user_id: 4, name: "Alternative Pillow",
     description: "An alternative to your normal pillow lifestyle -- now with additional flair.",
     yardage: 1, fabric_type: "Cotton Lawn", shipping: 5.00, price: 17.00)
 
-Product.create!(user_id: 4, name: "Hedinfrid",
+Product.create!(user_id: 4, name: "Pouch",
     description: "A pouch for holding things or hiding them.",
     yardage: 1, fabric_type: "Organic Cotton Sateen", shipping: 4.00, price: 15.00)
 
-Product.create!(user_id: 1, name: "Greiland",
+Product.create!(user_id: 1, name: "Tablet Cover",
     description: "A specially-sized soft container for your tablet.",
     yardage: 1, fabric_type: "Basic Combed Cotton", shipping: 4.00, price: 22.00)
 
