@@ -5,11 +5,7 @@ class CartsController < ApplicationController
   before_action :set_order
 
   def index
-    @order.total = 0
-    @order.order_items.each do |i|
-      i.total_price = (i.quantity * i.unit_price) + i.shipping
-      @order.total += i.total_price
-    end
+    @order.totals
     @order.save
   end
 
