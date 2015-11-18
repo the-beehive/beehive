@@ -128,7 +128,7 @@ Image.create(product_id: 8, uploaded_file: File.open("#{Rails.root}/app/assets/i
 Image.create(product_id: 9, uploaded_file: File.open("#{Rails.root}/app/assets/images/makeupbox2.jpg"))
 Image.create(product_id: 9, uploaded_file: File.open("#{Rails.root}/app/assets/images/makeupcase.jpg"))
 
-Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants.jpg"))
+Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants.png"))
 Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants2.jpg"))
 
 Image.create(product_id: 11, uploaded_file: File.open("#{Rails.root}/app/assets/images/clutch.jpg"))
