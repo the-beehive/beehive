@@ -1,5 +1,14 @@
 ## Beehive
 
+This is the repository for Beehive, an online marketplace where crafty entrepreneurs
+can offer products they create for purchase. Our marketplace is populated by crafters
+whose creations are made with fabric. Through our partnership with [Spoonflower](http://www.spoonflower.com/)
+all products offered on Beehive feature a customizable design feature that allows the
+client to choose the end-look of any product they purchase.
+
+Visitors to Beehive can peruse the marketplace, search product names and descriptions,
+and browse pattern options through the Spoonflower API.
+
 _Links to Sample Product Photos_
 
 ['Der Deer Party' by Smallest Forest on Flickr. CC BY-SA 2.0](https://www.flickr.com/photos/book_wallah/15067431370/in/photolist-oXswpu-oXtdxo-n9DqJp-8DAqtM-9yyaje-h7W3nX-h7UzEx-h7UMHG-deNdC7-bSjpgH-8RVs6c-cib76u-943iji-cib9iE-dgtzJC-cib6m1-8yeooT-scSPpV-scSP6i-nUZD3W-at3eWQ-ceVM7s-asZCap-dsso1s-peVnrG-oXtdVs-qUukT2-ojvHR2-ohwSMS-dz2SpK-bY9kFb-7ZperL-dwPc8J-dwHFr8-84zAU8-5rZT9q-9iDLCE-eCSLbA-7UJStB-cib6wJ-bY935Y-74bECy-gyvmNj-9g4rz1-dgtzJ9-fdQbRF-cAkgQ5-88tPgx-bC6f3E-bHk3Nr/)
