@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @product = Product.new
+    @user.orders.each do |o|
+      o.totals
+    end
   end
 
   # GET /users/new
