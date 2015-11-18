@@ -23,6 +23,7 @@
         <p>Total: <%= number_to_currency(o.total_price, unit: "$") %></p>
         <%# 'thingy' %>
         <%= form_for o do |q| %>
+          <%= hidden_field_tag :page, "cart" %>
           <%= q.number_field :quantity %>
           <%= q.submit "Update", class: 'quantity-bttn' %>
         <% end %>

@@ -36,6 +36,7 @@
                 <h4><%= order_item.name %></h4>
                 <label>Ordered On: <%= order_item.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
               <%= form_for order_item do |f| %>
+                <%= hidden_field_tag :page, "user" %>
                 <%= f.select :order_item_status, options_for_select(OrderItem.order_item_statuses.keys.to_a, order_item.order_item_status) %>
                 <%= f.submit 'Update Order Status'%>
               </div>

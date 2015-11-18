@@ -30,9 +30,8 @@
     <% end %>
   <h4>Order Summary</h4>
   <ul class="cart-summary">
-    <li><p>Total:</p></li>
     <li class="order-total">
-      <%= number_to_currency(@order.total) %>
+      Total: <%= number_to_currency(@order.total) %>
     </li>
   </ul>
   <div class="thx-order">
