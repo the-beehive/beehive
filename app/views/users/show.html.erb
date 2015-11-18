@@ -87,6 +87,7 @@
       <% @user.orders.each do |order| %>
         <div class="content-container">
           <% order.order_items.each do |item| %>
+          <div class="product-errything">
             <div class="item-img">
               <% first_image = item.product.images.first %>
               <%= image_tag(first_image.uploaded_file, :width => 150, :height => 150) %>
@@ -99,17 +100,12 @@
               <h4><%= item.product.name %></h4>
               <h4><%= number_to_currency(item.product.price)%></h4>
               <p>Quantity: <%= item.quantity %></p>
-              <br/>
               <p><%= item.created_at.strftime("%m/%d/%Y at %I:%M%p") %><p>
               <p><%= item.order_item_status %><p>
+              <% end %>
+              <p><%= link_to 'view invoice', charge_path(order.id) %></p>
             </div>
-          <% end %>
-          <p>
-            TOTAL: <%= number_to_currency(order.total) %>
-          </p>
-          <p>
-            <%= link_to 'view invoice', charge_path(order.id), { style: "text-decoration:none; color:#FFAF44" } %>
-          </p>
+          </div>
           </div>
         <% if order.id != session[:order_id] %>
         <% end %>
