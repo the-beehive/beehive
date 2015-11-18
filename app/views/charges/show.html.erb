@@ -19,8 +19,8 @@
         <% o.order_id %>
       </div>
       <div class="item-details">
-        <h4><%= o.name %></h4>
-        <h5><%= number_to_currency(o.unit_price, unit: "$") %></h5>
+        <h4><%= o.product.name %></h4>
+        <h4><%= number_to_currency(o.unit_price, unit: "$") %></h4>
         <p>Shipping: <%= number_to_currency(o.shipping, unit: "$") %></p>
         <p>Quantity: <%= o.quantity %>
         <p>Ordered On: <%= o.created_at.strftime("%m/%d/%Y at %I:%M%p") %></p>

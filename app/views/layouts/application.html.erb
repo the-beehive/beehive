@@ -4,7 +4,6 @@
         <title>Beehive</title>
         <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-        <!-- <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
@@ -24,7 +23,7 @@
                 <% if current_user %>
                   <!-- <li>Signed in with <%# current_user.provider %> as <%# current_user.name %></li> -->
                   <li><%= link_to 'Shop', products_path %></li>
-                  <li><%= link_to 'Manage', user_path(current_user) %></li>
+                  <li><%= link_to 'Profile', user_path(current_user) %></li>
                   <li><%= link_to 'Cart', carts_path %></li>
                   <li><%= link_to "Sign Out", "/sign_out", method: :delete %></li>
                 <% else %>
