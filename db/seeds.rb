@@ -128,8 +128,8 @@ Image.create(product_id: 8, uploaded_file: File.open("#{Rails.root}/app/assets/i
 Image.create(product_id: 9, uploaded_file: File.open("#{Rails.root}/app/assets/images/makeupbox2.jpg"))
 Image.create(product_id: 9, uploaded_file: File.open("#{Rails.root}/app/assets/images/makeupcase.jpg"))
 
+Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants.png"))
 Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants2.jpg"))
-Image.create(product_id: 10, uploaded_file: File.open("#{Rails.root}/app/assets/images/pants.jpg"))
 
 Image.create(product_id: 11, uploaded_file: File.open("#{Rails.root}/app/assets/images/clutch.jpg"))
 
@@ -173,28 +173,28 @@ fabrics = ["http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0461/84
 10.times do
   OrderItem.create!(
       product_id: rand(1..17), order_id: rand(1..5), quantity: rand(1..3),
-      fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
+      fabric_design_url: fabrics.sample, order_item_status: rand(1..3),
       shipping: rand(0.0..20.0), unit_price: rand(10.00..200.00))
 end
 
 10.times do
   OrderItem.create!(
       product_id: rand(1..17), order_id: rand(6..10), quantity: rand(1..3),
-      fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
+      fabric_design_url: fabrics.sample, order_item_status: rand(1..3),
       shipping: 4.99, unit_price: rand(10.00..50.00))
 end
 
 10.times do
   OrderItem.create!(
       product_id: rand(1..17), order_id: rand(11..15), quantity: rand(1..3),
-      fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
+      fabric_design_url: fabrics.sample, order_item_status: rand(1..3),
       shipping: 4.99, unit_price: rand(10.00..50.00))
 end
 
 10.times do
   OrderItem.create!(
       product_id: rand(1..17), order_id: rand(16..20), quantity: rand(1..3),
-      fabric_design_url: fabrics.sample, order_item_status: rand(0..3),
+      fabric_design_url: fabrics.sample, order_item_status: rand(1..3),
       shipping: 4.99, unit_price: rand(10.00..50.00))
 end
 

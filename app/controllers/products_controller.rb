@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
     @fabric_search_results = Product.fabric_search(params[:fabric])
   end
 
+  # Update the fabric search results using AJAX and jQuery magic.
   def fabric
     @fabric_search_results = Product.fabric_search(params[:fabric])
     render 'products/fabric'
@@ -32,7 +33,6 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-
   end
 
   # POST /products

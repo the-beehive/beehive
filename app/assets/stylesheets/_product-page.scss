@@ -168,12 +168,16 @@
         }
       }
   }
+  // vertical-align: middle;
+  // display: table-cell;
+  p {
+    padding-bottom: 1%;
+    // margin-left: 1em;
+  }
 
-  vertical-align: middle;
-  display: table-cell;
   img {
     position: relative;
-    margin-left: 1em;
+    margin-right: 1em;
     margin-bottom: 1em;
 
     &:last-child {
